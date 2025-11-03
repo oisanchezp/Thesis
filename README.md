@@ -1,10 +1,10 @@
-# Organización de un proyecto de investigación
+# Master's thesis in Environment and Development
 
 Esta plantilla proporciona una estructura general para proyectos de investigación. Las siguientes secciones explicarán cómo y por qué se define esta estructura, además de proporcionar las mejores prácticas para mantener los proyectos organizados. Siguiendo esta estructura, los investigadores podrán familiarizarse mejor con los proyectos en curso, y los proyectos terminados se archivarán de manera que garantice el acceso futuro a los datos y métodos. Esta plantilla se desarrolló como una herramienta para ayudar a mantener la continuidad dentro de un contexto de investigación organizacional en Geociencias SIATA. Se basa en las estructuras proporcionadas en:
 - https://github.com/EthanJantz/Research-Project-Template
 - https://github.com/coderefinery/reproducible-research
 
-## Estructura del proyecto
+## Repository structure
 
 Esta plantilla se basa en 4 carpetas: Información (info), Datos (data), Scripts (src) y Resultados (results). Adicionalmente, tiene 2 carpetas para la documentación del código (doc) y el manuscripo derivado (manuscript).
 

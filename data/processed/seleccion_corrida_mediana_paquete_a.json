@@ -1,0 +1,11 @@
+{
+  "modelo_referencia": "GAM",
+  "mc_id_star": 39,
+  "seed_star": 139,
+  "auc_star": 0.9734098018769552,
+  "auc_median": 0.9732867050934344,
+  "t_days": 1,
+  "p_days": 33,
+  "random_state_split": 42,
+  "threshold": 0.5
+}

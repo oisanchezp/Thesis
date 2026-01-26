@@ -582,7 +582,7 @@ out_path = "/home/oisanchezp/Thesis/data/processed/resultados2026_1d_33d_GAM_Log
 results_df.to_csv(out_path, index=False)
 
 imp_df = pd.DataFrame(import_records)
-imp_df.to_csv("/home/oisanchezp/Thesis/data/processed/importancia2026_perm_Logit_GAM.csv", index=False)
+imp_df.to_csv("/home/oisanchezp/Thesis/data/processed/importancia2026_a_Logit_GAM.csv", index=False)
 
 print(f"\nResultados guardados en: {out_path}")
 print("\nResumen por modelo (AUROC medio sobre las 50 corridas):")

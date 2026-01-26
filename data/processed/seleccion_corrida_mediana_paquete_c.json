@@ -1,0 +1,37 @@
+{
+  "paquete": "C",
+  "modelo_referencia": "GAM",
+  "mc_id_star": 9,
+  "seed_star": 109,
+  "auc_star": 0.9878310233414862,
+  "auc_median": 0.9878461213274149,
+  "t_days": 1,
+  "p_days": 33,
+  "random_state_split": 42,
+  "threshold": 0.5,
+  "min_dist_m": 300.0,
+  "excl_days": 30,
+  "umbrales": {
+    "1d": 5.0,
+    "7d": 10.0,
+    "90d": 80.0
+  },
+  "paths": {
+    "path_gpkg": "/home/oisanchezp/Thesis/data/metadata/slope_units_con_inventario.gpkg",
+    "layer_in": "slope_units_full",
+    "pluv_meta": "/home/oisanchezp/Thesis/data/metadata/pluviometros_metadatos_20250506.csv",
+    "ruta_series": "/mnt/investigacion/geotecnia/Pluvios_horarios/Pluvios_horarios_completos/",
+    "oni_path": "/home/oisanchezp/Thesis/data/metadata/oni_diario_2010_2025.csv"
+  },
+  "feature_names": [
+    "T",
+    "P",
+    "sin_doy",
+    "cos_doy",
+    "ENSO",
+    "slope_mean",
+    "log_area",
+    "geologia",
+    "cobertura"
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "paquete": "C",
   "modelo_referencia": "GAM",
-  "mc_id_star": 9,
-  "seed_star": 109,
-  "auc_star": 0.9878310233414862,
-  "auc_median": 0.9878461213274149,
+  "mc_id_star": 3,
+  "seed_star": 103,
+  "auc_star": 0.9833222551211553,
+  "auc_median": 0.9833222551211553,
   "t_days": 1,
   "p_days": 33,
   "random_state_split": 42,
@@ -12,8 +12,8 @@
   "min_dist_m": 300.0,
   "excl_days": 30,
   "umbrales": {
-    "1d": 5.0,
-    "7d": 10.0,
+    "1d": 10.0,
+    "7d": 20.0,
     "90d": 80.0
   },
   "paths": {

@@ -40,8 +40,8 @@ oni_path    = "/home/oisanchezp/Thesis/data/metadata/oni_diario_2010_2025.csv"
 MIN_DIST_M = 300
 EXCL_DAYS  = 30
 
-UMBRAL_1D  = 5
-UMBRAL_7D  = 10
+UMBRAL_1D  = 10
+UMBRAL_7D  = 20
 UMBRAL_90D = 80
 
 T_DAYS     = 1
@@ -131,7 +131,7 @@ def add_rain_columns_from_cache(df, gauge_col, date_col, cache_cs, k_list):
 # 2) CANDIDATOS (timestamps) por pluvio con umbrales + exclusión ±excl_days
 # ============================================================
 
-def build_excluded_dates(su_si_dates, excl_days=30):
+def build_excluded_dates(su_si_dates, excl_days=EXCL_DAYS):
     """
     Devuelve un pd.Index de fechas (tipo date) a excluir,
     que cubren ±excl_days alrededor de cada evento SI.
@@ -251,9 +251,9 @@ def assign_nearest_gauge_with_candidates(su_gdf, gpl, candidates_by_gauge, k=Non
 def construir_si_no_spatiotemporal_mc(seed,
                                       path_gpkg, layer_in,
                                       pluv_meta_csv, ruta_series, oni_path,
-                                      min_dist_m=500, excl_days=30,
-                                      umbral_1d=5, umbral_7d=10, umbral_90d=100,
-                                      t_days=1, p_days=33,
+                                      min_dist_m=MIN_DIST_M, excl_days=EXCL_DAYS,
+                                      umbral_1d=UMBRAL_1D, umbral_7d=UMBRAL_7D, umbral_90d=UMBRAL_90D,
+                                      t_days=T_DAYS, p_days=P_DAYS,
                                       col_geo="geologia",
                                       col_cov="cobertura",
                                       col_slope="slope_mean",
@@ -298,7 +298,7 @@ def construir_si_no_spatiotemporal_mc(seed,
     cache_cs, candidates_by_gauge = build_gauge_pool(
         pluv_meta_csv, ruta_series, excluidas,
         umbral_1d=umbral_1d, umbral_7d=umbral_7d, umbral_90d=umbral_90d,
-        min_days_after_install=t_days + p_days  # coherente con tu T/P
+        min_days_after_install=T_DAYS + P_DAYS  # coherente con tu T/P
     )
     if len(candidates_by_gauge) == 0:
         raise ValueError("No se encontraron candidatos de lluvia que cumplan umbrales + exclusión. Revisa umbrales o datos.")
@@ -465,8 +465,8 @@ def construir_si_no_spatiotemporal_mc(seed,
 
 def build_TP_dataset_allvars(
     df,
-    t_days=1,
-    p_days=33,
+    t_days=P_DAYS,
+    p_days=T_DAYS,
     col_geo="geologia",
     col_cov="cobertura",
     col_slope="slope_mean",
@@ -616,8 +616,8 @@ def get_best_lambda_train_only(X_train, y_train, random_state=42):
 
 
 def evaluate_models_once(df_mc,
-                         t_days=1,
-                         p_days=33,
+                         t_days=T_DAYS,
+                         p_days=P_DAYS,
                          test_size=0.30,
                          random_state=42,
                          thr=0.5,

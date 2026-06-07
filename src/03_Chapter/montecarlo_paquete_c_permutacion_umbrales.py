@@ -150,7 +150,7 @@ def build_excluded_dates(su_si_dates, excl_days=EXCL_DAYS):
     )
 
 def build_gauge_pool(pluv_meta_csv, ruta_series, excluded_dates,
-                     umbral_1d=5, umbral_7d=10, umbral_90d=100,
+                     umbral_1d=10, umbral_7d=20, umbral_90d=80,
                      min_days_after_install=TOTAL_DAYS):
     """
     Construye:
@@ -264,6 +264,9 @@ def construir_si_no_spatiotemporal_mc(seed,
     rng = np.random.default_rng(seed)
 
     su = gpd.read_file(path_gpkg, layer=layer_in)
+    if "fid" not in su.columns:
+        su = su.reset_index().rename(columns={"index": "fid"})
+    
     su["fecha_hora_evento"] = pd.to_datetime(su["fecha_hora_evento"], errors="coerce")
 
     # CRS métrico
@@ -420,8 +423,8 @@ def construir_si_no_spatiotemporal_mc(seed,
     ].copy()
 
     # si se quedaron cortos, no seguimos (prefiero fallo explícito)
-    if len(df_no) < (n_no_target - 80):
-        raise ValueError(f"Tras refiltrar por umbrales quedó NO={len(df_no)}/{(n_no_target-80)}. Baja umbrales o revisa series.")
+    if len(df_no) < (n_no_target - 100):
+        raise ValueError(f"Tras refiltrar por umbrales quedó NO={len(df_no)}/{(n_no_target-100)}. Baja umbrales o revisa series.")
 
     # 6) variables temporales: Mes, DoY, sin/cos
     for dff in (su_si, df_no):
@@ -467,8 +470,8 @@ def construir_si_no_spatiotemporal_mc(seed,
 
 def build_TP_dataset_allvars(
     df,
-    t_days=P_DAYS,
-    p_days=T_DAYS,
+    t_days=T_DAYS,
+    p_days=P_DAYS,
     col_geo="geologia",
     col_cov="cobertura",
     col_slope="slope_mean",
@@ -618,11 +621,13 @@ def get_best_lambda_train_only(X_train, y_train, random_state=42):
 
 
 
-def roc_and_points(y_true, y_prob, targets=(0.25, 0.95)):
+def roc_and_points(y_true, y_prob, tpr_targets=(0.95,), tnr_targets=(0.95,)):
     """
     Calcula curva ROC y devuelve:
     - arrays: fpr, tpr, thr
-    - puntos: OPT, TPR25, TPR95 con threshold (prob), TPR, TNR (=1-FPR)
+    - puntos: OPT + puntos por objetivos de TPR y/o TNR
+
+    Cada punto incluye threshold (prob), TPR, TNR (=1-FPR), FPR y YoudenJ.
     """
     fpr, tpr, thr = roc_curve(y_true, y_prob)  # thr: de inf -> 0
     tnr = 1.0 - fpr
@@ -630,17 +635,17 @@ def roc_and_points(y_true, y_prob, targets=(0.25, 0.95)):
     # OPT = maximiza Youden J = TPR - FPR
     j = tpr - fpr
     i_opt = int(np.nanargmax(j))
-    opt = {
+    pts = [{
         "name": "OPT",
         "threshold": float(thr[i_opt]),
         "tpr": float(tpr[i_opt]),
         "tnr": float(tnr[i_opt]),
         "fpr": float(fpr[i_opt]),
         "youdenJ": float(j[i_opt]),
-    }
+    }]
 
-    pts = [opt]
-    for tt in targets:
+    # puntos por TPR objetivo
+    for tt in tpr_targets:
         i = int(np.nanargmin(np.abs(tpr - tt)))
         pts.append({
             "name": f"TPR{int(round(tt*100))}",
@@ -651,7 +656,20 @@ def roc_and_points(y_true, y_prob, targets=(0.25, 0.95)):
             "youdenJ": float(j[i]),
         })
 
+    # puntos por TNR objetivo (equivale a FPR objetivo = 1 - TNR)
+    for ss in tnr_targets:
+        i = int(np.nanargmin(np.abs(tnr - ss)))
+        pts.append({
+            "name": f"TNR{int(round(ss*100))}",
+            "threshold": float(thr[i]),
+            "tpr": float(tpr[i]),
+            "tnr": float(tnr[i]),
+            "fpr": float(fpr[i]),
+            "youdenJ": float(j[i]),
+        })
+
     return fpr, tpr, thr, pts
+
 
 
 def roc_to_records(mc_id, modelo, fpr, tpr, thr):
@@ -745,7 +763,7 @@ def evaluate_models_once(df_mc,
     thr_points = []
 
     def add_roc(modelo, y_true, y_prob, mc_id=None):
-        fpr, tpr, thr_arr, pts = roc_and_points(y_true, y_prob, targets=(0.25, 0.95))
+        fpr, tpr, thr_arr, pts = roc_and_points(y_true, y_prob, tpr_targets=(0.95,), tnr_targets=(0.95,))
         roc_records.extend(roc_to_records(mc_id if mc_id is not None else -1, modelo, fpr, tpr, thr_arr))
         for p in pts:
             thr_points.append({
@@ -837,12 +855,16 @@ def evaluate_models_once(df_mc,
 # 8) MONTE CARLO + guardados (C)
 # ============================================================
 
-n_mc = 5
+n_mc = 100
 registros = []
 import_records = []
 
 roc_all = []
 thr_all = []
+
+# ---- AL INICIO (antes del loop) ----
+no_signatures = {}   # {mc_id: set((fid, timestamp))}
+no_fids_only  = {}   # {mc_id: set(fid)}  (solo espacial, sin fecha)
 
 for mc in range(n_mc):
     seed = 100 + mc
@@ -859,6 +881,23 @@ for mc in range(n_mc):
             col_geo="geologia", col_cov="cobertura",
             col_slope="slope_mean", col_area="area"
         )
+
+        # ---- DENTRO DEL LOOP, justo después de df_mc = construir... ----
+        df_no_only = df_mc[df_mc["si_no"] == 0].copy()
+
+        # firma espacio-temporal (fid + timestamp redondeado a hora)
+        sig = set(zip(
+            df_no_only["fid"].astype(int).to_numpy(),
+            pd.to_datetime(df_no_only["fecha_hora_evento"]).dt.floor("H").to_numpy()
+        ))
+
+        # firma solo espacial (fid)
+        sig_fid = set(df_no_only["fid"].astype(int).to_numpy())
+
+        no_signatures[mc] = sig
+        no_fids_only[mc]  = sig_fid
+
+        print(f"[MC {mc}] NO únicos (fid,t): {len(sig)} | NO únicos fid: {len(sig_fid)}")
 
         resultados_mc, imps_mc, models_mc, test_mc, roc_rec, thr_pts = evaluate_models_once(
             df_mc,
@@ -955,3 +994,25 @@ thr_df.to_csv(thr_path, index=False)
 
 print("Guardado ROC curves:", roc_path)
 print("Guardado ROC points:", thr_path)
+
+print("\n=== FIRMAS NO-eventos por MC ===")
+def jaccard(A, B):
+    return len(A & B) / len(A | B) if (A or B) else np.nan
+
+mcs = sorted(no_signatures.keys())
+
+print("\n=== Solapamiento Jaccard entre corridas (NO espacio-temporal: fid+hora) ===")
+for i in range(len(mcs)):
+    for j in range(i+1, len(mcs)):
+        a, b = mcs[i], mcs[j]
+        J = jaccard(no_signatures[a], no_signatures[b])
+        inter = len(no_signatures[a] & no_signatures[b])
+        print(f"MC{a} vs MC{b}: J={J:.3f} | intersección={inter}")
+
+print("\n=== Solapamiento Jaccard entre corridas (NO solo espacial: fid) ===")
+for i in range(len(mcs)):
+    for j in range(i+1, len(mcs)):
+        a, b = mcs[i], mcs[j]
+        J = jaccard(no_fids_only[a], no_fids_only[b])
+        inter = len(no_fids_only[a] & no_fids_only[b])
+        print(f"MC{a} vs MC{b}: J={J:.3f} | fids en común={inter}")

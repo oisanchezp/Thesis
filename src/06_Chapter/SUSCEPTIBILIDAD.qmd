@@ -1,0 +1,899 @@
+---
+title: "**PRIMERA PARTE: Modelo de susceptibilidad**"
+author: 
+  - name: "Oscar Ivan Sanchez Patiño"
+    affiliation: "Universidad Nacional de Colombia"
+lang: es
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-summary: "Mostrar código"
+execute:
+  echo: false
+  warning: false
+  message: false
+date: today
+date-format: "MMMM YYYY"
+bibliography: referencias.bib
+---
+
+# Zero-Inflated Negative Binomial + BYM2 en INLA
+
+## Contexto (Para entender bien)
+
+### Primera parte:
+
+Se definen los ceros estructurales y los ceros no estructurales
+
+$$P(Y_i = 0) = \pi + (1-\pi) \cdot f_{NB}(0 \mid \mu_i, k)$$
+
+La probabilidad de que la SUi tenga cero deslizamientos es igual a: la probabilidad de ser un **cero estructural**, más la probabilidad de no ser un cero estructural multiplicado por la probabilidad de que un SU que no es cero estructural tenga cero deslizamientos.
+
+### Seguna parte:
+
+$$P(Y_i = y) = (1-\pi) \cdot f_{NB}(y \mid \mu_i, k), \quad y > 0$$
+
+Probabilidad de que, en la SUi se observen 'y' deslizamientos es igual a la probabilidad de que esta SU sí sea susceptible (osea que no es un Cero estructural) por la probabilidad de que, dado que es susceptible, el Binomial Negativo produzca exactamente 'y' deslizamientos, con media ui y parametros de dispersión k.
+
+y \> 0 significa que solo aplica cuando y es mayor que cero, es decir, cuando se observan 1,2, 3... deslizamientos.
+
+------------------------------------------------------------------------
+
+
+
+
+## Preparación de datos
+
+### Paquetes
+
+```{r}
+.libPaths(c("~/R/library", .libPaths()))
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+install.packages(c("dplyr", "ggplot2"), lib = "~/R/library")
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+
+
+
+```{r}
+.libPaths(c("~/R/library", .libPaths()))
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+install.packages(c("dplyr", "ggplot2"), lib = "~/R/library")
+```
+
+
+```{r}
+.libPaths(c("~/R/library", .libPaths()))
+
+install.packages(
+  "fmesher",
+  repos = c(
+    inlabruorg = "https://inlabru-org.r-universe.dev",
+    CRAN = "https://cloud.r-project.org"
+  ),
+  lib = "~/R/library"
+)
+```
+
+```{r}
+.libPaths(c("~/R/library", .libPaths()))
+
+install.packages(
+  "INLA",
+  repos = c(
+    CRAN = "https://cloud.r-project.org",
+    inlabruorg = "https://inlabru-org.r-universe.dev",
+    INLA = "https://inla.r-inla-download.org/R/stable"
+  ),
+  dependencies = TRUE,
+  lib = "~/R/library"
+)
+```
+
+```{r}
+.libPaths(c("~/R/library", .libPaths()))
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+install.packages(c("sf", "spdep"), lib = "~/R/library", dependencies = TRUE)
+```
+
+```{r}
+.libPaths(c("~/R/library", .libPaths()))
+requireNamespace("fmesher")  # debe devolver TRUE
+library(INLA)
+inla.setOption(inla.mode = "compact")
+inla.setOption(num.threads = "4:1")
+```
+
+
+```{r}
+.libPaths(c("~/R/library", .libPaths()))
+
+library(sf)
+library(spdep)
+library(INLA)
+library(dplyr)
+library(ggplot2)
+
+inla.setOption(inla.mode = "compact")
+inla.setOption(num.threads = "4:1")
+```
+
+### Cargar y limpiar
+
+```{r}
+
+su <- st_read("slope_units_final.gpkg", layer = "slope_units_final")
+
+su <- st_transform(su, 32618)
+
+su <- st_make_valid(su)
+
+# Variables a factor
+su <- su %>%
+  mutate(
+    geologia  = factor(suelos),
+    cobertura = factor(cobertura_cat),
+    tipo_su   = factor(su_type),
+    zona      = factor(zona_lluvia),
+    log_area  = log(area),
+    mm        = as.integer(n_mm)
+  )
+
+# NAs: 146 en zona, 80 en cobertura
+# Opción A (más simple): eliminar
+su <- su %>% filter(!is.na(zona), !is.na(cobertura))
+
+# Opción B (conservadora): crear categoría "desconocido"
+# su$cobertura <- addNA(su$cobertura); levels(su$cobertura)[is.na(levels(su$cobertura))] <- "SinDato"
+
+# ID secuencial obligatorio para BYM2 (índice 1..N consecutivo)
+su$su_id <- seq_len(nrow(su))
+
+# Verifica que no quedan NAs en lo relevante
+stopifnot(!any(is.na(su$mm)), !any(is.na(su$log_area)))
+```
+
+### Categoría de referencia
+
+```{r}
+su$geologia  <- relevel(su$geologia,  ref = "Areno-limoso") #Más abundante
+su$cobertura <- relevel(su$cobertura, ref = "3")   # BOSQUES
+su$tipo_su   <- relevel(su$tipo_su,   ref = "2") #Más abundante
+```
+
+## Construcción grafo espacial
+
+```{r}
+# Vecindad por contigüidad queen
+nb <- poly2nb(su, queen = TRUE)
+
+# Revisar conectividad
+summary(nb)
+# Busca: "Number of regions with no links" — deberían ser 0 idealmente
+```
+
+### Convertir a formato INLA
+
+```{r}
+# Exportar grafo de vecindad a archivo que INLA pueda leer
+nb2INLA("grafo_su.adj", nb)
+g <- inla.read.graph("grafo_su.adj")
+
+# Guarda el grafo: construirlo toma tiempo, no querrás repetirlo
+saveRDS(nb, "nb_queen.rds")
+```
+
+------------------------------------------------------------------------
+
+## Formulación del modelo
+
+### Priors PC (Penalised Complexity)
+
+```{r}
+# Prior para la precisión del efecto espacial
+# P(sigma > 1) = 0.01  →  efectos espaciales grandes en log-escala son poco probables
+prec_prior <- list(prec = list(prior = "pc.prec", param = c(1, 0.01)))
+
+# Prior para phi (proporción espacial en BYM2)
+# P(phi < 0.5) = 0.5  →  neutral, sin preferencia a priori
+phi_prior <- list(phi = list(prior = "pc", param = c(0.5, 0.5)))
+
+# Prior conjunto para BYM2
+bym2_hyper <- list(
+  prec = list(prior = "pc.prec", param = c(1, 0.01)),
+  phi  = list(prior = "pc",       param = c(0.5, 0.5))
+)
+```
+
+### Fórmula
+
+```{r}
+formula <- mm ~ 1 +
+  
+  # Variables fijas (todas aleatorias)
+  geologia + cobertura + tipo_su +
+  
+  # Intercepto aleatorio por zona de lluvia
+  f(zona, model = "iid", 
+    hyper = list(prec = list(prior = "pc.prec", param = c(1, 0.01)))) +
+  
+  # Componente espacial BYM2
+  f(su_id, model = "bym2", graph = g,
+    scale.model = TRUE, constr = TRUE,
+    hyper = bym2_hyper)
+```
+
+Notas: - `scale.model = TRUE` → escala la precisión para que sea comparable entre grafos distintos. - `constr = TRUE` → impone suma-cero al componente espacial (evita confundirlo con el intercepto). - `zona` como `iid` es tu efecto multinivel: 5 zonas de lluvia, cada una con su intercepto aleatorio.
+
+### Ajuste
+
+```{r}
+res <- inla(
+  formula,
+  family = "zeroinflatednbinomial1",
+  data = st_drop_geometry(su),
+  E = area,                          # offset: log(E) se aplica internamente
+  control.predictor = list(compute = TRUE, link = 1),
+  control.compute   = list(dic = TRUE, waic = TRUE, cpo = TRUE,
+                           config = TRUE,
+                           return.marginals.predictor = TRUE),
+  control.inla      = list(strategy = "adaptive", int.strategy = "eb"),
+  verbose = TRUE
+)
+```
+
+**Sobre las opciones**: - `E = area` aplica `log(area)` como offset automáticamente. Es la forma idiomática en INLA para modelos de tasa. - `int.strategy = "eb"` (Empirical Bayes) es mucho más rápido que `"ccd"` o `"grid"` y suele ser suficiente con 57k puntos. Cuando tengas el modelo definitivo, corre una vez con `"ccd"` para estimaciones finales. - `config = TRUE` te permite hacer muestreo posterior después (útil para Parte 2). - `cpo = TRUE` habilita validación cruzada leave-one-out.
+
+> ⏱️ **Tiempo esperado**: con 57k unidades y grafo BYM2, espera entre 15 min y varias horas dependiendo de tu máquina. Arranca con una muestra pequeña (p.ej. 5000 SU) para depurar la sintaxis antes de correr el completo.
+
+## Interpretación de resultados
+
+### Resumen general
+
+```{r}
+summary(res)
+```
+
+Te interesa: - **Efectos fijos**: media posterior y credible intervals de cada categoría. Como el link es log, `exp(beta)` da el **rate ratio** respecto a la categoría de referencia. - **Hiperparámetros**: - `size for the nbinomial` → parámetro de dispersión $k$. Valores pequeños = mucha sobredispersión. - `zero-probability parameter` → el $\pi$ constante. - `Precision for su_id` → $\tau$ del BYM2. - `Phi for su_id` → la proporción de varianza espacial. **Clave para tu discusión**: si phi es alto, la susceptibilidad tiene estructura espacial fuerte no capturada por las covariables. - `Precision for zona` → variabilidad entre zonas de lluvia.
+
+## MODELO BINOMIAL NEGATIVO
+
+```{r}
+# ============================================================
+# MODELO ALTERNATIVO: NB puro (sin zero-inflation)
+# Para comparar con el ZINB mediante WAIC/DIC
+# ============================================================
+
+# La fórmula es IDÉNTICA a la del ZINB
+formula_nb <- mm ~ 1 +
+  geologia + cobertura + tipo_su +
+  f(zona, model = "iid",
+    hyper = list(prec = list(prior = "pc.prec", param = c(1, 0.01)))) +
+  f(su_id, model = "bym2", graph = g,
+    scale.model = TRUE, constr = TRUE,
+    hyper = bym2_hyper)
+
+# Ajuste: lo único que cambia es family = "nbinomial"
+res_nb <- inla(
+  formula_nb,
+  family = "nbinomial",                   # <-- ÚNICO CAMBIO
+  data = st_drop_geometry(su),
+  E = area,
+  control.predictor = list(compute = TRUE, link = 1),
+  control.compute   = list(dic = TRUE, waic = TRUE, cpo = TRUE,
+                           config = TRUE,
+                           return.marginals.predictor = TRUE),
+  control.inla      = list(strategy = "adaptive", int.strategy = "eb"),
+  verbose = TRUE
+)
+
+# Guarda el objeto para no tener que volver a correrlo
+saveRDS(res_nb, "res_NB_BYM2.rds")
+saveRDS(res,    "res_ZINB_BYM2.rds")   # por si no lo habías guardado
+```
+
+```{r}
+# ============================================================
+# COMPARACIÓN ZINB vs NB
+# ============================================================
+
+comparacion <- data.frame(
+  Modelo = c("ZINB + BYM2", "NB + BYM2"),
+  
+  DIC = c(res$dic$dic,
+          res_nb$dic$dic),
+  
+  WAIC = c(res$waic$waic,
+           res_nb$waic$waic),
+  
+  # Número efectivo de parámetros (penaliza complejidad)
+  p_eff_WAIC = c(res$waic$p.eff,
+                 res_nb$waic$p.eff),
+  
+  # Log-score predictivo (LOO-CV vía CPO): más alto = mejor
+  LogScore_CPO = c(sum(log(res$cpo$cpo),    na.rm = TRUE),
+                   sum(log(res_nb$cpo$cpo), na.rm = TRUE)),
+  
+  # Marginal log-likelihood
+  mlik = c(res$mlik[1, 1],
+           res_nb$mlik[1, 1])
+)
+
+# Diferencias
+comparacion$DeltaWAIC <- comparacion$WAIC - min(comparacion$WAIC)
+comparacion$DeltaDIC  <- comparacion$DIC  - min(comparacion$DIC)
+
+print(comparacion, row.names = FALSE, digits = 4)
+```
+
+```{r}
+table(su$cobertura, su$mm > 0)
+# Si en cob9 todo es FALSE, confirmaste la separación.
+```
+
+```{r}
+table(su$geologia, su$mm > 0)   # ¿cuántas SUs con/sin deslizamientos?
+table(su$geologia)               # tamaño de cada categoría
+```
+
+```{r}
+res$summary.random$zona
+```
+
+### Efectos fijos interpretables
+
+```{r}
+fixed <- res$summary.fixed
+fixed$RR       <- exp(fixed$mean)
+fixed$RR_lower <- exp(fixed$`0.025quant`)
+fixed$RR_upper <- exp(fixed$`0.975quant`)
+print(fixed[, c("RR", "RR_lower", "RR_upper")])
+```
+
+Ejemplo de lectura: si para `geologiaDepósitos Cuaternarios` obtienes RR = 3.2 (2.1–4.9), significa que ceteris paribus los depósitos cuaternarios tienen **3.2 veces la tasa esperada de deslizamientos** comparada con la referencia (ígneas intrusivas).
+
+### Mapas de susceptibilidad
+
+El predictor lineal te da la media posterior del BN condicional. Dos cosas interesantes de mapear:
+
+```{r}
+# (a) Tasa esperada condicional al NB (deslizamientos/km² esperados si el SU es susceptible)
+su$mu_post <- res$summary.fitted.values$mean / su$area
+
+# (b) Componente espacial puro (efecto "residual" BYM2)
+N <- nrow(su)
+su$bym_post <- res$summary.random$su_id$mean[1:N]   # primeras N son el efecto total
+
+# (c) Phi y precisión — útiles para tu discusión
+phi_post <- res$summary.hyperpar["Phi for su_id", ]
+print(phi_post)
+```
+
+### Diagnóstico con CPO y PIT
+
+```{r}
+# CPO: conditional predictive ordinate; valores muy bajos indican observaciones mal predichas
+sum(log(res$cpo$cpo), na.rm = TRUE)    # log-score; más alto = mejor
+
+# PIT histogram: idealmente uniforme
+hist(res$cpo$pit, breaks = 20)
+
+# WAIC / DIC para comparar modelos alternativos
+res$waic$waic
+res$dic$dic
+```
+
+Para tu tesis, corre **al menos estas versiones alternativas** y compara con WAIC: 1. Sin BYM2, solo IID por SU → ¿cuánta ganancia da la dependencia espacial? 2. Sin efecto multinivel por zona → ¿la zona aporta? 3. ZIP vs ZINB → ¿necesitas la dispersión extra del NB? 4. NB sin zero-inflation → ¿justifica el ZI el costo en complejidad?
+
+------------------------------------------------------------------------
+
+## AQUI VA UNA COMPARACIÓN DE DISTINTOS MODELOS CON DISTINTAS CONFIGURACIONES
+
+Para argumentar la elección final del modelo, se ajustan y comparan cuatro especificaciones que combinan dos decisiones metodológicas: (1) la familia de probabilidad (ZINB vs NB) y (2) la representación de la información topográfica (cluster `tipo_su` vs variables continuas centradas).
+
+| ID | Familia | Variables fijas | Aleatorios | Espacial |
+|---------------|---------------|---------------|---------------|---------------|
+| M1 | ZINB | geo + cob + tipo_su | intercepto/zona | BYM2 |
+| M2 | NB | geo + cob + tipo_su | intercepto/zona | BYM2 |
+| M3 | ZINB | geo + cob + slope, curva, acos, asin (centradas) | intercepto/zona | BYM2 |
+| M4 | ZINB | geo + cob + slope, curva, acos, asin (centradas) | intercepto/zona + pendientes aleatorias por zona | BYM2 |
+
+La comparación se realiza mediante WAIC, DIC, log-score CPO y la inspección del cambio en φ (proporción espacial del BYM2) y π (fracción de ceros estructurales).
+
+```{r}
+# ============================================================
+# PREPARACIÓN para M3 y M4
+# ============================================================
+
+# 1) Centrar las variables continuas (resta la media; SD original conservada)
+#    Esto mejora convergencia y hace interpretable el intercepto
+su <- su %>%
+  mutate(
+    slope_c = as.numeric(scale(slope_mean, center = TRUE, scale = FALSE)),
+    curva_c = as.numeric(scale(curva_mean, center = TRUE, scale = FALSE)),
+    acos_c  = as.numeric(scale(acos_mean,  center = TRUE, scale = FALSE)),
+    asin_c  = as.numeric(scale(asin_mean,  center = TRUE, scale = FALSE))
+  )
+
+# 2) Validación: no NAs en las nuevas continuas
+stopifnot(!any(is.na(su$slope_c)),
+          !any(is.na(su$curva_c)),
+          !any(is.na(su$acos_c)),
+          !any(is.na(su$asin_c)))
+
+# 3) Índice numérico de zona y copias para pendientes aleatorias en M4
+#    INLA exige índices distintos por término f() aunque apunten a lo mismo
+su$zona_id    <- as.integer(su$zona)
+su$zona_slope <- su$zona_id
+su$zona_curva <- su$zona_id
+su$zona_acos  <- su$zona_id
+su$zona_asin  <- su$zona_id
+
+# 4) Prior común para precisiones IID (efectos aleatorios)
+prec_pc <- list(prec = list(prior = "pc.prec", param = c(1, 0.01)))
+```
+
+```{r}
+# ============================================================
+# M2: NB con tipo_su (referencia de familia)
+# ============================================================
+formula_M2 <- mm ~ 1 +
+  geologia + cobertura + tipo_su +
+  f(zona, model = "iid", hyper = prec_pc) +
+  f(su_id, model = "bym2", graph = g,
+    scale.model = TRUE, constr = TRUE,
+    hyper = bym2_hyper)
+
+res_M2 <- inla(
+  formula_M2,
+  family = "nbinomial",
+  data   = st_drop_geometry(su),
+  E      = area,
+  control.predictor = list(compute = TRUE, link = 1),
+  control.compute   = list(dic = TRUE, waic = TRUE, cpo = TRUE,
+                           config = TRUE,
+                           return.marginals.predictor = TRUE),
+  control.inla      = list(strategy = "adaptive", int.strategy = "eb"),
+  verbose = TRUE
+)
+
+saveRDS(res_M2, "res_M2_NB_tipoSU.rds")
+```
+
+```{r}
+# ============================================================
+# M3: ZINB con slope, curva, acos, asin (centradas)
+#     SIN tipo_su (las continuas reemplazan al cluster)
+# ============================================================
+formula_M3 <- mm ~ 1 +
+  geologia + cobertura +
+  slope_c + curva_c + acos_c + asin_c +
+  f(zona, model = "iid", hyper = prec_pc) +
+  f(su_id, model = "bym2", graph = g,
+    scale.model = TRUE, constr = TRUE,
+    hyper = bym2_hyper)
+
+res_M3 <- inla(
+  formula_M3,
+  family = "zeroinflatednbinomial1",
+  data   = st_drop_geometry(su),
+  E      = area,
+  control.predictor = list(compute = TRUE, link = 1),
+  control.compute   = list(dic = TRUE, waic = TRUE, cpo = TRUE,
+                           config = TRUE,
+                           return.marginals.predictor = TRUE),
+  control.inla      = list(strategy = "adaptive", int.strategy = "eb"),
+  verbose = TRUE
+)
+
+saveRDS(res_M3, "res_M3_ZINB_topo.rds")
+```
+
+```{r}
+# ============================================================
+# M4: ZINB con topográficas + pendientes aleatorias por zona
+#     Permite que el efecto de cada variable continua VARÍE
+#     según la zona de lluvia
+# ============================================================
+formula_M4 <- mm ~ 1 +
+  
+  # Efectos fijos (promedio global)
+  geologia + cobertura +
+  slope_c + curva_c + acos_c + asin_c +
+  
+  # Intercepto aleatorio por zona (mismo que M3)
+  f(zona, model = "iid", hyper = prec_pc) +
+  
+  # Pendientes aleatorias por zona: el efecto de cada variable
+  # tiene una desviación específica para cada zona
+  f(zona_slope, slope_c, model = "iid", hyper = prec_pc) +
+  f(zona_curva, curva_c, model = "iid", hyper = prec_pc) +
+  f(zona_acos,  acos_c,  model = "iid", hyper = prec_pc) +
+  f(zona_asin,  asin_c,  model = "iid", hyper = prec_pc) +
+  
+  # Componente espacial BYM2 (igual que en todos)
+  f(su_id, model = "bym2", graph = g,
+    scale.model = TRUE, constr = TRUE,
+    hyper = bym2_hyper)
+
+res_M4 <- inla(
+  formula_M4,
+  family = "zeroinflatednbinomial1",
+  data   = st_drop_geometry(su),
+  E      = area,
+  control.predictor = list(compute = TRUE, link = 1),
+  control.compute   = list(dic = TRUE, waic = TRUE, cpo = TRUE,
+                           config = TRUE,
+                           return.marginals.predictor = TRUE),
+  control.inla      = list(strategy = "adaptive", int.strategy = "eb"),
+  verbose = TRUE
+)
+
+saveRDS(res_M4, "res_M4_ZINB_topo_random.rds")
+```
+
+```{r}
+# ============================================================
+# COMPARACIÓN: M1 (ZINB+tipo_su) vs M2 (NB+tipo_su) vs M3 (ZINB+continuas)
+# Carga los modelos guardados — no requiere reajuste
+# ============================================================
+
+# ----- Carga de modelos -----
+res_M1 <- readRDS("res_ZINB_BYM2.rds")    # ZINB + tipo_su (modelo base)
+res_M2 <- readRDS("res_M2_NB_tipoSU.rds")      # NB + tipo_su
+res_M3 <- readRDS("res_M3_ZINB_topo.rds") # ZINB + variables continuas
+
+# ----- Helpers -----
+get_phi <- function(r) {
+  if ("Phi for su_id" %in% rownames(r$summary.hyperpar)) {
+    r$summary.hyperpar["Phi for su_id", "mean"]
+  } else NA
+}
+
+get_pi <- function(r, ZI = TRUE) {
+  if (!ZI) return(NA)
+  nm <- "zero-probability parameter for zeroinflatednbinomial1"
+  if (nm %in% rownames(r$summary.hyperpar)) {
+    r$summary.hyperpar[nm, "mean"]
+  } else NA
+}
+
+# ----- Tabla comparativa -----
+comparacion <- data.frame(
+  Modelo = c("M1: ZINB + tipo_su",
+             "M2: NB + tipo_su",
+             "M3: ZINB + continuas"),
+  
+  DIC          = c(res_M1$dic$dic,
+                   res_M2$dic$dic,
+                   res_M3$dic$dic),
+  
+  WAIC         = c(res_M1$waic$waic,
+                   res_M2$waic$waic,
+                   res_M3$waic$waic),
+  
+  p_eff_WAIC   = c(res_M1$waic$p.eff,
+                   res_M2$waic$p.eff,
+                   res_M3$waic$p.eff),
+  
+  LogScore_CPO = c(sum(log(res_M1$cpo$cpo), na.rm = TRUE),
+                   sum(log(res_M2$cpo$cpo), na.rm = TRUE),
+                   sum(log(res_M3$cpo$cpo), na.rm = TRUE)),
+  
+  mlik         = c(res_M1$mlik[1, 1],
+                   res_M2$mlik[1, 1],
+                   res_M3$mlik[1, 1]),
+  
+  Phi_BYM2     = c(get_phi(res_M1),
+                   get_phi(res_M2),
+                   get_phi(res_M3)),
+  
+  pi_ZI        = c(get_pi(res_M1, TRUE),
+                   get_pi(res_M2, FALSE),
+                   get_pi(res_M3, TRUE))
+)
+
+# Diferencias respecto al mejor
+comparacion$DeltaWAIC <- comparacion$WAIC - min(comparacion$WAIC)
+comparacion$DeltaDIC  <- comparacion$DIC  - min(comparacion$DIC)
+
+# Ordenar por WAIC (mejor primero)
+comparacion <- comparacion[order(comparacion$WAIC), ]
+
+print(comparacion, row.names = FALSE, digits = 4)
+
+# Guardar
+write.csv(comparacion, "tabla_comparacion_modelos.csv", row.names = FALSE)
+```
+
+------------------------------------------------------------------------
+
+## Puente a la Parte 2: probabilidad de ser cero estructural
+
+Este es el paso que vincula Parte 1 con Parte 2. Para los SU que observaste con `mm = 0`, quieres separar: - Los que son **estructuralmente seguros** (exclúyelos del análisis de umbrales de lluvia — no aportan información). - Los que son **susceptibles pero no se han detonado** (esos sí entran al análisis de umbrales).
+
+La probabilidad posterior de ser cero estructural condicional a observar cero es:
+
+$$P(\text{estructural} \mid Y_i = 0) = \frac{\pi}{\pi + (1-\pi) \cdot f_{NB}(0 \mid \mu_i, k)}$$
+
+```{r}
+res <- readRDS("res_ZINB_BYM2.rds")
+# Extraer hiperparámetros posteriores
+samples <- inla.posterior.sample(1000, res)
+
+# Función para calcular P(estructural | y=0) por SU a partir de muestras
+prob_estructural <- function(samples, idx_su) {
+  # Para cada muestra, calcula mu_i, pi, k y evalúa la fórmula
+  # (código detallado abajo)
+}
+
+# Versión simple usando estimaciones puntuales (aceptable como primer cut)
+pi_hat <- res$summary.hyperpar["zero-probability parameter for zeroinflatednbinomial1", "mean"]
+k_hat  <- res$summary.hyperpar["size for the nbinomial observations (1/overdispersion)", "mean"]
+mu_hat <- res$summary.fitted.values$mean   # E[Y_i]
+
+# f_NB(0 | mu, k)
+p_nb_zero <- dnbinom(0, size = k_hat, mu = mu_hat)
+
+# P(estructural | y=0)
+su$p_structural_given_zero <- pi_hat / (pi_hat + (1 - pi_hat) * p_nb_zero)
+
+# Para la Parte 2, conservas sólo los SU con probabilidad baja de ser estructurales
+su$susceptible <- with(su, mm > 0 | p_structural_given_zero < 0.5)
+table(su$susceptible)
+```
+
+El umbral de 0.5 es una decisión que debes justificar (sensibilidad al corte: prueba 0.3, 0.5, 0.7 y reporta). Esto te deja con un subconjunto de SU que **sí pueden deslizarse**, y sobre ellos construirás los umbrales de lluvia usando tu inventario de 444 eventos.
+
+------------------------------------------------------------------------
+
+## Checklist antes de reportar
+
+- [ ] Grafo conectado (sin islas) y guardado
+- [ ] Categorías de referencia elegidas con justificación física
+- [ ] NAs tratados explícitamente (documentar en el texto de tesis)
+- [ ] Modelo corrido con `int.strategy = "ccd"` para la versión final
+- [ ] Comparación de WAIC contra al menos 3 modelos alternativos (sin BYM2, sin ZI, sin multinivel)
+- [ ] Histograma PIT inspeccionado
+- [ ] Phi posterior reportado con intervalo de credibilidad
+- [ ] Mapa del efecto BYM2 para identificar patrones residuales
+- [ ] Tabla de rate ratios de efectos fijos con IC 95%
+
+------------------------------------------------------------------------
+
+```{r}
+library(sf)
+library(dplyr)
+library(ggplot2)
+library(viridis)
+library(patchwork)
+
+N <- nrow(su)
+
+# --- 1. Extraer cantidades posteriores por SU ---
+
+# Tasa esperada absoluta de deslizamientos por SU (E[Y_i])
+# E = area está en km², así que mu_post está en deslizamientos/km² × km² = absolutos
+su$mu_post     <- res$summary.fitted.values$mean
+
+# Tasa esperada por km² (área ya está en km², división directa)
+su$mu_post_km2 <- su$mu_post / as.numeric(su$area)
+
+# Intervalos de credibilidad y SD posterior de la tasa
+su$mu_q025 <- res$summary.fitted.values$`0.025quant`
+su$mu_q975 <- res$summary.fitted.values$`0.975quant`
+su$mu_sd   <- res$summary.fitted.values$sd
+
+# Efecto espacial BYM2 total (primeras N filas del summary.random)
+su$bym_mean <- res$summary.random$su_id$mean[1:N]
+su$bym_sd   <- res$summary.random$su_id$sd[1:N]
+
+# --- 2. Probabilidad posterior de ser cero estructural | y=0 ---
+
+# Extracción robusta de hiperparámetros (independiente de la versión de INLA)
+nombres_hyper <- rownames(res$summary.hyperpar)
+nombre_pi <- grep("zero-probability", nombres_hyper, value = TRUE)
+nombre_k  <- grep("^size for",        nombres_hyper, value = TRUE)
+
+stopifnot(length(nombre_pi) == 1, length(nombre_k) == 1)
+
+pi_hat <- res$summary.hyperpar[nombre_pi, "mean"]
+k_hat  <- res$summary.hyperpar[nombre_k,  "mean"]
+
+cat("pi_hat =", pi_hat, " | k_hat =", k_hat, "\n")
+
+# f_NB(0 | mu, k) por SU
+p_nb_zero <- dnbinom(0, size = k_hat, mu = su$mu_post)
+
+# P(estructural | y=0)
+su$p_estructural <- pi_hat / (pi_hat + (1 - pi_hat) * p_nb_zero)
+
+# --- 3. Probabilidad de ser SUSCEPTIBLE ---
+# Para SUs con mm>0 forzamos a 1 (ya se deslizaron → son susceptibles por definición)
+su$p_susceptible <- ifelse(su$mm > 0, 1, 1 - su$p_estructural)
+
+# --- 4. Clase de susceptibilidad (leyenda discreta) ---
+su$clase_susc <- cut(
+  su$p_susceptible,
+  breaks = c(-Inf, 0.2, 0.5, 0.8, Inf),
+  labels = c("Muy baja", "Baja", "Media", "Alta")
+)
+
+# --- 5. Verificación rápida ---
+cat("\nResumen p_estructural:\n"); print(summary(su$p_estructural))
+cat("\nDistribución por clase:\n"); print(table(su$clase_susc))
+
+# INLCUIR PARTE 2
+#UMBRAL <- 0.5
+#su$incluir_parte2 <- (su$mm > 0) | (su$p_estructural < UMBRAL)
+
+# --- 6. Guardar capa para QGIS/ArcGIS ---
+st_write(su, "su_resultados_ZINB_BYM2.gpkg",
+         layer = "susceptibilidad", delete_layer = TRUE)
+```
+
+```{r}
+# === DIAGNÓSTICO ===
+
+# 1) Ver cómo se llaman REALMENTE los hiperparámetros en tu modelo
+cat("Nombres exactos de hiperparámetros:\n")
+print(rownames(res$summary.hyperpar))
+
+# 2) Probar extracción con el nombre exacto
+nombres_hyper <- rownames(res$summary.hyperpar)
+
+# Buscar el que contiene "zero-probability" sin asumir el nombre exacto
+nombre_pi <- grep("zero-probability", nombres_hyper, value = TRUE)
+nombre_k  <- grep("size for", nombres_hyper, value = TRUE)
+
+cat("\nNombre detectado para pi:", nombre_pi, "\n")
+cat("Nombre detectado para k:",  nombre_k,  "\n")
+
+# 3) Extraer
+pi_hat <- res$summary.hyperpar[nombre_pi, "mean"]
+k_hat  <- res$summary.hyperpar[nombre_k,  "mean"]
+
+cat("\nValor de pi_hat:", pi_hat, "\n")
+cat("Valor de k_hat:",  k_hat,  "\n")
+
+# 4) Inspeccionar mu_post
+cat("\nResumen de mu_post:\n")
+print(summary(su$mu_post))
+
+cat("\n¿Hay NAs en mu_post?:", sum(is.na(su$mu_post)), "\n")
+cat("¿Hay ceros en mu_post?:", sum(su$mu_post == 0), "\n")
+cat("¿Hay infinitos en mu_post?:", sum(is.infinite(su$mu_post)), "\n")
+
+# 5) Probar el cálculo paso a paso para una SU
+i <- 1
+mu_i <- su$mu_post[i]
+p_nb_zero_i <- dnbinom(0, size = k_hat, mu = mu_i)
+p_struct_i  <- pi_hat / (pi_hat + (1 - pi_hat) * p_nb_zero_i)
+
+cat("\nPara la SU 1:\n")
+cat("  mu_i =", mu_i, "\n")
+cat("  f_NB(0|mu, k) =", p_nb_zero_i, "\n")
+cat("  P(estructural | y=0) =", p_struct_i, "\n")
+```
+
+```{r}
+summary(as.numeric(su$area))   # área en km²
+```
+
+```{r}
+library(sf)
+library(dplyr)
+
+# Cargar el GeoPackage de Parte 1
+su <- st_read("su_resultados_ZINB_BYM2.gpkg", layer = "susceptibilidad")
+
+# --- Filtrado para Parte 2 ---
+
+UMBRAL_ESTRUCT <- 0.7   # corte conservador
+
+su_parte2 <- su %>%
+  filter((mm > 0) | (p_estructural < UMBRAL_ESTRUCT))
+
+# Resumen del filtrado
+cat("=========================================\n")
+cat("FILTRADO PARA PARTE 2 (corte =", UMBRAL_ESTRUCT, ")\n")
+cat("=========================================\n")
+cat("SUs totales:                ", nrow(su),         "\n")
+cat("SUs susceptibles (entran):  ", nrow(su_parte2),  "\n")
+cat("SUs estructurales (salen):  ", nrow(su) - nrow(su_parte2), "\n")
+cat("\nDistribución por tipo de SU:\n")
+print(table(su_parte2$tipo_su))
+
+# --- Análisis de sensibilidad al corte ---
+
+cortes <- c(0.3, 0.5, 0.7, 0.9)
+sensibilidad <- lapply(cortes, function(c) {
+  incluir <- (su$mm > 0) | (su$p_estructural < c)
+  data.frame(
+    corte           = c,
+    SUs_incluidas   = sum(incluir),
+    SUs_excluidas   = sum(!incluir),
+    pct_incluidas   = round(100 * mean(incluir), 2)
+  )
+}) %>% do.call(rbind, .)
+
+print(sensibilidad)
+
+# --- Guardar GeoPackage de SUs susceptibles para Parte 2 ---
+
+# Seleccionar solo las columnas que necesitarás en Parte 2
+su_para_parte2 <- su_parte2 %>%
+  select(su_id,
+         tipo_su,         # variable de estratificación
+         zona,
+         geologia,
+         cobertura,
+         area,
+         mm,              # eventos históricos (para validación)
+         p_estructural,   # por si quieres usarla como ponderación
+         p_susceptible)
+
+st_write(su_para_parte2,
+         "su_susceptibles_parte2.gpkg",
+         layer = "susceptibles",
+         delete_layer = TRUE)
+
+cat("\n✓ Archivo guardado: su_susceptibles_parte2.gpkg\n")
+```
+
+```{r}
+# Paleta común y tema limpio
+theme_mapa <- theme_void(base_size = 10) +
+  theme(legend.position = "right",
+        plot.title = element_text(face = "bold", size = 11))
+
+# Mapa 1: Susceptibilidad (probabilidad de NO ser cero estructural)
+m1 <- ggplot(su) +
+  geom_sf(aes(fill = p_susceptible), color = NA) +
+  scale_fill_viridis_c(option = "plasma", limits = c(0,1),
+                       name = "P(susceptible)") +
+  labs(title = "A. Susceptibilidad posterior por SU") +
+  theme_mapa
+
+# Mapa 2: Tasa esperada de deslizamientos por km² (log para ver contraste)
+m2 <- ggplot(su) +
+  geom_sf(aes(fill = mu_post_km2), color = NA) +
+  scale_fill_viridis_c(option = "inferno", trans = "log1p",
+                       name = "Desliz./km²\n(esperados)") +
+  labs(title = "B. Tasa esperada (condicional al NB)") +
+  theme_mapa
+
+# Mapa 3: Efecto espacial BYM2 (el "residual" que no explican las covariables)
+m3 <- ggplot(su) +
+  geom_sf(aes(fill = bym_mean), color = NA) +
+  scale_fill_gradient2(low = "#2166ac", mid = "white", high = "#b2182b",
+                       midpoint = 0, name = "Efecto\nespacial") +
+  labs(title = "C. Componente espacial BYM2") +
+  theme_mapa
+
+# Mapa 4: Incertidumbre (desviación estándar posterior)
+m4 <- ggplot(su) +
+  geom_sf(aes(fill = mu_sd), color = NA) +
+  scale_fill_viridis_c(option = "cividis", name = "SD posterior") +
+  labs(title = "D. Incertidumbre de la predicción") +
+  theme_mapa
+
+# Composición 2x2
+mapa_compuesto <- (m1 + m2) / (m3 + m4) +
+  plot_annotation(
+    title = "Modelo ZINB + BYM2 — Valle de Aburrá",
+    subtitle = "Resultados posteriores por Slope Unit"
+  )
+
+ggsave("mapa_ZINB_BYM2.png", mapa_compuesto,
+       width = 14, height = 11, dpi = 300, bg = "white")
+```

@@ -1,0 +1,1163 @@
+2026-05-10 11:05:23,998 | INFO    | ======================================================================
+2026-05-10 11:05:23,998 | INFO    | INICIO: 2026-05-10T11:05:23
+2026-05-10 11:05:23,998 | INFO    | OUT_DIR: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/
+2026-05-10 11:05:23,998 | INFO    | Modelo: GAM Parte 2 — su_type=2 (ensayo)
+2026-05-10 11:05:23,999 | INFO    | N_MC=10 | RATIO_NO_SI=2 | EXCL_DAYS=30 | MIN_DIST_M=200
+2026-05-10 11:05:23,999 | INFO    | Filtro exposición: 1d>=5.0 mm | 30d>=50.0 mm
+2026-05-10 11:05:23,999 | INFO    | Cargando GPKG: /home/oisanchezp/Thesis/data/processed/su_susceptibles_con_inventario.gpkg
+2026-05-10 11:06:14,313 | INFO    | SU total: 55332 | tipos: [1.0, 2.0, 3.0, 4.0] | zonas: ['1', '2', '3', '4', '5']
+2026-05-10 11:06:14,357 | INFO    | su_type=2 | total=28993 | eventos=265 | no-eventos=28728
+2026-05-10 11:06:14,402 | INFO    | Fechas excluidas: 1707
+2026-05-10 11:06:14,403 | INFO    | Construyendo pool de pluvios y fechas candidatas...
+2026-05-10 11:06:33,776 | INFO    | Pluvios con series: 142 | con fechas candidatas: 142
+2026-05-10 11:06:33,799 | INFO    | === MC 1/10 | seed=100 ===
+2026-05-10 11:07:04,135 | INFO    | [seed=100] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 11:07:04,369 | INFO    | AUC=0.951 | AP=0.947 | Brier=0.067 | P*70=0.708 | P*85=0.414 | P*95=0.098
+2026-05-10 11:07:04,534 | INFO    | === MC 2/10 | seed=101 ===
+2026-05-10 11:07:36,095 | INFO    | [seed=101] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=478 | total=742
+2026-05-10 11:07:36,308 | INFO    | AUC=0.940 | AP=0.927 | Brier=0.076 | P*70=0.695 | P*85=0.449 | P*95=0.069
+2026-05-10 11:07:36,480 | INFO    | === MC 3/10 | seed=102 ===
+2026-05-10 11:08:06,998 | INFO    | [seed=102] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 11:08:07,210 | INFO    | AUC=0.950 | AP=0.944 | Brier=0.069 | P*70=0.715 | P*85=0.517 | P*95=0.139
+2026-05-10 11:08:07,380 | INFO    | === MC 4/10 | seed=103 ===
+2026-05-10 11:08:37,681 | INFO    | [seed=103] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=458 | total=722
+2026-05-10 11:08:37,903 | INFO    | AUC=0.951 | AP=0.938 | Brier=0.075 | P*70=0.750 | P*85=0.491 | P*95=0.112
+2026-05-10 11:08:38,064 | INFO    | === MC 5/10 | seed=104 ===
+2026-05-10 11:09:08,551 | INFO    | [seed=104] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=463 | total=727
+2026-05-10 11:09:08,750 | INFO    | AUC=0.958 | AP=0.951 | Brier=0.067 | P*70=0.706 | P*85=0.470 | P*95=0.150
+2026-05-10 11:09:08,914 | INFO    | === MC 6/10 | seed=105 ===
+2026-05-10 11:09:39,686 | INFO    | [seed=105] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=459 | total=723
+2026-05-10 11:09:39,905 | INFO    | AUC=0.951 | AP=0.936 | Brier=0.076 | P*70=0.688 | P*85=0.393 | P*95=0.117
+2026-05-10 11:09:40,084 | INFO    | === MC 7/10 | seed=106 ===
+2026-05-10 11:10:11,469 | INFO    | [seed=106] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=470 | total=734
+2026-05-10 11:10:11,670 | INFO    | AUC=0.943 | AP=0.923 | Brier=0.076 | P*70=0.628 | P*85=0.453 | P*95=0.114
+2026-05-10 11:10:11,835 | INFO    | === MC 8/10 | seed=107 ===
+2026-05-10 11:10:42,617 | INFO    | [seed=107] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=475 | total=739
+2026-05-10 11:10:42,840 | INFO    | AUC=0.951 | AP=0.946 | Brier=0.065 | P*70=0.587 | P*85=0.412 | P*95=0.116
+2026-05-10 11:10:43,005 | INFO    | === MC 9/10 | seed=108 ===
+2026-05-10 11:11:14,468 | INFO    | [seed=108] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 11:11:14,697 | INFO    | AUC=0.940 | AP=0.926 | Brier=0.081 | P*70=0.677 | P*85=0.407 | P*95=0.111
+2026-05-10 11:11:14,875 | INFO    | === MC 10/10 | seed=109 ===
+2026-05-10 11:11:45,440 | INFO    | [seed=109] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=461 | total=725
+2026-05-10 11:11:45,681 | INFO    | AUC=0.945 | AP=0.923 | Brier=0.075 | P*70=0.586 | P*85=0.430 | P*95=0.117
+2026-05-10 11:12:09,761 | INFO    | AUC mediana=0.9502 | AP mediana=0.9372 | Brier mediana=0.0753
+2026-05-10 11:12:09,762 | INFO    | run_star=0
+2026-05-10 11:12:09,837 | INFO    | === LISTO ===
+2026-05-10 11:12:09,837 | INFO    | Métricas:     /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_mc_metrics.csv
+2026-05-10 11:12:09,837 | INFO    | Thresholds:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_thresholds_mc.csv
+2026-05-10 11:12:09,837 | INFO    | Grilla agg:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs.parquet
+2026-05-10 11:12:09,837 | INFO    | Grilla x run: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs_per_run.parquet
+2026-05-10 11:12:09,837 | INFO    | Modelo final: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_run_star.joblib
+2026-05-10 11:12:09,837 | INFO    | Package:      /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_package.json
+2026-05-10 11:12:09,837 | INFO    | Dataset star: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_dataset_run_star.parquet
+2026-05-10 12:37:44,442 | INFO    | ======================================================================
+2026-05-10 12:37:44,442 | INFO    | INICIO: 2026-05-10T12:37:44
+2026-05-10 12:37:44,443 | INFO    | OUT_DIR: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/
+2026-05-10 12:37:44,443 | INFO    | Modelo: GAM Parte 2 — su_type=2 (ensayo)
+2026-05-10 12:37:44,443 | INFO    | N_MC=100 | RATIO_NO_SI=2 | EXCL_DAYS=30 | MIN_DIST_M=200
+2026-05-10 12:37:44,443 | INFO    | Filtro exposición: 1d>=5.0 mm | 30d>=50.0 mm
+2026-05-10 12:37:44,443 | INFO    | Cargando GPKG: /home/oisanchezp/Thesis/data/processed/su_susceptibles_con_inventario.gpkg
+2026-05-10 12:38:32,663 | INFO    | SU total: 55332 | tipos: [1.0, 2.0, 3.0, 4.0] | zonas: ['1', '2', '3', '4', '5']
+2026-05-10 12:38:32,707 | INFO    | su_type=2 | total=28993 | eventos=265 | no-eventos=28728
+2026-05-10 12:38:32,751 | INFO    | Fechas excluidas: 1707
+2026-05-10 12:38:32,751 | INFO    | Construyendo pool de pluvios y fechas candidatas...
+2026-05-10 12:38:49,100 | INFO    | Pluvios con series: 142 | con fechas candidatas: 142
+2026-05-10 12:38:49,118 | INFO    | === MC 1/100 | seed=100 ===
+2026-05-10 12:39:19,442 | INFO    | [seed=100] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 12:39:19,685 | INFO    | AUC=0.951 | AP=0.947 | Brier=0.067 | P*70=0.708 | P*85=0.414 | P*95=0.098
+2026-05-10 12:39:19,852 | INFO    | === MC 2/100 | seed=101 ===
+2026-05-10 12:39:49,959 | INFO    | [seed=101] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=478 | total=742
+2026-05-10 12:39:50,157 | INFO    | AUC=0.940 | AP=0.927 | Brier=0.076 | P*70=0.695 | P*85=0.449 | P*95=0.069
+2026-05-10 12:39:50,321 | INFO    | === MC 3/100 | seed=102 ===
+2026-05-10 12:40:21,526 | INFO    | [seed=102] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 12:40:21,758 | INFO    | AUC=0.950 | AP=0.944 | Brier=0.069 | P*70=0.715 | P*85=0.517 | P*95=0.139
+2026-05-10 12:40:21,936 | INFO    | === MC 4/100 | seed=103 ===
+2026-05-10 12:40:51,995 | INFO    | [seed=103] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=458 | total=722
+2026-05-10 12:40:52,239 | INFO    | AUC=0.951 | AP=0.938 | Brier=0.075 | P*70=0.750 | P*85=0.491 | P*95=0.112
+2026-05-10 12:40:52,405 | INFO    | === MC 5/100 | seed=104 ===
+2026-05-10 12:41:23,597 | INFO    | [seed=104] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=463 | total=727
+2026-05-10 12:41:23,790 | INFO    | AUC=0.958 | AP=0.951 | Brier=0.067 | P*70=0.706 | P*85=0.470 | P*95=0.150
+2026-05-10 12:41:23,954 | INFO    | === MC 6/100 | seed=105 ===
+2026-05-10 12:41:54,940 | INFO    | [seed=105] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=459 | total=723
+2026-05-10 12:41:55,145 | INFO    | AUC=0.951 | AP=0.936 | Brier=0.076 | P*70=0.688 | P*85=0.393 | P*95=0.117
+2026-05-10 12:41:55,327 | INFO    | === MC 7/100 | seed=106 ===
+2026-05-10 12:42:25,838 | INFO    | [seed=106] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=470 | total=734
+2026-05-10 12:42:26,049 | INFO    | AUC=0.943 | AP=0.923 | Brier=0.076 | P*70=0.628 | P*85=0.453 | P*95=0.114
+2026-05-10 12:42:26,289 | INFO    | === MC 8/100 | seed=107 ===
+2026-05-10 12:42:57,038 | INFO    | [seed=107] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=475 | total=739
+2026-05-10 12:42:57,238 | INFO    | AUC=0.951 | AP=0.946 | Brier=0.065 | P*70=0.587 | P*85=0.412 | P*95=0.116
+2026-05-10 12:42:57,408 | INFO    | === MC 9/100 | seed=108 ===
+2026-05-10 12:43:27,789 | INFO    | [seed=108] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 12:43:27,986 | INFO    | AUC=0.940 | AP=0.926 | Brier=0.081 | P*70=0.677 | P*85=0.407 | P*95=0.111
+2026-05-10 12:43:28,156 | INFO    | === MC 10/100 | seed=109 ===
+2026-05-10 12:43:58,384 | INFO    | [seed=109] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=461 | total=725
+2026-05-10 12:43:58,579 | INFO    | AUC=0.945 | AP=0.923 | Brier=0.075 | P*70=0.586 | P*85=0.430 | P*95=0.117
+2026-05-10 12:43:58,747 | INFO    | === MC 11/100 | seed=110 ===
+2026-05-10 12:44:29,136 | INFO    | [seed=110] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 12:44:29,344 | INFO    | AUC=0.944 | AP=0.921 | Brier=0.078 | P*70=0.568 | P*85=0.411 | P*95=0.118
+2026-05-10 12:44:29,509 | INFO    | === MC 12/100 | seed=111 ===
+2026-05-10 12:44:59,784 | INFO    | [seed=111] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=490 | total=754
+2026-05-10 12:44:59,981 | INFO    | AUC=0.940 | AP=0.918 | Brier=0.086 | P*70=0.840 | P*85=0.541 | P*95=0.105
+2026-05-10 12:45:00,139 | INFO    | === MC 13/100 | seed=112 ===
+2026-05-10 12:45:31,149 | INFO    | [seed=112] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 12:45:31,342 | INFO    | AUC=0.949 | AP=0.923 | Brier=0.077 | P*70=0.662 | P*85=0.453 | P*95=0.103
+2026-05-10 12:45:31,509 | INFO    | === MC 14/100 | seed=113 ===
+2026-05-10 12:46:02,221 | INFO    | [seed=113] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=466 | total=730
+2026-05-10 12:46:02,414 | INFO    | AUC=0.950 | AP=0.939 | Brier=0.069 | P*70=0.622 | P*85=0.435 | P*95=0.142
+2026-05-10 12:46:02,580 | INFO    | === MC 15/100 | seed=114 ===
+2026-05-10 12:46:34,171 | INFO    | [seed=114] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=464 | total=728
+2026-05-10 12:46:34,385 | INFO    | AUC=0.944 | AP=0.929 | Brier=0.081 | P*70=0.662 | P*85=0.429 | P*95=0.119
+2026-05-10 12:46:34,542 | INFO    | === MC 16/100 | seed=115 ===
+2026-05-10 12:47:05,066 | INFO    | [seed=115] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=476 | total=740
+2026-05-10 12:47:05,261 | INFO    | AUC=0.943 | AP=0.938 | Brier=0.067 | P*70=0.690 | P*85=0.447 | P*95=0.084
+2026-05-10 12:47:05,425 | INFO    | === MC 17/100 | seed=116 ===
+2026-05-10 12:47:35,881 | INFO    | [seed=116] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=468 | total=732
+2026-05-10 12:47:36,071 | INFO    | AUC=0.948 | AP=0.945 | Brier=0.070 | P*70=0.688 | P*85=0.508 | P*95=0.093
+2026-05-10 12:47:36,235 | INFO    | === MC 18/100 | seed=117 ===
+2026-05-10 12:48:06,875 | INFO    | [seed=117] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=459 | total=723
+2026-05-10 12:48:07,085 | INFO    | AUC=0.949 | AP=0.932 | Brier=0.077 | P*70=0.741 | P*85=0.463 | P*95=0.133
+2026-05-10 12:48:07,243 | INFO    | === MC 19/100 | seed=118 ===
+2026-05-10 12:48:37,515 | INFO    | [seed=118] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=467 | total=731
+2026-05-10 12:48:37,706 | INFO    | AUC=0.934 | AP=0.891 | Brier=0.088 | P*70=0.559 | P*85=0.419 | P*95=0.116
+2026-05-10 12:48:37,868 | INFO    | === MC 20/100 | seed=119 ===
+2026-05-10 12:49:08,306 | INFO    | [seed=119] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=465 | total=729
+2026-05-10 12:49:08,533 | INFO    | AUC=0.955 | AP=0.948 | Brier=0.067 | P*70=0.683 | P*85=0.472 | P*95=0.096
+2026-05-10 12:49:08,708 | INFO    | === MC 21/100 | seed=120 ===
+2026-05-10 12:49:38,998 | INFO    | [seed=120] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=479 | total=743
+2026-05-10 12:49:39,194 | INFO    | AUC=0.937 | AP=0.934 | Brier=0.074 | P*70=0.709 | P*85=0.457 | P*95=0.067
+2026-05-10 12:49:39,357 | INFO    | === MC 22/100 | seed=121 ===
+2026-05-10 12:50:10,524 | INFO    | [seed=121] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=468 | total=732
+2026-05-10 12:50:10,713 | INFO    | AUC=0.952 | AP=0.943 | Brier=0.072 | P*70=0.721 | P*85=0.513 | P*95=0.106
+2026-05-10 12:50:10,877 | INFO    | === MC 23/100 | seed=122 ===
+2026-05-10 12:50:41,391 | INFO    | [seed=122] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 12:50:41,581 | INFO    | AUC=0.943 | AP=0.928 | Brier=0.077 | P*70=0.674 | P*85=0.397 | P*95=0.100
+2026-05-10 12:50:41,749 | INFO    | === MC 24/100 | seed=123 ===
+2026-05-10 12:51:12,372 | INFO    | [seed=123] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 12:51:12,558 | INFO    | AUC=0.939 | AP=0.935 | Brier=0.074 | P*70=0.697 | P*85=0.465 | P*95=0.114
+2026-05-10 12:51:12,724 | INFO    | === MC 25/100 | seed=124 ===
+2026-05-10 12:51:43,914 | INFO    | [seed=124] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=457 | total=721
+2026-05-10 12:51:44,097 | INFO    | AUC=0.948 | AP=0.929 | Brier=0.076 | P*70=0.656 | P*85=0.464 | P*95=0.125
+2026-05-10 12:51:44,264 | INFO    | === MC 26/100 | seed=125 ===
+2026-05-10 12:52:14,982 | INFO    | [seed=125] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=470 | total=734
+2026-05-10 12:52:15,177 | INFO    | AUC=0.943 | AP=0.936 | Brier=0.074 | P*70=0.721 | P*85=0.480 | P*95=0.085
+2026-05-10 12:52:15,342 | INFO    | === MC 27/100 | seed=126 ===
+2026-05-10 12:52:46,188 | INFO    | [seed=126] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=474 | total=738
+2026-05-10 12:52:46,380 | INFO    | AUC=0.946 | AP=0.938 | Brier=0.072 | P*70=0.700 | P*85=0.543 | P*95=0.092
+2026-05-10 12:52:46,546 | INFO    | === MC 28/100 | seed=127 ===
+2026-05-10 12:53:17,185 | INFO    | [seed=127] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=481 | total=745
+2026-05-10 12:53:17,372 | INFO    | AUC=0.934 | AP=0.924 | Brier=0.084 | P*70=0.649 | P*85=0.413 | P*95=0.080
+2026-05-10 12:53:17,538 | INFO    | === MC 29/100 | seed=128 ===
+2026-05-10 12:53:48,078 | INFO    | [seed=128] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=471 | total=735
+2026-05-10 12:53:48,275 | INFO    | AUC=0.950 | AP=0.934 | Brier=0.070 | P*70=0.620 | P*85=0.425 | P*95=0.114
+2026-05-10 12:53:48,441 | INFO    | === MC 30/100 | seed=129 ===
+2026-05-10 12:54:19,095 | INFO    | [seed=129] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 12:54:19,289 | INFO    | AUC=0.953 | AP=0.945 | Brier=0.071 | P*70=0.743 | P*85=0.491 | P*95=0.137
+2026-05-10 12:54:19,454 | INFO    | === MC 31/100 | seed=130 ===
+2026-05-10 12:54:49,923 | INFO    | [seed=130] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=457 | total=721
+2026-05-10 12:54:50,109 | INFO    | AUC=0.955 | AP=0.940 | Brier=0.072 | P*70=0.794 | P*85=0.552 | P*95=0.141
+2026-05-10 12:54:50,315 | INFO    | === MC 32/100 | seed=131 ===
+2026-05-10 12:55:21,087 | INFO    | [seed=131] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=464 | total=728
+2026-05-10 12:55:21,282 | INFO    | AUC=0.957 | AP=0.943 | Brier=0.074 | P*70=0.647 | P*85=0.420 | P*95=0.119
+2026-05-10 12:55:21,447 | INFO    | === MC 33/100 | seed=132 ===
+2026-05-10 12:55:51,969 | INFO    | [seed=132] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=477 | total=741
+2026-05-10 12:55:52,164 | INFO    | AUC=0.931 | AP=0.917 | Brier=0.082 | P*70=0.668 | P*85=0.414 | P*95=0.057
+2026-05-10 12:55:52,330 | INFO    | === MC 34/100 | seed=133 ===
+2026-05-10 12:56:24,000 | INFO    | [seed=133] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=475 | total=739
+2026-05-10 12:56:24,204 | INFO    | AUC=0.953 | AP=0.945 | Brier=0.062 | P*70=0.684 | P*85=0.511 | P*95=0.106
+2026-05-10 12:56:24,372 | INFO    | === MC 35/100 | seed=134 ===
+2026-05-10 12:56:55,120 | INFO    | [seed=134] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 12:56:55,357 | INFO    | AUC=0.938 | AP=0.929 | Brier=0.080 | P*70=0.670 | P*85=0.451 | P*95=0.101
+2026-05-10 12:56:55,520 | INFO    | === MC 36/100 | seed=135 ===
+2026-05-10 13:00:36,148 | INFO    | ======================================================================
+2026-05-10 13:00:36,148 | INFO    | INICIO: 2026-05-10T13:00:36
+2026-05-10 13:00:36,149 | INFO    | OUT_DIR: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/
+2026-05-10 13:00:36,149 | INFO    | Modelo: GAM Parte 2 — su_type=2 (ensayo)
+2026-05-10 13:00:36,149 | INFO    | N_MC=10 | RATIO_NO_SI=2 | EXCL_DAYS=30 | MIN_DIST_M=200
+2026-05-10 13:00:36,149 | INFO    | Filtro exposición: 1d>=5.0 mm | 30d>=50.0 mm
+2026-05-10 13:00:36,149 | INFO    | Cargando GPKG: /home/oisanchezp/Thesis/data/processed/su_susceptibles_con_inventario.gpkg
+2026-05-10 13:01:23,346 | INFO    | SU total: 55332 | tipos: [1.0, 2.0, 3.0, 4.0] | zonas: ['1', '2', '3', '4', '5']
+2026-05-10 13:01:23,393 | INFO    | su_type=2 | total=28993 | eventos=265 | no-eventos=28728
+2026-05-10 13:01:23,439 | INFO    | Fechas excluidas: 1707
+2026-05-10 13:01:23,439 | INFO    | Construyendo pool de pluvios y fechas candidatas...
+2026-05-10 13:01:40,797 | INFO    | Pluvios con series: 142 | con fechas candidatas: 142
+2026-05-10 13:01:40,815 | INFO    | === MC 1/10 | seed=100 ===
+2026-05-10 13:02:11,616 | INFO    | [seed=100] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 13:02:11,925 | INFO    | AUC=0.951 | AP=0.947 | Brier=0.067 | P*70=0.708 | P*85=0.414 | P*95=0.098
+2026-05-10 13:02:12,092 | INFO    | === MC 2/10 | seed=101 ===
+2026-05-10 13:02:42,357 | INFO    | [seed=101] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=478 | total=742
+2026-05-10 13:02:42,664 | INFO    | AUC=0.940 | AP=0.927 | Brier=0.076 | P*70=0.695 | P*85=0.449 | P*95=0.069
+2026-05-10 13:02:42,856 | INFO    | === MC 3/10 | seed=102 ===
+2026-05-10 13:03:13,208 | INFO    | [seed=102] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 13:03:13,502 | INFO    | AUC=0.950 | AP=0.944 | Brier=0.069 | P*70=0.715 | P*85=0.517 | P*95=0.139
+2026-05-10 13:03:13,682 | INFO    | === MC 4/10 | seed=103 ===
+2026-05-10 13:03:43,716 | INFO    | [seed=103] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=458 | total=722
+2026-05-10 13:03:44,027 | INFO    | AUC=0.951 | AP=0.938 | Brier=0.075 | P*70=0.750 | P*85=0.491 | P*95=0.112
+2026-05-10 13:03:44,205 | INFO    | === MC 5/10 | seed=104 ===
+2026-05-10 13:04:14,466 | INFO    | [seed=104] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=463 | total=727
+2026-05-10 13:04:14,748 | INFO    | AUC=0.958 | AP=0.951 | Brier=0.067 | P*70=0.706 | P*85=0.470 | P*95=0.150
+2026-05-10 13:04:15,008 | INFO    | === MC 6/10 | seed=105 ===
+2026-05-10 13:04:45,091 | INFO    | [seed=105] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=459 | total=723
+2026-05-10 13:04:45,364 | INFO    | AUC=0.951 | AP=0.936 | Brier=0.076 | P*70=0.688 | P*85=0.393 | P*95=0.117
+2026-05-10 13:04:45,549 | INFO    | === MC 7/10 | seed=106 ===
+2026-05-10 13:05:15,699 | INFO    | [seed=106] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=470 | total=734
+2026-05-10 13:05:15,966 | INFO    | AUC=0.943 | AP=0.923 | Brier=0.076 | P*70=0.628 | P*85=0.453 | P*95=0.114
+2026-05-10 13:05:16,137 | INFO    | === MC 8/10 | seed=107 ===
+2026-05-10 13:05:45,931 | INFO    | [seed=107] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=475 | total=739
+2026-05-10 13:05:46,211 | INFO    | AUC=0.951 | AP=0.946 | Brier=0.065 | P*70=0.587 | P*85=0.412 | P*95=0.116
+2026-05-10 13:05:46,382 | INFO    | === MC 9/10 | seed=108 ===
+2026-05-10 13:06:16,314 | INFO    | [seed=108] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 13:06:16,584 | INFO    | AUC=0.940 | AP=0.926 | Brier=0.081 | P*70=0.677 | P*85=0.407 | P*95=0.111
+2026-05-10 13:06:16,752 | INFO    | === MC 10/10 | seed=109 ===
+2026-05-10 13:06:47,168 | INFO    | [seed=109] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=461 | total=725
+2026-05-10 13:06:47,393 | INFO    | AUC=0.945 | AP=0.923 | Brier=0.075 | P*70=0.586 | P*85=0.430 | P*95=0.117
+2026-05-10 13:07:11,858 | INFO    | NO acumulados de 10 corridas: 4679 filas guardadas en /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_no_events_all_runs.parquet
+2026-05-10 13:07:11,858 | INFO    | AUC mediana=0.9502 | AP mediana=0.9372 | Brier mediana=0.0753
+2026-05-10 13:07:11,858 | INFO    | run_star=0
+2026-05-10 13:07:11,927 | INFO    | === LISTO ===
+2026-05-10 13:07:11,927 | INFO    | Métricas:     /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_mc_metrics.csv
+2026-05-10 13:07:11,927 | INFO    | Thresholds:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_thresholds_mc.csv
+2026-05-10 13:07:11,927 | INFO    | Grilla agg:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs.parquet
+2026-05-10 13:07:11,927 | INFO    | Grilla x run: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs_per_run.parquet
+2026-05-10 13:07:11,928 | INFO    | Modelo final: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_run_star.joblib
+2026-05-10 13:07:11,928 | INFO    | Package:      /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_package.json
+2026-05-10 13:07:11,928 | INFO    | Dataset star: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_dataset_run_star.parquet
+2026-05-10 17:56:36,154 | INFO    | ======================================================================
+2026-05-10 17:56:36,154 | INFO    | INICIO: 2026-05-10T17:56:36
+2026-05-10 17:56:36,154 | INFO    | OUT_DIR: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/
+2026-05-10 17:56:36,154 | INFO    | Modelo: GAM Parte 2 — su_type=2 (ensayo)
+2026-05-10 17:56:36,154 | INFO    | N_MC=10 | RATIO_NO_SI=2 | EXCL_DAYS=30 | MIN_DIST_M=200
+2026-05-10 17:56:36,154 | INFO    | Filtro exposición: 1d>=5.0 mm | 30d>=50.0 mm
+2026-05-10 17:56:36,154 | INFO    | Cargando GPKG: /home/oisanchezp/Thesis/data/processed/su_susceptibles_con_inventario.gpkg
+2026-05-10 17:57:30,033 | INFO    | ======================================================================
+2026-05-10 17:57:30,033 | INFO    | INICIO: 2026-05-10T17:57:30
+2026-05-10 17:57:30,033 | INFO    | OUT_DIR: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/
+2026-05-10 17:57:30,034 | INFO    | Modelo: GAM Parte 2 — su_type=2 (ensayo)
+2026-05-10 17:57:30,034 | INFO    | N_MC=10 | RATIO_NO_SI=2 | EXCL_DAYS=30 | MIN_DIST_M=200
+2026-05-10 17:57:30,034 | INFO    | Filtro exposición: 1d>=5.0 mm | 30d>=50.0 mm
+2026-05-10 17:57:30,034 | INFO    | Cargando GPKG: /home/oisanchezp/Thesis/data/processed/su_susceptibles_con_inventario.gpkg
+2026-05-10 17:58:18,674 | INFO    | SU total: 55332 | tipos: [1.0, 2.0, 3.0, 4.0] | zonas: ['1', '2', '3', '4', '5']
+2026-05-10 17:58:18,724 | INFO    | su_type=2 | total=28993 | eventos=265 | no-eventos=28728
+2026-05-10 17:58:18,768 | INFO    | Fechas excluidas: 1707
+2026-05-10 17:58:18,768 | INFO    | Construyendo pool de pluvios y fechas candidatas...
+2026-05-10 17:58:37,779 | INFO    | Pluvios con series: 142 | con fechas candidatas: 142
+2026-05-10 17:58:37,800 | INFO    | === MC 1/10 | seed=100 ===
+2026-05-10 17:59:08,386 | INFO    | [seed=100] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 17:59:08,652 | INFO    | AUC=0.951 | AP=0.947 | Brier=0.067 | P*70=0.708 | P*OPT=0.388 (TPR=0.90) | P*85=0.414 | P*95=0.098
+2026-05-10 17:59:08,827 | INFO    | === MC 2/10 | seed=101 ===
+2026-05-10 17:59:39,108 | INFO    | [seed=101] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=478 | total=742
+2026-05-10 17:59:39,313 | INFO    | AUC=0.940 | AP=0.927 | Brier=0.076 | P*70=0.695 | P*OPT=0.439 (TPR=0.87) | P*85=0.449 | P*95=0.069
+2026-05-10 17:59:39,484 | INFO    | === MC 3/10 | seed=102 ===
+2026-05-10 18:00:10,535 | INFO    | [seed=102] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 18:00:10,812 | INFO    | AUC=0.950 | AP=0.944 | Brier=0.069 | P*70=0.715 | P*OPT=0.424 (TPR=0.90) | P*85=0.517 | P*95=0.139
+2026-05-10 18:00:11,006 | INFO    | === MC 4/10 | seed=103 ===
+2026-05-10 18:00:42,646 | INFO    | [seed=103] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=458 | total=722
+2026-05-10 18:00:42,890 | INFO    | AUC=0.951 | AP=0.938 | Brier=0.075 | P*70=0.750 | P*OPT=0.442 (TPR=0.90) | P*85=0.491 | P*95=0.112
+2026-05-10 18:00:43,066 | INFO    | === MC 5/10 | seed=104 ===
+2026-05-10 18:01:13,200 | INFO    | [seed=104] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=463 | total=727
+2026-05-10 18:01:13,427 | INFO    | AUC=0.958 | AP=0.951 | Brier=0.067 | P*70=0.706 | P*OPT=0.378 (TPR=0.93) | P*85=0.470 | P*95=0.150
+2026-05-10 18:01:13,604 | INFO    | === MC 6/10 | seed=105 ===
+2026-05-10 18:01:43,550 | INFO    | [seed=105] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=459 | total=723
+2026-05-10 18:01:43,767 | INFO    | AUC=0.951 | AP=0.936 | Brier=0.076 | P*70=0.688 | P*OPT=0.364 (TPR=0.91) | P*85=0.393 | P*95=0.117
+2026-05-10 18:01:43,953 | INFO    | === MC 7/10 | seed=106 ===
+2026-05-10 18:02:14,333 | INFO    | [seed=106] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=470 | total=734
+2026-05-10 18:02:14,566 | INFO    | AUC=0.943 | AP=0.923 | Brier=0.076 | P*70=0.628 | P*OPT=0.344 (TPR=0.91) | P*85=0.453 | P*95=0.114
+2026-05-10 18:02:14,746 | INFO    | === MC 8/10 | seed=107 ===
+2026-05-10 18:02:44,973 | INFO    | [seed=107] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=475 | total=739
+2026-05-10 18:02:45,221 | INFO    | AUC=0.951 | AP=0.946 | Brier=0.065 | P*70=0.587 | P*OPT=0.412 (TPR=0.90) | P*85=0.412 | P*95=0.116
+2026-05-10 18:02:45,401 | INFO    | === MC 9/10 | seed=108 ===
+2026-05-10 18:03:15,533 | INFO    | [seed=108] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 18:03:15,727 | INFO    | AUC=0.940 | AP=0.926 | Brier=0.081 | P*70=0.677 | P*OPT=0.371 (TPR=0.90) | P*85=0.407 | P*95=0.111
+2026-05-10 18:03:15,905 | INFO    | === MC 10/10 | seed=109 ===
+2026-05-10 18:03:46,073 | INFO    | [seed=109] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=461 | total=725
+2026-05-10 18:03:46,286 | INFO    | AUC=0.945 | AP=0.923 | Brier=0.075 | P*70=0.586 | P*OPT=0.408 (TPR=0.89) | P*85=0.430 | P*95=0.117
+2026-05-10 18:04:11,629 | INFO    | NO acumulados de 10 corridas: 4679 filas guardadas en /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_no_events_all_runs.parquet
+2026-05-10 18:04:11,632 | INFO    | Curvas ROC de 10 corridas: 2201 filas guardadas en /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_roc_curves_mc.parquet
+2026-05-10 18:04:11,632 | INFO    | AUC mediana=0.9502 | AP mediana=0.9372 | Brier mediana=0.0753
+2026-05-10 18:04:11,633 | INFO    | run_star=0
+2026-05-10 18:04:11,739 | INFO    | === LISTO ===
+2026-05-10 18:04:11,739 | INFO    | Métricas:     /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_mc_metrics.csv
+2026-05-10 18:04:11,739 | INFO    | Thresholds:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_thresholds_mc.csv
+2026-05-10 18:04:11,739 | INFO    | Grilla agg:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs.parquet
+2026-05-10 18:04:11,739 | INFO    | Grilla x run: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs_per_run.parquet
+2026-05-10 18:04:11,739 | INFO    | Modelo final: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_run_star.joblib
+2026-05-10 18:04:11,740 | INFO    | Package:      /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_package.json
+2026-05-10 18:04:11,740 | INFO    | Dataset star: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_dataset_run_star.parquet
+2026-05-10 18:07:26,255 | INFO    | ======================================================================
+2026-05-10 18:07:26,255 | INFO    | INICIO: 2026-05-10T18:07:26
+2026-05-10 18:07:26,255 | INFO    | OUT_DIR: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/
+2026-05-10 18:07:26,255 | INFO    | Modelo: GAM Parte 2 — su_type=2 (ensayo)
+2026-05-10 18:07:26,255 | INFO    | N_MC=10 | RATIO_NO_SI=2 | EXCL_DAYS=30 | MIN_DIST_M=200
+2026-05-10 18:07:26,256 | INFO    | Filtro exposición: 1d>=5.0 mm | 30d>=50.0 mm
+2026-05-10 18:07:26,256 | INFO    | Cargando GPKG: /home/oisanchezp/Thesis/data/processed/su_susceptibles_con_inventario.gpkg
+2026-05-10 18:08:15,062 | INFO    | SU total: 55332 | tipos: [1.0, 2.0, 3.0, 4.0] | zonas: ['1', '2', '3', '4', '5']
+2026-05-10 18:08:15,110 | INFO    | su_type=2 | total=28993 | eventos=265 | no-eventos=28728
+2026-05-10 18:08:15,154 | INFO    | Fechas excluidas: 1707
+2026-05-10 18:08:15,155 | INFO    | Construyendo pool de pluvios y fechas candidatas...
+2026-05-10 18:08:33,250 | INFO    | Pluvios con series: 142 | con fechas candidatas: 142
+2026-05-10 18:08:33,268 | INFO    | === MC 1/10 | seed=100 ===
+2026-05-10 18:09:03,688 | INFO    | [seed=100] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 18:09:03,948 | INFO    | AUC=0.951 | AP=0.947 | Brier=0.067 | P*70=0.708 | P*OPT=0.388 (TPR=0.90) | P*85=0.414 | P*95=0.098
+2026-05-10 18:09:04,122 | INFO    | === MC 2/10 | seed=101 ===
+2026-05-10 18:09:34,388 | INFO    | [seed=101] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=478 | total=742
+2026-05-10 18:09:34,590 | INFO    | AUC=0.940 | AP=0.927 | Brier=0.076 | P*70=0.695 | P*OPT=0.439 (TPR=0.87) | P*85=0.449 | P*95=0.069
+2026-05-10 18:09:34,758 | INFO    | === MC 3/10 | seed=102 ===
+2026-05-10 18:10:05,139 | INFO    | [seed=102] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 18:10:05,366 | INFO    | AUC=0.950 | AP=0.944 | Brier=0.069 | P*70=0.715 | P*OPT=0.424 (TPR=0.90) | P*85=0.517 | P*95=0.139
+2026-05-10 18:10:05,542 | INFO    | === MC 4/10 | seed=103 ===
+2026-05-10 18:10:35,776 | INFO    | [seed=103] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=458 | total=722
+2026-05-10 18:10:35,996 | INFO    | AUC=0.951 | AP=0.938 | Brier=0.075 | P*70=0.750 | P*OPT=0.442 (TPR=0.90) | P*85=0.491 | P*95=0.112
+2026-05-10 18:10:36,180 | INFO    | === MC 5/10 | seed=104 ===
+2026-05-10 18:11:06,191 | INFO    | [seed=104] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=463 | total=727
+2026-05-10 18:11:06,381 | INFO    | AUC=0.958 | AP=0.951 | Brier=0.067 | P*70=0.706 | P*OPT=0.378 (TPR=0.93) | P*85=0.470 | P*95=0.150
+2026-05-10 18:11:06,547 | INFO    | === MC 6/10 | seed=105 ===
+2026-05-10 18:11:36,385 | INFO    | [seed=105] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=459 | total=723
+2026-05-10 18:11:36,568 | INFO    | AUC=0.951 | AP=0.936 | Brier=0.076 | P*70=0.688 | P*OPT=0.364 (TPR=0.91) | P*85=0.393 | P*95=0.117
+2026-05-10 18:11:36,743 | INFO    | === MC 7/10 | seed=106 ===
+2026-05-10 18:12:07,849 | INFO    | [seed=106] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=470 | total=734
+2026-05-10 18:12:08,029 | INFO    | AUC=0.943 | AP=0.923 | Brier=0.076 | P*70=0.628 | P*OPT=0.344 (TPR=0.91) | P*85=0.453 | P*95=0.114
+2026-05-10 18:12:08,196 | INFO    | === MC 8/10 | seed=107 ===
+2026-05-10 18:12:39,230 | INFO    | [seed=107] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=475 | total=739
+2026-05-10 18:12:39,412 | INFO    | AUC=0.951 | AP=0.946 | Brier=0.065 | P*70=0.587 | P*OPT=0.412 (TPR=0.90) | P*85=0.412 | P*95=0.116
+2026-05-10 18:12:39,580 | INFO    | === MC 9/10 | seed=108 ===
+2026-05-10 18:13:09,588 | INFO    | [seed=108] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 18:13:09,768 | INFO    | AUC=0.940 | AP=0.926 | Brier=0.081 | P*70=0.677 | P*OPT=0.371 (TPR=0.90) | P*85=0.407 | P*95=0.111
+2026-05-10 18:13:09,938 | INFO    | === MC 10/10 | seed=109 ===
+2026-05-10 18:13:40,211 | INFO    | [seed=109] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=461 | total=725
+2026-05-10 18:13:40,412 | INFO    | AUC=0.945 | AP=0.923 | Brier=0.075 | P*70=0.586 | P*OPT=0.408 (TPR=0.89) | P*85=0.430 | P*95=0.117
+2026-05-10 18:14:04,299 | INFO    | NO acumulados de 10 corridas: 4679 filas guardadas en /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_no_events_all_runs.parquet
+2026-05-10 18:14:04,301 | INFO    | Curvas ROC de 10 corridas: 2201 filas guardadas en /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_roc_curves_mc.parquet
+2026-05-10 18:14:04,302 | INFO    | AUC mediana=0.9502 | AP mediana=0.9372 | Brier mediana=0.0753
+2026-05-10 18:14:04,302 | INFO    | run_star=0
+2026-05-10 18:14:04,370 | INFO    | === LISTO ===
+2026-05-10 18:14:04,371 | INFO    | Métricas:     /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_mc_metrics.csv
+2026-05-10 18:14:04,371 | INFO    | Thresholds:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_thresholds_mc.csv
+2026-05-10 18:14:04,371 | INFO    | Grilla agg:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs.parquet
+2026-05-10 18:14:04,371 | INFO    | Grilla x run: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs_per_run.parquet
+2026-05-10 18:14:04,371 | INFO    | Modelo final: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_run_star.joblib
+2026-05-10 18:14:04,371 | INFO    | Package:      /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_package.json
+2026-05-10 18:14:04,371 | INFO    | Dataset star: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_dataset_run_star.parquet
+2026-05-10 22:41:45,532 | INFO    | ======================================================================
+2026-05-10 22:41:45,532 | INFO    | INICIO: 2026-05-10T22:41:45
+2026-05-10 22:41:45,532 | INFO    | OUT_DIR: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/
+2026-05-10 22:41:45,532 | INFO    | Modelo: GAM Parte 2 — su_type=2 (ensayo)
+2026-05-10 22:41:45,533 | INFO    | N_MC=10 | RATIO_NO_SI=2 | EXCL_DAYS=30 | MIN_DIST_M=200
+2026-05-10 22:41:45,533 | INFO    | Filtro exposición: 1d>=5.0 mm | 30d>=50.0 mm
+2026-05-10 22:41:45,533 | INFO    | Cargando GPKG: /home/oisanchezp/Thesis/data/processed/su_susceptibles_con_inventario.gpkg
+2026-05-10 22:42:32,988 | INFO    | SU total: 55332 | tipos: [1.0, 2.0, 3.0, 4.0] | zonas: ['1', '2', '3', '4', '5']
+2026-05-10 22:42:33,026 | INFO    | su_type=2 | total=28993 | eventos=265 | no-eventos=28728
+2026-05-10 22:42:33,069 | INFO    | Fechas excluidas: 1707
+2026-05-10 22:42:33,069 | INFO    | Construyendo pool de pluvios y fechas candidatas...
+2026-05-10 22:42:51,703 | INFO    | Pluvios con series: 142 | con fechas candidatas: 142
+2026-05-10 22:42:51,734 | INFO    | === MC 1/10 | seed=100 ===
+2026-05-10 22:43:28,358 | INFO    | ======================================================================
+2026-05-10 22:43:28,359 | INFO    | INICIO: 2026-05-10T22:43:28
+2026-05-10 22:43:28,359 | INFO    | OUT_DIR: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/
+2026-05-10 22:43:28,359 | INFO    | Modelo: GAM Parte 2 — su_type=2 (ensayo)
+2026-05-10 22:43:28,359 | INFO    | N_MC=100 | RATIO_NO_SI=2 | EXCL_DAYS=30 | MIN_DIST_M=200
+2026-05-10 22:43:28,359 | INFO    | Filtro exposición: 1d>=5.0 mm | 30d>=50.0 mm
+2026-05-10 22:43:28,359 | INFO    | Cargando GPKG: /home/oisanchezp/Thesis/data/processed/su_susceptibles_con_inventario.gpkg
+2026-05-10 22:44:15,633 | INFO    | SU total: 55332 | tipos: [1.0, 2.0, 3.0, 4.0] | zonas: ['1', '2', '3', '4', '5']
+2026-05-10 22:44:15,672 | INFO    | su_type=2 | total=28993 | eventos=265 | no-eventos=28728
+2026-05-10 22:44:15,715 | INFO    | Fechas excluidas: 1707
+2026-05-10 22:44:15,715 | INFO    | Construyendo pool de pluvios y fechas candidatas...
+2026-05-10 22:44:30,677 | INFO    | Pluvios con series: 142 | con fechas candidatas: 142
+2026-05-10 22:44:30,693 | INFO    | === MC 1/100 | seed=100 ===
+2026-05-10 22:44:59,924 | INFO    | [seed=100] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 22:45:00,156 | INFO    | AUC=0.951 | AP=0.947 | Brier=0.067 | P*70=0.708 | P*OPT=0.388 (TPR=0.90) | P*85=0.414 | P*95=0.098
+2026-05-10 22:45:00,319 | INFO    | === MC 2/100 | seed=101 ===
+2026-05-10 22:45:31,819 | INFO    | [seed=101] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=478 | total=742
+2026-05-10 22:45:32,050 | INFO    | AUC=0.940 | AP=0.927 | Brier=0.076 | P*70=0.695 | P*OPT=0.439 (TPR=0.87) | P*85=0.449 | P*95=0.069
+2026-05-10 22:45:32,228 | INFO    | === MC 3/100 | seed=102 ===
+2026-05-10 22:46:02,018 | INFO    | [seed=102] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 22:46:02,240 | INFO    | AUC=0.950 | AP=0.944 | Brier=0.069 | P*70=0.715 | P*OPT=0.424 (TPR=0.90) | P*85=0.517 | P*95=0.139
+2026-05-10 22:46:02,416 | INFO    | === MC 4/100 | seed=103 ===
+2026-05-10 22:46:31,523 | INFO    | [seed=103] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=458 | total=722
+2026-05-10 22:46:31,709 | INFO    | AUC=0.951 | AP=0.938 | Brier=0.075 | P*70=0.750 | P*OPT=0.442 (TPR=0.90) | P*85=0.491 | P*95=0.112
+2026-05-10 22:46:31,871 | INFO    | === MC 5/100 | seed=104 ===
+2026-05-10 22:47:00,954 | INFO    | [seed=104] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=463 | total=727
+2026-05-10 22:47:01,131 | INFO    | AUC=0.958 | AP=0.951 | Brier=0.067 | P*70=0.706 | P*OPT=0.378 (TPR=0.93) | P*85=0.470 | P*95=0.150
+2026-05-10 22:47:01,290 | INFO    | === MC 6/100 | seed=105 ===
+2026-05-10 22:47:30,324 | INFO    | [seed=105] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=459 | total=723
+2026-05-10 22:47:30,527 | INFO    | AUC=0.951 | AP=0.936 | Brier=0.076 | P*70=0.688 | P*OPT=0.364 (TPR=0.91) | P*85=0.393 | P*95=0.117
+2026-05-10 22:47:30,703 | INFO    | === MC 7/100 | seed=106 ===
+2026-05-10 22:47:59,779 | INFO    | [seed=106] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=470 | total=734
+2026-05-10 22:47:59,966 | INFO    | AUC=0.943 | AP=0.923 | Brier=0.076 | P*70=0.628 | P*OPT=0.344 (TPR=0.91) | P*85=0.453 | P*95=0.114
+2026-05-10 22:48:00,131 | INFO    | === MC 8/100 | seed=107 ===
+2026-05-10 22:48:29,185 | INFO    | [seed=107] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=475 | total=739
+2026-05-10 22:48:29,407 | INFO    | AUC=0.951 | AP=0.946 | Brier=0.065 | P*70=0.587 | P*OPT=0.412 (TPR=0.90) | P*85=0.412 | P*95=0.116
+2026-05-10 22:48:29,583 | INFO    | === MC 9/100 | seed=108 ===
+2026-05-10 22:48:58,987 | INFO    | [seed=108] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 22:48:59,221 | INFO    | AUC=0.940 | AP=0.926 | Brier=0.081 | P*70=0.677 | P*OPT=0.371 (TPR=0.90) | P*85=0.407 | P*95=0.111
+2026-05-10 22:48:59,390 | INFO    | === MC 10/100 | seed=109 ===
+2026-05-10 22:49:28,567 | INFO    | [seed=109] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=461 | total=725
+2026-05-10 22:49:28,818 | INFO    | AUC=0.945 | AP=0.923 | Brier=0.075 | P*70=0.586 | P*OPT=0.408 (TPR=0.89) | P*85=0.430 | P*95=0.117
+2026-05-10 22:49:28,992 | INFO    | === MC 11/100 | seed=110 ===
+2026-05-10 22:49:58,093 | INFO    | [seed=110] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 22:49:58,284 | INFO    | AUC=0.944 | AP=0.921 | Brier=0.078 | P*70=0.568 | P*OPT=0.346 (TPR=0.90) | P*85=0.411 | P*95=0.118
+2026-05-10 22:49:58,457 | INFO    | === MC 12/100 | seed=111 ===
+2026-05-10 22:50:29,617 | INFO    | [seed=111] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=490 | total=754
+2026-05-10 22:50:29,821 | INFO    | AUC=0.940 | AP=0.918 | Brier=0.086 | P*70=0.840 | P*OPT=0.581 (TPR=0.85) | P*85=0.541 | P*95=0.105
+2026-05-10 22:50:29,997 | INFO    | === MC 13/100 | seed=112 ===
+2026-05-10 22:50:59,948 | INFO    | [seed=112] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 22:51:00,149 | INFO    | AUC=0.949 | AP=0.923 | Brier=0.077 | P*70=0.662 | P*OPT=0.367 (TPR=0.91) | P*85=0.453 | P*95=0.103
+2026-05-10 22:51:00,329 | INFO    | === MC 14/100 | seed=113 ===
+2026-05-10 22:51:29,729 | INFO    | [seed=113] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=466 | total=730
+2026-05-10 22:51:29,915 | INFO    | AUC=0.950 | AP=0.939 | Brier=0.069 | P*70=0.622 | P*OPT=0.435 (TPR=0.90) | P*85=0.435 | P*95=0.142
+2026-05-10 22:51:30,078 | INFO    | === MC 15/100 | seed=114 ===
+2026-05-10 22:51:59,243 | INFO    | [seed=114] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=464 | total=728
+2026-05-10 22:51:59,429 | INFO    | AUC=0.944 | AP=0.929 | Brier=0.081 | P*70=0.662 | P*OPT=0.383 (TPR=0.90) | P*85=0.429 | P*95=0.119
+2026-05-10 22:51:59,592 | INFO    | === MC 16/100 | seed=115 ===
+2026-05-10 22:52:28,824 | INFO    | [seed=115] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=476 | total=740
+2026-05-10 22:52:29,007 | INFO    | AUC=0.943 | AP=0.938 | Brier=0.067 | P*70=0.690 | P*OPT=0.447 (TPR=0.86) | P*85=0.447 | P*95=0.084
+2026-05-10 22:52:29,169 | INFO    | === MC 17/100 | seed=116 ===
+2026-05-10 22:52:58,284 | INFO    | [seed=116] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=468 | total=732
+2026-05-10 22:52:58,480 | INFO    | AUC=0.948 | AP=0.945 | Brier=0.070 | P*70=0.688 | P*OPT=0.397 (TPR=0.90) | P*85=0.508 | P*95=0.093
+2026-05-10 22:52:58,639 | INFO    | === MC 18/100 | seed=117 ===
+2026-05-10 22:53:28,066 | INFO    | [seed=117] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=459 | total=723
+2026-05-10 22:53:28,254 | INFO    | AUC=0.949 | AP=0.932 | Brier=0.077 | P*70=0.741 | P*OPT=0.443 (TPR=0.90) | P*85=0.463 | P*95=0.133
+2026-05-10 22:53:28,433 | INFO    | === MC 19/100 | seed=118 ===
+2026-05-10 22:53:57,756 | INFO    | [seed=118] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=467 | total=731
+2026-05-10 22:53:57,952 | INFO    | AUC=0.934 | AP=0.891 | Brier=0.088 | P*70=0.559 | P*OPT=0.419 (TPR=0.87) | P*85=0.419 | P*95=0.116
+2026-05-10 22:53:58,117 | INFO    | === MC 20/100 | seed=119 ===
+2026-05-10 22:54:27,128 | INFO    | [seed=119] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=465 | total=729
+2026-05-10 22:54:27,334 | INFO    | AUC=0.955 | AP=0.948 | Brier=0.067 | P*70=0.683 | P*OPT=0.408 (TPR=0.91) | P*85=0.472 | P*95=0.096
+2026-05-10 22:54:27,489 | INFO    | === MC 21/100 | seed=120 ===
+2026-05-10 22:54:56,128 | INFO    | [seed=120] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=479 | total=743
+2026-05-10 22:54:56,310 | INFO    | AUC=0.937 | AP=0.934 | Brier=0.074 | P*70=0.709 | P*OPT=0.457 (TPR=0.87) | P*85=0.457 | P*95=0.067
+2026-05-10 22:54:56,471 | INFO    | === MC 22/100 | seed=121 ===
+2026-05-10 22:55:26,144 | INFO    | [seed=121] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=468 | total=732
+2026-05-10 22:55:26,438 | INFO    | AUC=0.952 | AP=0.943 | Brier=0.072 | P*70=0.721 | P*OPT=0.346 (TPR=0.91) | P*85=0.513 | P*95=0.106
+2026-05-10 22:55:26,674 | INFO    | === MC 23/100 | seed=122 ===
+2026-05-10 22:55:56,286 | INFO    | [seed=122] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 22:55:56,497 | INFO    | AUC=0.943 | AP=0.928 | Brier=0.077 | P*70=0.674 | P*OPT=0.377 (TPR=0.87) | P*85=0.397 | P*95=0.100
+2026-05-10 22:55:56,717 | INFO    | === MC 24/100 | seed=123 ===
+2026-05-10 22:56:25,564 | INFO    | [seed=123] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 22:56:25,742 | INFO    | AUC=0.939 | AP=0.935 | Brier=0.074 | P*70=0.697 | P*OPT=0.408 (TPR=0.91) | P*85=0.465 | P*95=0.114
+2026-05-10 22:56:25,901 | INFO    | === MC 25/100 | seed=124 ===
+2026-05-10 22:56:54,528 | INFO    | [seed=124] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=457 | total=721
+2026-05-10 22:56:54,740 | INFO    | AUC=0.948 | AP=0.929 | Brier=0.076 | P*70=0.656 | P*OPT=0.380 (TPR=0.90) | P*85=0.464 | P*95=0.125
+2026-05-10 22:56:54,916 | INFO    | === MC 26/100 | seed=125 ===
+2026-05-10 22:57:23,774 | INFO    | [seed=125] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=470 | total=734
+2026-05-10 22:57:23,952 | INFO    | AUC=0.943 | AP=0.936 | Brier=0.074 | P*70=0.721 | P*OPT=0.480 (TPR=0.86) | P*85=0.480 | P*95=0.085
+2026-05-10 22:57:24,113 | INFO    | === MC 27/100 | seed=126 ===
+2026-05-10 22:57:52,830 | INFO    | [seed=126] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=474 | total=738
+2026-05-10 22:57:53,014 | INFO    | AUC=0.946 | AP=0.938 | Brier=0.072 | P*70=0.700 | P*OPT=0.412 (TPR=0.90) | P*85=0.543 | P*95=0.092
+2026-05-10 22:57:53,178 | INFO    | === MC 28/100 | seed=127 ===
+2026-05-10 22:58:22,289 | INFO    | [seed=127] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=481 | total=745
+2026-05-10 22:58:22,534 | INFO    | AUC=0.934 | AP=0.924 | Brier=0.084 | P*70=0.649 | P*OPT=0.446 (TPR=0.85) | P*85=0.413 | P*95=0.080
+2026-05-10 22:58:22,713 | INFO    | === MC 29/100 | seed=128 ===
+2026-05-10 22:58:51,958 | INFO    | [seed=128] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=471 | total=735
+2026-05-10 22:58:52,146 | INFO    | AUC=0.950 | AP=0.934 | Brier=0.070 | P*70=0.620 | P*OPT=0.328 (TPR=0.91) | P*85=0.425 | P*95=0.114
+2026-05-10 22:58:52,311 | INFO    | === MC 30/100 | seed=129 ===
+2026-05-10 22:59:21,496 | INFO    | [seed=129] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 22:59:21,676 | INFO    | AUC=0.953 | AP=0.945 | Brier=0.071 | P*70=0.743 | P*OPT=0.491 (TPR=0.86) | P*85=0.491 | P*95=0.137
+2026-05-10 22:59:21,840 | INFO    | === MC 31/100 | seed=130 ===
+2026-05-10 22:59:50,362 | INFO    | [seed=130] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=457 | total=721
+2026-05-10 22:59:50,530 | INFO    | AUC=0.955 | AP=0.940 | Brier=0.072 | P*70=0.794 | P*OPT=0.389 (TPR=0.92) | P*85=0.552 | P*95=0.141
+2026-05-10 22:59:50,693 | INFO    | === MC 32/100 | seed=131 ===
+2026-05-10 23:00:21,870 | INFO    | [seed=131] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=464 | total=728
+2026-05-10 23:00:22,046 | INFO    | AUC=0.957 | AP=0.943 | Brier=0.074 | P*70=0.647 | P*OPT=0.420 (TPR=0.87) | P*85=0.420 | P*95=0.119
+2026-05-10 23:00:22,214 | INFO    | === MC 33/100 | seed=132 ===
+2026-05-10 23:00:51,629 | INFO    | [seed=132] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=477 | total=741
+2026-05-10 23:00:51,822 | INFO    | AUC=0.931 | AP=0.917 | Brier=0.082 | P*70=0.668 | P*OPT=0.321 (TPR=0.89) | P*85=0.414 | P*95=0.057
+2026-05-10 23:00:51,990 | INFO    | === MC 34/100 | seed=133 ===
+2026-05-10 23:01:21,728 | INFO    | [seed=133] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=475 | total=739
+2026-05-10 23:01:21,914 | INFO    | AUC=0.953 | AP=0.945 | Brier=0.062 | P*70=0.684 | P*OPT=0.469 (TPR=0.90) | P*85=0.511 | P*95=0.106
+2026-05-10 23:01:22,086 | INFO    | === MC 35/100 | seed=134 ===
+2026-05-10 23:01:50,851 | INFO    | [seed=134] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 23:01:51,026 | INFO    | AUC=0.938 | AP=0.929 | Brier=0.080 | P*70=0.670 | P*OPT=0.390 (TPR=0.90) | P*85=0.451 | P*95=0.101
+2026-05-10 23:01:51,189 | INFO    | === MC 36/100 | seed=135 ===
+2026-05-10 23:02:19,954 | INFO    | [seed=135] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 23:02:20,125 | INFO    | AUC=0.948 | AP=0.931 | Brier=0.074 | P*70=0.801 | P*OPT=0.397 (TPR=0.90) | P*85=0.506 | P*95=0.135
+2026-05-10 23:02:20,289 | INFO    | === MC 37/100 | seed=136 ===
+2026-05-10 23:02:49,114 | INFO    | [seed=136] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 23:02:49,284 | INFO    | AUC=0.946 | AP=0.933 | Brier=0.076 | P*70=0.772 | P*OPT=0.423 (TPR=0.89) | P*85=0.472 | P*95=0.098
+2026-05-10 23:02:49,446 | INFO    | === MC 38/100 | seed=137 ===
+2026-05-10 23:03:18,247 | INFO    | [seed=137] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=476 | total=740
+2026-05-10 23:03:18,422 | INFO    | AUC=0.937 | AP=0.928 | Brier=0.082 | P*70=0.644 | P*OPT=0.485 (TPR=0.85) | P*85=0.419 | P*95=0.106
+2026-05-10 23:03:18,585 | INFO    | === MC 39/100 | seed=138 ===
+2026-05-10 23:03:47,371 | INFO    | [seed=138] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 23:03:47,542 | INFO    | AUC=0.947 | AP=0.935 | Brier=0.070 | P*70=0.714 | P*OPT=0.434 (TPR=0.90) | P*85=0.459 | P*95=0.104
+2026-05-10 23:03:47,705 | INFO    | === MC 40/100 | seed=139 ===
+2026-05-10 23:04:17,156 | INFO    | [seed=139] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=466 | total=730
+2026-05-10 23:04:17,323 | INFO    | AUC=0.945 | AP=0.931 | Brier=0.077 | P*70=0.688 | P*OPT=0.425 (TPR=0.90) | P*85=0.425 | P*95=0.136
+2026-05-10 23:04:17,488 | INFO    | === MC 41/100 | seed=140 ===
+2026-05-10 23:04:46,859 | INFO    | [seed=140] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=475 | total=739
+2026-05-10 23:04:47,029 | INFO    | AUC=0.936 | AP=0.926 | Brier=0.079 | P*70=0.797 | P*OPT=0.390 (TPR=0.90) | P*85=0.449 | P*95=0.075
+2026-05-10 23:04:47,193 | INFO    | === MC 42/100 | seed=141 ===
+2026-05-10 23:05:16,246 | INFO    | [seed=141] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=463 | total=727
+2026-05-10 23:05:16,506 | INFO    | AUC=0.962 | AP=0.954 | Brier=0.066 | P*70=0.525 | P*OPT=0.355 (TPR=0.91) | P*85=0.421 | P*95=0.118
+2026-05-10 23:05:16,703 | INFO    | === MC 43/100 | seed=142 ===
+2026-05-10 23:05:45,989 | INFO    | [seed=142] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=481 | total=745
+2026-05-10 23:05:46,162 | INFO    | AUC=0.933 | AP=0.921 | Brier=0.084 | P*70=0.713 | P*OPT=0.424 (TPR=0.86) | P*85=0.424 | P*95=0.068
+2026-05-10 23:05:46,324 | INFO    | === MC 44/100 | seed=143 ===
+2026-05-10 23:06:15,456 | INFO    | [seed=143] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=461 | total=725
+2026-05-10 23:06:15,624 | INFO    | AUC=0.956 | AP=0.931 | Brier=0.066 | P*70=0.736 | P*OPT=0.347 (TPR=0.92) | P*85=0.456 | P*95=0.123
+2026-05-10 23:06:15,787 | INFO    | === MC 45/100 | seed=144 ===
+2026-05-10 23:06:44,452 | INFO    | [seed=144] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=468 | total=732
+2026-05-10 23:06:44,626 | INFO    | AUC=0.933 | AP=0.907 | Brier=0.080 | P*70=0.754 | P*OPT=0.383 (TPR=0.91) | P*85=0.390 | P*95=0.054
+2026-05-10 23:06:44,787 | INFO    | === MC 46/100 | seed=145 ===
+2026-05-10 23:07:13,557 | INFO    | [seed=145] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 23:07:13,721 | INFO    | AUC=0.942 | AP=0.928 | Brier=0.078 | P*70=0.713 | P*OPT=0.273 (TPR=0.91) | P*85=0.415 | P*95=0.103
+2026-05-10 23:07:13,884 | INFO    | === MC 47/100 | seed=146 ===
+2026-05-10 23:07:42,542 | INFO    | [seed=146] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=475 | total=739
+2026-05-10 23:07:42,708 | INFO    | AUC=0.938 | AP=0.918 | Brier=0.085 | P*70=0.827 | P*OPT=0.349 (TPR=0.91) | P*85=0.463 | P*95=0.111
+2026-05-10 23:07:42,871 | INFO    | === MC 48/100 | seed=147 ===
+2026-05-10 23:08:11,552 | INFO    | [seed=147] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 23:08:11,727 | INFO    | AUC=0.940 | AP=0.924 | Brier=0.082 | P*70=0.734 | P*OPT=0.385 (TPR=0.90) | P*85=0.438 | P*95=0.113
+2026-05-10 23:08:11,889 | INFO    | === MC 49/100 | seed=148 ===
+2026-05-10 23:08:40,616 | INFO    | [seed=148] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=471 | total=735
+2026-05-10 23:08:40,779 | INFO    | AUC=0.938 | AP=0.910 | Brier=0.084 | P*70=0.650 | P*OPT=0.297 (TPR=0.90) | P*85=0.341 | P*95=0.106
+2026-05-10 23:08:40,942 | INFO    | === MC 50/100 | seed=149 ===
+2026-05-10 23:09:09,962 | INFO    | [seed=149] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=471 | total=735
+2026-05-10 23:09:10,133 | INFO    | AUC=0.940 | AP=0.935 | Brier=0.075 | P*70=0.747 | P*OPT=0.376 (TPR=0.91) | P*85=0.486 | P*95=0.103
+2026-05-10 23:09:10,339 | INFO    | === MC 51/100 | seed=150 ===
+2026-05-10 23:09:39,052 | INFO    | [seed=150] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 23:09:39,225 | INFO    | AUC=0.939 | AP=0.916 | Brier=0.082 | P*70=0.715 | P*OPT=0.426 (TPR=0.90) | P*85=0.495 | P*95=0.119
+2026-05-10 23:09:39,390 | INFO    | === MC 52/100 | seed=151 ===
+2026-05-10 23:10:08,839 | INFO    | [seed=151] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 23:10:09,046 | INFO    | AUC=0.946 | AP=0.935 | Brier=0.077 | P*70=0.758 | P*OPT=0.381 (TPR=0.91) | P*85=0.526 | P*95=0.079
+2026-05-10 23:10:09,216 | INFO    | === MC 53/100 | seed=152 ===
+2026-05-10 23:10:38,716 | INFO    | [seed=152] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=451 | total=715
+2026-05-10 23:10:38,897 | INFO    | AUC=0.961 | AP=0.953 | Brier=0.068 | P*70=0.617 | P*OPT=0.310 (TPR=0.91) | P*85=0.396 | P*95=0.113
+2026-05-10 23:10:39,067 | INFO    | === MC 54/100 | seed=153 ===
+2026-05-10 23:11:07,866 | INFO    | [seed=153] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=465 | total=729
+2026-05-10 23:11:08,035 | INFO    | AUC=0.941 | AP=0.922 | Brier=0.075 | P*70=0.656 | P*OPT=0.414 (TPR=0.90) | P*85=0.523 | P*95=0.111
+2026-05-10 23:11:08,199 | INFO    | === MC 55/100 | seed=154 ===
+2026-05-10 23:11:36,647 | INFO    | [seed=154] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=459 | total=723
+2026-05-10 23:11:36,810 | INFO    | AUC=0.961 | AP=0.947 | Brier=0.067 | P*70=0.691 | P*OPT=0.368 (TPR=0.91) | P*85=0.443 | P*95=0.161
+2026-05-10 23:11:36,972 | INFO    | === MC 56/100 | seed=155 ===
+2026-05-10 23:12:05,617 | INFO    | [seed=155] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=471 | total=735
+2026-05-10 23:12:05,783 | INFO    | AUC=0.954 | AP=0.948 | Brier=0.066 | P*70=0.706 | P*OPT=0.418 (TPR=0.91) | P*85=0.464 | P*95=0.104
+2026-05-10 23:12:05,946 | INFO    | === MC 57/100 | seed=156 ===
+2026-05-10 23:12:34,524 | INFO    | [seed=156] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=474 | total=738
+2026-05-10 23:12:34,686 | INFO    | AUC=0.940 | AP=0.930 | Brier=0.084 | P*70=0.860 | P*OPT=0.530 (TPR=0.87) | P*85=0.530 | P*95=0.115
+2026-05-10 23:12:34,847 | INFO    | === MC 58/100 | seed=157 ===
+2026-05-10 23:13:03,488 | INFO    | [seed=157] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=478 | total=742
+2026-05-10 23:13:03,652 | INFO    | AUC=0.951 | AP=0.947 | Brier=0.070 | P*70=0.647 | P*OPT=0.333 (TPR=0.87) | P*85=0.360 | P*95=0.073
+2026-05-10 23:13:03,815 | INFO    | === MC 59/100 | seed=158 ===
+2026-05-10 23:13:32,386 | INFO    | [seed=158] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=465 | total=729
+2026-05-10 23:13:32,547 | INFO    | AUC=0.948 | AP=0.943 | Brier=0.068 | P*70=0.660 | P*OPT=0.350 (TPR=0.90) | P*85=0.422 | P*95=0.079
+2026-05-10 23:13:32,710 | INFO    | === MC 60/100 | seed=159 ===
+2026-05-10 23:14:01,345 | INFO    | [seed=159] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=471 | total=735
+2026-05-10 23:14:01,506 | INFO    | AUC=0.950 | AP=0.942 | Brier=0.069 | P*70=0.735 | P*OPT=0.349 (TPR=0.91) | P*85=0.427 | P*95=0.094
+2026-05-10 23:14:01,669 | INFO    | === MC 61/100 | seed=160 ===
+2026-05-10 23:14:30,417 | INFO    | [seed=160] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=472 | total=736
+2026-05-10 23:14:30,581 | INFO    | AUC=0.921 | AP=0.900 | Brier=0.093 | P*70=0.675 | P*OPT=0.320 (TPR=0.91) | P*85=0.395 | P*95=0.087
+2026-05-10 23:14:30,744 | INFO    | === MC 62/100 | seed=161 ===
+2026-05-10 23:14:59,217 | INFO    | [seed=161] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=455 | total=719
+2026-05-10 23:14:59,380 | INFO    | AUC=0.945 | AP=0.919 | Brier=0.082 | P*70=0.724 | P*OPT=0.399 (TPR=0.90) | P*85=0.462 | P*95=0.136
+2026-05-10 23:14:59,542 | INFO    | === MC 63/100 | seed=162 ===
+2026-05-10 23:15:29,027 | INFO    | [seed=162] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=464 | total=728
+2026-05-10 23:15:29,187 | INFO    | AUC=0.955 | AP=0.942 | Brier=0.070 | P*70=0.710 | P*OPT=0.327 (TPR=0.92) | P*85=0.461 | P*95=0.109
+2026-05-10 23:15:29,347 | INFO    | === MC 64/100 | seed=163 ===
+2026-05-10 23:15:58,474 | INFO    | [seed=163] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=473 | total=737
+2026-05-10 23:15:58,642 | INFO    | AUC=0.941 | AP=0.930 | Brier=0.080 | P*70=0.787 | P*OPT=0.369 (TPR=0.91) | P*85=0.428 | P*95=0.105
+2026-05-10 23:15:58,806 | INFO    | === MC 65/100 | seed=164 ===
+2026-05-10 23:16:27,567 | INFO    | [seed=164] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=474 | total=738
+2026-05-10 23:16:27,729 | INFO    | AUC=0.955 | AP=0.939 | Brier=0.065 | P*70=0.596 | P*OPT=0.330 (TPR=0.91) | P*85=0.431 | P*95=0.117
+2026-05-10 23:16:27,890 | INFO    | === MC 66/100 | seed=165 ===
+2026-05-10 23:16:56,574 | INFO    | [seed=165] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=464 | total=728
+2026-05-10 23:16:56,740 | INFO    | AUC=0.963 | AP=0.955 | Brier=0.065 | P*70=0.633 | P*OPT=0.393 (TPR=0.89) | P*85=0.409 | P*95=0.130
+2026-05-10 23:16:56,904 | INFO    | === MC 67/100 | seed=166 ===
+2026-05-10 23:17:25,648 | INFO    | [seed=166] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=475 | total=739
+2026-05-10 23:17:25,814 | INFO    | AUC=0.943 | AP=0.934 | Brier=0.078 | P*70=0.826 | P*OPT=0.379 (TPR=0.91) | P*85=0.464 | P*95=0.066
+2026-05-10 23:17:25,976 | INFO    | === MC 68/100 | seed=167 ===
+2026-05-10 23:17:54,554 | INFO    | [seed=167] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 23:17:54,729 | INFO    | AUC=0.946 | AP=0.902 | Brier=0.075 | P*70=0.751 | P*OPT=0.421 (TPR=0.89) | P*85=0.501 | P*95=0.114
+2026-05-10 23:17:54,894 | INFO    | === MC 69/100 | seed=168 ===
+2026-05-10 23:18:23,783 | INFO    | [seed=168] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=464 | total=728
+2026-05-10 23:18:23,945 | INFO    | AUC=0.950 | AP=0.937 | Brier=0.078 | P*70=0.729 | P*OPT=0.433 (TPR=0.90) | P*85=0.524 | P*95=0.132
+2026-05-10 23:18:24,108 | INFO    | === MC 70/100 | seed=169 ===
+2026-05-10 23:18:52,871 | INFO    | [seed=169] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=457 | total=721
+2026-05-10 23:18:53,039 | INFO    | AUC=0.956 | AP=0.943 | Brier=0.072 | P*70=0.603 | P*OPT=0.362 (TPR=0.90) | P*85=0.395 | P*95=0.133
+2026-05-10 23:18:53,202 | INFO    | === MC 71/100 | seed=170 ===
+2026-05-10 23:19:22,217 | INFO    | [seed=170] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=470 | total=734
+2026-05-10 23:19:22,390 | INFO    | AUC=0.944 | AP=0.930 | Brier=0.072 | P*70=0.766 | P*OPT=0.397 (TPR=0.91) | P*85=0.470 | P*95=0.091
+2026-05-10 23:19:22,556 | INFO    | === MC 72/100 | seed=171 ===
+2026-05-10 23:19:51,439 | INFO    | [seed=171] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=470 | total=734
+2026-05-10 23:19:51,602 | INFO    | AUC=0.945 | AP=0.929 | Brier=0.077 | P*70=0.614 | P*OPT=0.334 (TPR=0.91) | P*85=0.472 | P*95=0.130
+2026-05-10 23:19:51,765 | INFO    | === MC 73/100 | seed=172 ===
+2026-05-10 23:20:22,735 | INFO    | [seed=172] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=456 | total=720
+2026-05-10 23:20:22,910 | INFO    | AUC=0.958 | AP=0.950 | Brier=0.067 | P*70=0.655 | P*OPT=0.379 (TPR=0.91) | P*85=0.427 | P*95=0.124
+2026-05-10 23:20:23,074 | INFO    | === MC 74/100 | seed=173 ===
+2026-05-10 23:20:52,371 | INFO    | [seed=173] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=466 | total=730
+2026-05-10 23:20:52,536 | INFO    | AUC=0.950 | AP=0.945 | Brier=0.070 | P*70=0.702 | P*OPT=0.393 (TPR=0.90) | P*85=0.458 | P*95=0.121
+2026-05-10 23:20:52,726 | INFO    | === MC 75/100 | seed=174 ===
+2026-05-10 23:21:21,922 | INFO    | [seed=174] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=455 | total=719
+2026-05-10 23:21:22,101 | INFO    | AUC=0.956 | AP=0.950 | Brier=0.071 | P*70=0.630 | P*OPT=0.472 (TPR=0.89) | P*85=0.472 | P*95=0.144
+2026-05-10 23:21:22,265 | INFO    | === MC 76/100 | seed=175 ===
+2026-05-10 23:21:50,946 | INFO    | [seed=175] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=456 | total=720
+2026-05-10 23:21:51,111 | INFO    | AUC=0.949 | AP=0.940 | Brier=0.077 | P*70=0.751 | P*OPT=0.474 (TPR=0.89) | P*85=0.474 | P*95=0.122
+2026-05-10 23:21:51,274 | INFO    | === MC 77/100 | seed=176 ===
+2026-05-10 23:22:20,116 | INFO    | [seed=176] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=474 | total=738
+2026-05-10 23:22:20,314 | INFO    | AUC=0.946 | AP=0.942 | Brier=0.075 | P*70=0.771 | P*OPT=0.458 (TPR=0.89) | P*85=0.476 | P*95=0.135
+2026-05-10 23:22:20,491 | INFO    | === MC 78/100 | seed=177 ===
+2026-05-10 23:22:49,270 | INFO    | [seed=177] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 23:22:49,437 | INFO    | AUC=0.938 | AP=0.918 | Brier=0.081 | P*70=0.729 | P*OPT=0.430 (TPR=0.90) | P*85=0.474 | P*95=0.083
+2026-05-10 23:22:49,600 | INFO    | === MC 79/100 | seed=178 ===
+2026-05-10 23:23:18,437 | INFO    | [seed=178] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=457 | total=721
+2026-05-10 23:23:18,605 | INFO    | AUC=0.953 | AP=0.940 | Brier=0.074 | P*70=0.509 | P*OPT=0.304 (TPR=0.92) | P*85=0.430 | P*95=0.145
+2026-05-10 23:23:18,768 | INFO    | === MC 80/100 | seed=179 ===
+2026-05-10 23:23:47,579 | INFO    | [seed=179] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=466 | total=730
+2026-05-10 23:23:47,753 | INFO    | AUC=0.949 | AP=0.937 | Brier=0.070 | P*70=0.651 | P*OPT=0.469 (TPR=0.89) | P*85=0.480 | P*95=0.121
+2026-05-10 23:23:47,917 | INFO    | === MC 81/100 | seed=180 ===
+2026-05-10 23:24:16,882 | INFO    | [seed=180] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=472 | total=736
+2026-05-10 23:24:17,049 | INFO    | AUC=0.946 | AP=0.941 | Brier=0.069 | P*70=0.794 | P*OPT=0.385 (TPR=0.91) | P*85=0.385 | P*95=0.085
+2026-05-10 23:24:17,212 | INFO    | === MC 82/100 | seed=181 ===
+2026-05-10 23:24:46,323 | INFO    | [seed=181] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 23:24:46,498 | INFO    | AUC=0.934 | AP=0.908 | Brier=0.085 | P*70=0.713 | P*OPT=0.433 (TPR=0.90) | P*85=0.486 | P*95=0.130
+2026-05-10 23:24:46,661 | INFO    | === MC 83/100 | seed=182 ===
+2026-05-10 23:25:16,856 | INFO    | [seed=182] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=471 | total=735
+2026-05-10 23:25:17,086 | INFO    | AUC=0.956 | AP=0.945 | Brier=0.072 | P*70=0.749 | P*OPT=0.301 (TPR=0.91) | P*85=0.476 | P*95=0.116
+2026-05-10 23:25:17,303 | INFO    | === MC 84/100 | seed=183 ===
+2026-05-10 23:25:47,050 | INFO    | [seed=183] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=471 | total=735
+2026-05-10 23:25:47,231 | INFO    | AUC=0.944 | AP=0.931 | Brier=0.080 | P*70=0.718 | P*OPT=0.356 (TPR=0.90) | P*85=0.470 | P*95=0.110
+2026-05-10 23:25:47,431 | INFO    | === MC 85/100 | seed=184 ===
+2026-05-10 23:26:17,096 | INFO    | [seed=184] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=459 | total=723
+2026-05-10 23:26:17,263 | INFO    | AUC=0.955 | AP=0.947 | Brier=0.071 | P*70=0.715 | P*OPT=0.447 (TPR=0.87) | P*85=0.447 | P*95=0.074
+2026-05-10 23:26:17,431 | INFO    | === MC 86/100 | seed=185 ===
+2026-05-10 23:26:46,800 | INFO    | [seed=185] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=476 | total=740
+2026-05-10 23:26:46,970 | INFO    | AUC=0.942 | AP=0.941 | Brier=0.070 | P*70=0.697 | P*OPT=0.349 (TPR=0.89) | P*85=0.453 | P*95=0.086
+2026-05-10 23:26:47,136 | INFO    | === MC 87/100 | seed=186 ===
+2026-05-10 23:27:16,601 | INFO    | [seed=186] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=465 | total=729
+2026-05-10 23:27:16,772 | INFO    | AUC=0.945 | AP=0.935 | Brier=0.076 | P*70=0.691 | P*OPT=0.395 (TPR=0.91) | P*85=0.492 | P*95=0.138
+2026-05-10 23:27:16,937 | INFO    | === MC 88/100 | seed=187 ===
+2026-05-10 23:27:46,370 | INFO    | [seed=187] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=464 | total=728
+2026-05-10 23:27:46,540 | INFO    | AUC=0.949 | AP=0.930 | Brier=0.080 | P*70=0.766 | P*OPT=0.367 (TPR=0.91) | P*85=0.449 | P*95=0.104
+2026-05-10 23:27:46,706 | INFO    | === MC 89/100 | seed=188 ===
+2026-05-10 23:28:16,080 | INFO    | [seed=188] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=471 | total=735
+2026-05-10 23:28:16,246 | INFO    | AUC=0.951 | AP=0.947 | Brier=0.068 | P*70=0.640 | P*OPT=0.443 (TPR=0.89) | P*85=0.443 | P*95=0.111
+2026-05-10 23:28:16,411 | INFO    | === MC 90/100 | seed=189 ===
+2026-05-10 23:28:45,913 | INFO    | [seed=189] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=469 | total=733
+2026-05-10 23:28:46,088 | INFO    | AUC=0.950 | AP=0.947 | Brier=0.068 | P*70=0.691 | P*OPT=0.494 (TPR=0.89) | P*85=0.494 | P*95=0.072
+2026-05-10 23:28:46,254 | INFO    | === MC 91/100 | seed=190 ===
+2026-05-10 23:29:15,778 | INFO    | [seed=190] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=471 | total=735
+2026-05-10 23:29:15,974 | INFO    | AUC=0.956 | AP=0.949 | Brier=0.065 | P*70=0.689 | P*OPT=0.422 (TPR=0.89) | P*85=0.473 | P*95=0.129
+2026-05-10 23:29:16,137 | INFO    | === MC 92/100 | seed=191 ===
+2026-05-10 23:29:45,626 | INFO    | [seed=191] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=457 | total=721
+2026-05-10 23:29:45,910 | INFO    | AUC=0.953 | AP=0.942 | Brier=0.075 | P*70=0.712 | P*OPT=0.354 (TPR=0.91) | P*85=0.412 | P*95=0.128
+2026-05-10 23:29:46,129 | INFO    | === MC 93/100 | seed=192 ===
+2026-05-10 23:30:16,581 | INFO    | [seed=192] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=468 | total=732
+2026-05-10 23:30:16,884 | INFO    | AUC=0.952 | AP=0.944 | Brier=0.070 | P*70=0.773 | P*OPT=0.474 (TPR=0.89) | P*85=0.483 | P*95=0.135
+2026-05-10 23:30:17,065 | INFO    | === MC 94/100 | seed=193 ===
+2026-05-10 23:30:46,417 | INFO    | [seed=193] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=465 | total=729
+2026-05-10 23:30:46,635 | INFO    | AUC=0.945 | AP=0.934 | Brier=0.073 | P*70=0.641 | P*OPT=0.349 (TPR=0.91) | P*85=0.434 | P*95=0.110
+2026-05-10 23:30:46,798 | INFO    | === MC 95/100 | seed=194 ===
+2026-05-10 23:31:16,039 | INFO    | [seed=194] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=459 | total=723
+2026-05-10 23:31:16,272 | INFO    | AUC=0.949 | AP=0.942 | Brier=0.073 | P*70=0.720 | P*OPT=0.430 (TPR=0.89) | P*85=0.430 | P*95=0.089
+2026-05-10 23:31:16,450 | INFO    | === MC 96/100 | seed=195 ===
+2026-05-10 23:31:45,343 | INFO    | [seed=195] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=462 | total=726
+2026-05-10 23:31:45,534 | INFO    | AUC=0.965 | AP=0.959 | Brier=0.062 | P*70=0.608 | P*OPT=0.368 (TPR=0.91) | P*85=0.386 | P*95=0.130
+2026-05-10 23:31:45,711 | INFO    | === MC 97/100 | seed=196 ===
+2026-05-10 23:32:14,519 | INFO    | [seed=196] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=462 | total=726
+2026-05-10 23:32:14,683 | INFO    | AUC=0.937 | AP=0.895 | Brier=0.086 | P*70=0.686 | P*OPT=0.373 (TPR=0.89) | P*85=0.373 | P*95=0.117
+2026-05-10 23:32:14,846 | INFO    | === MC 98/100 | seed=197 ===
+2026-05-10 23:32:43,579 | INFO    | [seed=197] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=471 | total=735
+2026-05-10 23:32:43,759 | INFO    | AUC=0.948 | AP=0.941 | Brier=0.072 | P*70=0.741 | P*OPT=0.360 (TPR=0.91) | P*85=0.445 | P*95=0.094
+2026-05-10 23:32:43,924 | INFO    | === MC 99/100 | seed=198 ===
+2026-05-10 23:33:12,776 | INFO    | [seed=198] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=478 | total=742
+2026-05-10 23:33:12,943 | INFO    | AUC=0.934 | AP=0.922 | Brier=0.084 | P*70=0.673 | P*OPT=0.393 (TPR=0.87) | P*85=0.393 | P*95=0.099
+2026-05-10 23:33:13,108 | INFO    | === MC 100/100 | seed=199 ===
+2026-05-10 23:33:41,936 | INFO    | [seed=199] su_type=2 | SI=265 | NO_eligible=26318 | NO_final=478 | total=742
+2026-05-10 23:33:42,102 | INFO    | AUC=0.925 | AP=0.909 | Brier=0.092 | P*70=0.745 | P*OPT=0.438 (TPR=0.87) | P*85=0.490 | P*95=0.062
+2026-05-10 23:34:06,765 | INFO    | NO acumulados de 100 corridas: 46837 filas guardadas en /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_no_events_all_runs.parquet
+2026-05-10 23:34:06,776 | INFO    | Curvas ROC de 100 corridas: 22014 filas guardadas en /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_roc_curves_mc.parquet
+2026-05-10 23:34:06,776 | INFO    | AUC mediana=0.9466 | AP mediana=0.9351 | Brier mediana=0.0745
+2026-05-10 23:34:06,776 | INFO    | run_star=76
+2026-05-10 23:34:06,851 | INFO    | === LISTO ===
+2026-05-10 23:34:06,851 | INFO    | Métricas:     /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_mc_metrics.csv
+2026-05-10 23:34:06,851 | INFO    | Thresholds:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_thresholds_mc.csv
+2026-05-10 23:34:06,851 | INFO    | Grilla agg:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs.parquet
+2026-05-10 23:34:06,851 | INFO    | Grilla x run: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs_per_run.parquet
+2026-05-10 23:34:06,851 | INFO    | Modelo final: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_run_star.joblib
+2026-05-10 23:34:06,851 | INFO    | Package:      /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_package.json
+2026-05-10 23:34:06,851 | INFO    | Dataset star: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_dataset_run_star.parquet
+2026-05-11 10:41:17,201 | INFO    | ======================================================================
+2026-05-11 10:41:17,201 | INFO    | INICIO: 2026-05-11T10:41:17
+2026-05-11 10:41:17,202 | INFO    | OUT_DIR: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/
+2026-05-11 10:41:17,202 | INFO    | Modelo: GAM Parte 2 — su_type=2 (ensayo)
+2026-05-11 10:41:17,202 | INFO    | N_MC=10 | RATIO_NO_SI=2 | EXCL_DAYS=30 | MIN_DIST_M=200
+2026-05-11 10:41:17,202 | INFO    | Filtro exposición: 1d>=5.0 mm | 30d>=50.0 mm
+2026-05-11 10:41:17,202 | INFO    | Cargando GPKG: /home/oisanchezp/Thesis/data/processed/su_susceptibles_con_inventario.gpkg
+2026-05-11 10:42:01,819 | INFO    | SU total: 55332 | tipos: [1.0, 2.0, 3.0, 4.0] | zonas: ['1', '2', '3', '4', '5']
+2026-05-11 10:42:01,858 | INFO    | su_type=2 | total=28993 | eventos=265 | no-eventos=28728
+2026-05-11 10:42:01,898 | INFO    | Fechas excluidas: 1707
+2026-05-11 10:42:01,898 | INFO    | Construyendo pool de pluvios y fechas candidatas...
+2026-05-11 10:42:16,695 | INFO    | Pluvios con series: 142 | con fechas candidatas: 142
+2026-05-11 10:42:16,712 | INFO    | === MC 1/10 | seed=100 ===
+2026-05-11 10:42:45,084 | INFO    | [seed=100] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 10:42:45,127 | INFO    | [seed=100] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 10:42:45,358 | INFO    | AUC=0.969 | AP=0.963 | Brier=0.056 | P*70=0.772 | P*OPT=0.199 (TPR=0.92) | P*85=0.460 | P*95=0.086
+2026-05-11 10:42:45,518 | INFO    | === MC 2/10 | seed=101 ===
+2026-05-11 10:43:13,871 | INFO    | [seed=101] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 10:43:13,912 | INFO    | [seed=101] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=478 | total=731
+2026-05-11 10:43:14,094 | INFO    | AUC=0.959 | AP=0.937 | Brier=0.067 | P*70=0.719 | P*OPT=0.335 (TPR=0.91) | P*85=0.406 | P*95=0.086
+2026-05-11 10:43:14,264 | INFO    | === MC 3/10 | seed=102 ===
+2026-05-11 10:43:42,463 | INFO    | [seed=102] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 10:43:42,504 | INFO    | [seed=102] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 10:43:42,683 | INFO    | AUC=0.957 | AP=0.947 | Brier=0.067 | P*70=0.786 | P*OPT=0.483 (TPR=0.86) | P*85=0.483 | P*95=0.067
+2026-05-11 10:43:42,857 | INFO    | === MC 4/10 | seed=103 ===
+2026-05-11 10:44:11,055 | INFO    | [seed=103] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 10:44:11,097 | INFO    | [seed=103] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=458 | total=711
+2026-05-11 10:44:11,277 | INFO    | AUC=0.951 | AP=0.937 | Brier=0.067 | P*70=0.784 | P*OPT=0.351 (TPR=0.91) | P*85=0.420 | P*95=0.071
+2026-05-11 10:44:11,438 | INFO    | === MC 5/10 | seed=104 ===
+2026-05-11 10:44:39,769 | INFO    | [seed=104] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 10:44:39,809 | INFO    | [seed=104] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=463 | total=716
+2026-05-11 10:44:39,985 | INFO    | AUC=0.963 | AP=0.955 | Brier=0.062 | P*70=0.848 | P*OPT=0.334 (TPR=0.91) | P*85=0.584 | P*95=0.077
+2026-05-11 10:44:40,145 | INFO    | === MC 6/10 | seed=105 ===
+2026-05-11 10:45:08,538 | INFO    | [seed=105] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 10:45:08,578 | INFO    | [seed=105] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=459 | total=712
+2026-05-11 10:45:08,744 | INFO    | AUC=0.957 | AP=0.943 | Brier=0.069 | P*70=0.776 | P*OPT=0.271 (TPR=0.91) | P*85=0.459 | P*95=0.071
+2026-05-11 10:45:08,904 | INFO    | === MC 7/10 | seed=106 ===
+2026-05-11 10:45:37,834 | INFO    | [seed=106] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 10:45:37,911 | INFO    | [seed=106] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=470 | total=723
+2026-05-11 10:45:38,076 | INFO    | AUC=0.953 | AP=0.920 | Brier=0.074 | P*70=0.750 | P*OPT=0.321 (TPR=0.89) | P*85=0.417 | P*95=0.053
+2026-05-11 10:45:38,237 | INFO    | === MC 8/10 | seed=107 ===
+2026-05-11 10:46:07,011 | INFO    | [seed=107] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 10:46:07,051 | INFO    | [seed=107] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=475 | total=728
+2026-05-11 10:46:07,229 | INFO    | AUC=0.963 | AP=0.952 | Brier=0.065 | P*70=0.693 | P*OPT=0.366 (TPR=0.88) | P*85=0.402 | P*95=0.070
+2026-05-11 10:46:07,389 | INFO    | === MC 9/10 | seed=108 ===
+2026-05-11 10:46:36,039 | INFO    | [seed=108] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 10:46:36,079 | INFO    | [seed=108] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 10:46:36,245 | INFO    | AUC=0.950 | AP=0.929 | Brier=0.074 | P*70=0.757 | P*OPT=0.280 (TPR=0.89) | P*85=0.457 | P*95=0.051
+2026-05-11 10:46:36,404 | INFO    | === MC 10/10 | seed=109 ===
+2026-05-11 10:47:04,724 | INFO    | [seed=109] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 10:47:04,763 | INFO    | [seed=109] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=461 | total=714
+2026-05-11 10:47:04,937 | INFO    | AUC=0.950 | AP=0.924 | Brier=0.069 | P*70=0.798 | P*OPT=0.299 (TPR=0.89) | P*85=0.561 | P*95=0.048
+2026-05-11 10:47:27,196 | INFO    | NO acumulados de 10 corridas: 4679 filas guardadas en /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_no_events_all_runs.parquet
+2026-05-11 10:47:27,198 | INFO    | Curvas ROC de 10 corridas: 2167 filas guardadas en /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_roc_curves_mc.parquet
+2026-05-11 10:47:27,199 | INFO    | AUC mediana=0.9571 | AP mediana=0.9398 | Brier mediana=0.0670
+2026-05-11 10:47:27,199 | INFO    | run_star=2
+2026-05-11 10:47:27,268 | INFO    | === LISTO ===
+2026-05-11 10:47:27,268 | INFO    | Métricas:     /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_mc_metrics.csv
+2026-05-11 10:47:27,269 | INFO    | Thresholds:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_thresholds_mc.csv
+2026-05-11 10:47:27,269 | INFO    | Grilla agg:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs.parquet
+2026-05-11 10:47:27,269 | INFO    | Grilla x run: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs_per_run.parquet
+2026-05-11 10:47:27,269 | INFO    | Modelo final: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_run_star.joblib
+2026-05-11 10:47:27,269 | INFO    | Package:      /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_package.json
+2026-05-11 10:47:27,269 | INFO    | Dataset star: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_dataset_run_star.parquet
+2026-05-11 11:29:05,322 | INFO    | ======================================================================
+2026-05-11 11:29:05,322 | INFO    | INICIO: 2026-05-11T11:29:05
+2026-05-11 11:29:05,322 | INFO    | OUT_DIR: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/
+2026-05-11 11:29:05,322 | INFO    | Modelo: GAM Parte 2 — su_type=2 (ensayo)
+2026-05-11 11:29:05,322 | INFO    | N_MC=100 | RATIO_NO_SI=2 | EXCL_DAYS=30 | MIN_DIST_M=200
+2026-05-11 11:29:05,322 | INFO    | Filtro exposición: 1d>=5.0 mm | 30d>=50.0 mm
+2026-05-11 11:29:05,322 | INFO    | Cargando GPKG: /home/oisanchezp/Thesis/data/processed/su_susceptibles_con_inventario.gpkg
+2026-05-11 11:29:49,264 | INFO    | SU total: 55332 | tipos: [1.0, 2.0, 3.0, 4.0] | zonas: ['1', '2', '3', '4', '5']
+2026-05-11 11:29:49,302 | INFO    | su_type=2 | total=28993 | eventos=265 | no-eventos=28728
+2026-05-11 11:29:49,342 | INFO    | Fechas excluidas: 1707
+2026-05-11 11:29:49,343 | INFO    | Construyendo pool de pluvios y fechas candidatas...
+2026-05-11 11:30:04,256 | INFO    | Pluvios con series: 142 | con fechas candidatas: 142
+2026-05-11 11:30:04,275 | INFO    | === MC 1/100 | seed=100 ===
+2026-05-11 11:30:33,557 | INFO    | [seed=100] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:30:33,599 | INFO    | [seed=100] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 11:30:33,824 | INFO    | AUC=0.969 | AP=0.963 | Brier=0.056 | P*70=0.772 | P*OPT=0.199 (TPR=0.92) | P*85=0.460 | P*95=0.086
+2026-05-11 11:30:33,985 | INFO    | === MC 2/100 | seed=101 ===
+2026-05-11 11:31:02,188 | INFO    | [seed=101] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:31:02,230 | INFO    | [seed=101] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=478 | total=731
+2026-05-11 11:31:02,483 | INFO    | AUC=0.959 | AP=0.937 | Brier=0.067 | P*70=0.719 | P*OPT=0.335 (TPR=0.91) | P*85=0.406 | P*95=0.086
+2026-05-11 11:31:02,662 | INFO    | === MC 3/100 | seed=102 ===
+2026-05-11 11:31:30,767 | INFO    | [seed=102] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:31:30,810 | INFO    | [seed=102] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 11:31:30,996 | INFO    | AUC=0.957 | AP=0.947 | Brier=0.067 | P*70=0.786 | P*OPT=0.483 (TPR=0.86) | P*85=0.483 | P*95=0.067
+2026-05-11 11:31:31,156 | INFO    | === MC 4/100 | seed=103 ===
+2026-05-11 11:31:59,332 | INFO    | [seed=103] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:31:59,371 | INFO    | [seed=103] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=458 | total=711
+2026-05-11 11:31:59,563 | INFO    | AUC=0.951 | AP=0.937 | Brier=0.067 | P*70=0.784 | P*OPT=0.351 (TPR=0.91) | P*85=0.420 | P*95=0.071
+2026-05-11 11:31:59,724 | INFO    | === MC 5/100 | seed=104 ===
+2026-05-11 11:32:27,649 | INFO    | [seed=104] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:32:27,688 | INFO    | [seed=104] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=463 | total=716
+2026-05-11 11:32:27,883 | INFO    | AUC=0.963 | AP=0.955 | Brier=0.062 | P*70=0.848 | P*OPT=0.334 (TPR=0.91) | P*85=0.584 | P*95=0.077
+2026-05-11 11:32:28,046 | INFO    | === MC 6/100 | seed=105 ===
+2026-05-11 11:32:56,149 | INFO    | [seed=105] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:32:56,189 | INFO    | [seed=105] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=459 | total=712
+2026-05-11 11:32:56,362 | INFO    | AUC=0.957 | AP=0.943 | Brier=0.069 | P*70=0.776 | P*OPT=0.271 (TPR=0.91) | P*85=0.459 | P*95=0.071
+2026-05-11 11:32:56,525 | INFO    | === MC 7/100 | seed=106 ===
+2026-05-11 11:33:24,721 | INFO    | [seed=106] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:33:24,798 | INFO    | [seed=106] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=470 | total=723
+2026-05-11 11:33:24,972 | INFO    | AUC=0.953 | AP=0.920 | Brier=0.074 | P*70=0.750 | P*OPT=0.321 (TPR=0.89) | P*85=0.417 | P*95=0.053
+2026-05-11 11:33:25,134 | INFO    | === MC 8/100 | seed=107 ===
+2026-05-11 11:33:53,477 | INFO    | [seed=107] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:33:53,517 | INFO    | [seed=107] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=475 | total=728
+2026-05-11 11:33:53,694 | INFO    | AUC=0.963 | AP=0.952 | Brier=0.065 | P*70=0.693 | P*OPT=0.366 (TPR=0.88) | P*85=0.402 | P*95=0.070
+2026-05-11 11:33:53,854 | INFO    | === MC 9/100 | seed=108 ===
+2026-05-11 11:34:21,966 | INFO    | [seed=108] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:34:22,005 | INFO    | [seed=108] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 11:34:22,176 | INFO    | AUC=0.950 | AP=0.929 | Brier=0.074 | P*70=0.757 | P*OPT=0.280 (TPR=0.89) | P*85=0.457 | P*95=0.051
+2026-05-11 11:34:22,335 | INFO    | === MC 10/100 | seed=109 ===
+2026-05-11 11:34:50,359 | INFO    | [seed=109] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:34:50,399 | INFO    | [seed=109] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=461 | total=714
+2026-05-11 11:34:50,574 | INFO    | AUC=0.950 | AP=0.924 | Brier=0.069 | P*70=0.798 | P*OPT=0.299 (TPR=0.89) | P*85=0.561 | P*95=0.048
+2026-05-11 11:34:50,734 | INFO    | === MC 11/100 | seed=110 ===
+2026-05-11 11:35:19,052 | INFO    | [seed=110] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:35:19,091 | INFO    | [seed=110] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 11:35:19,305 | INFO    | AUC=0.954 | AP=0.925 | Brier=0.073 | P*70=0.699 | P*OPT=0.244 (TPR=0.91) | P*85=0.433 | P*95=0.064
+2026-05-11 11:35:19,465 | INFO    | === MC 12/100 | seed=111 ===
+2026-05-11 11:35:47,435 | INFO    | [seed=111] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:35:47,475 | INFO    | [seed=111] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=490 | total=743
+2026-05-11 11:35:47,686 | INFO    | AUC=0.948 | AP=0.914 | Brier=0.081 | P*70=0.723 | P*OPT=0.303 (TPR=0.95) | P*85=0.522 | P*95=0.278
+2026-05-11 11:35:47,855 | INFO    | === MC 13/100 | seed=112 ===
+2026-05-11 11:36:16,734 | INFO    | [seed=112] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:36:16,775 | INFO    | [seed=112] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 11:36:16,970 | INFO    | AUC=0.961 | AP=0.932 | Brier=0.071 | P*70=0.758 | P*OPT=0.444 (TPR=0.87) | P*85=0.444 | P*95=0.066
+2026-05-11 11:36:17,151 | INFO    | === MC 14/100 | seed=113 ===
+2026-05-11 11:36:46,410 | INFO    | [seed=113] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:36:46,452 | INFO    | [seed=113] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=466 | total=719
+2026-05-11 11:36:46,642 | INFO    | AUC=0.938 | AP=0.923 | Brier=0.077 | P*70=0.792 | P*OPT=0.273 (TPR=0.91) | P*85=0.493 | P*95=0.055
+2026-05-11 11:36:46,826 | INFO    | === MC 15/100 | seed=114 ===
+2026-05-11 11:37:15,766 | INFO    | [seed=114] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:37:15,807 | INFO    | [seed=114] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=464 | total=717
+2026-05-11 11:37:15,986 | INFO    | AUC=0.957 | AP=0.938 | Brier=0.073 | P*70=0.729 | P*OPT=0.343 (TPR=0.91) | P*85=0.557 | P*95=0.067
+2026-05-11 11:37:16,148 | INFO    | === MC 16/100 | seed=115 ===
+2026-05-11 11:37:44,623 | INFO    | [seed=115] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:37:44,703 | INFO    | [seed=115] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=476 | total=729
+2026-05-11 11:37:44,875 | INFO    | AUC=0.961 | AP=0.955 | Brier=0.054 | P*70=0.725 | P*OPT=0.313 (TPR=0.91) | P*85=0.445 | P*95=0.061
+2026-05-11 11:37:45,040 | INFO    | === MC 17/100 | seed=116 ===
+2026-05-11 11:38:13,491 | INFO    | [seed=116] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:38:13,532 | INFO    | [seed=116] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=468 | total=721
+2026-05-11 11:38:13,712 | INFO    | AUC=0.955 | AP=0.946 | Brier=0.063 | P*70=0.738 | P*OPT=0.361 (TPR=0.88) | P*85=0.394 | P*95=0.055
+2026-05-11 11:38:13,875 | INFO    | === MC 18/100 | seed=117 ===
+2026-05-11 11:38:42,174 | INFO    | [seed=117] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:38:42,214 | INFO    | [seed=117] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=459 | total=712
+2026-05-11 11:38:42,381 | INFO    | AUC=0.952 | AP=0.932 | Brier=0.071 | P*70=0.704 | P*OPT=0.523 (TPR=0.88) | P*85=0.567 | P*95=0.086
+2026-05-11 11:38:42,545 | INFO    | === MC 19/100 | seed=118 ===
+2026-05-11 11:39:11,000 | INFO    | [seed=118] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:39:11,042 | INFO    | [seed=118] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=467 | total=720
+2026-05-11 11:39:11,217 | INFO    | AUC=0.937 | AP=0.895 | Brier=0.082 | P*70=0.670 | P*OPT=0.286 (TPR=0.91) | P*85=0.371 | P*95=0.067
+2026-05-11 11:39:11,378 | INFO    | === MC 20/100 | seed=119 ===
+2026-05-11 11:39:39,366 | INFO    | [seed=119] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:39:39,406 | INFO    | [seed=119] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=465 | total=718
+2026-05-11 11:39:39,582 | INFO    | AUC=0.966 | AP=0.955 | Brier=0.057 | P*70=0.822 | P*OPT=0.401 (TPR=0.88) | P*85=0.551 | P*95=0.084
+2026-05-11 11:39:39,751 | INFO    | === MC 21/100 | seed=120 ===
+2026-05-11 11:40:08,667 | INFO    | [seed=120] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:40:08,707 | INFO    | [seed=120] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=479 | total=732
+2026-05-11 11:40:08,876 | INFO    | AUC=0.958 | AP=0.948 | Brier=0.063 | P*70=0.739 | P*OPT=0.398 (TPR=0.89) | P*85=0.398 | P*95=0.076
+2026-05-11 11:40:09,044 | INFO    | === MC 22/100 | seed=121 ===
+2026-05-11 11:40:37,571 | INFO    | [seed=121] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:40:37,613 | INFO    | [seed=121] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=468 | total=721
+2026-05-11 11:40:37,793 | INFO    | AUC=0.957 | AP=0.952 | Brier=0.062 | P*70=0.812 | P*OPT=0.421 (TPR=0.88) | P*85=0.430 | P*95=0.064
+2026-05-11 11:40:37,958 | INFO    | === MC 23/100 | seed=122 ===
+2026-05-11 11:41:07,170 | INFO    | [seed=122] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:41:07,211 | INFO    | [seed=122] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 11:41:07,385 | INFO    | AUC=0.957 | AP=0.932 | Brier=0.071 | P*70=0.771 | P*OPT=0.313 (TPR=0.88) | P*85=0.404 | P*95=0.051
+2026-05-11 11:41:07,552 | INFO    | === MC 24/100 | seed=123 ===
+2026-05-11 11:41:36,154 | INFO    | [seed=123] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:41:36,231 | INFO    | [seed=123] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 11:41:36,405 | INFO    | AUC=0.949 | AP=0.937 | Brier=0.071 | P*70=0.712 | P*OPT=0.585 (TPR=0.83) | P*85=0.509 | P*95=0.111
+2026-05-11 11:41:36,566 | INFO    | === MC 25/100 | seed=124 ===
+2026-05-11 11:42:04,911 | INFO    | [seed=124] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:42:04,951 | INFO    | [seed=124] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=457 | total=710
+2026-05-11 11:42:05,115 | INFO    | AUC=0.959 | AP=0.945 | Brier=0.066 | P*70=0.770 | P*OPT=0.478 (TPR=0.87) | P*85=0.478 | P*95=0.073
+2026-05-11 11:42:05,277 | INFO    | === MC 26/100 | seed=125 ===
+2026-05-11 11:42:33,776 | INFO    | [seed=125] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:42:33,816 | INFO    | [seed=125] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=470 | total=723
+2026-05-11 11:42:33,990 | INFO    | AUC=0.959 | AP=0.942 | Brier=0.074 | P*70=0.764 | P*OPT=0.610 (TPR=0.84) | P*85=0.434 | P*95=0.051
+2026-05-11 11:42:34,151 | INFO    | === MC 27/100 | seed=126 ===
+2026-05-11 11:43:02,449 | INFO    | [seed=126] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:43:02,489 | INFO    | [seed=126] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=474 | total=727
+2026-05-11 11:43:02,656 | INFO    | AUC=0.955 | AP=0.939 | Brier=0.072 | P*70=0.752 | P*OPT=0.359 (TPR=0.88) | P*85=0.435 | P*95=0.086
+2026-05-11 11:43:02,819 | INFO    | === MC 28/100 | seed=127 ===
+2026-05-11 11:43:31,095 | INFO    | [seed=127] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:43:31,137 | INFO    | [seed=127] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=481 | total=734
+2026-05-11 11:43:31,306 | INFO    | AUC=0.943 | AP=0.922 | Brier=0.078 | P*70=0.671 | P*OPT=0.342 (TPR=0.89) | P*85=0.487 | P*95=0.043
+2026-05-11 11:43:31,468 | INFO    | === MC 29/100 | seed=128 ===
+2026-05-11 11:43:59,479 | INFO    | [seed=128] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:43:59,519 | INFO    | [seed=128] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=471 | total=724
+2026-05-11 11:43:59,730 | INFO    | AUC=0.958 | AP=0.937 | Brier=0.065 | P*70=0.744 | P*OPT=0.192 (TPR=0.92) | P*85=0.409 | P*95=0.072
+2026-05-11 11:43:59,897 | INFO    | === MC 30/100 | seed=129 ===
+2026-05-11 11:44:28,083 | INFO    | [seed=129] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:44:28,125 | INFO    | [seed=129] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 11:44:28,344 | INFO    | AUC=0.951 | AP=0.935 | Brier=0.070 | P*70=0.708 | P*OPT=0.666 (TPR=0.83) | P*85=0.491 | P*95=0.051
+2026-05-11 11:44:28,505 | INFO    | === MC 31/100 | seed=130 ===
+2026-05-11 11:44:56,512 | INFO    | [seed=130] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:44:56,552 | INFO    | [seed=130] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=457 | total=710
+2026-05-11 11:44:56,765 | INFO    | AUC=0.949 | AP=0.938 | Brier=0.070 | P*70=0.839 | P*OPT=0.395 (TPR=0.91) | P*85=0.586 | P*95=0.084
+2026-05-11 11:44:56,926 | INFO    | === MC 32/100 | seed=131 ===
+2026-05-11 11:45:25,180 | INFO    | [seed=131] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:45:25,220 | INFO    | [seed=131] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=464 | total=717
+2026-05-11 11:45:25,469 | INFO    | AUC=0.956 | AP=0.941 | Brier=0.072 | P*70=0.659 | P*OPT=0.304 (TPR=0.91) | P*85=0.472 | P*95=0.061
+2026-05-11 11:45:25,631 | INFO    | === MC 33/100 | seed=132 ===
+2026-05-11 11:45:53,427 | INFO    | [seed=132] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:45:53,466 | INFO    | [seed=132] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=477 | total=730
+2026-05-11 11:45:53,681 | INFO    | AUC=0.948 | AP=0.929 | Brier=0.073 | P*70=0.703 | P*OPT=0.204 (TPR=0.92) | P*85=0.464 | P*95=0.069
+2026-05-11 11:45:53,841 | INFO    | === MC 34/100 | seed=133 ===
+2026-05-11 11:46:22,622 | INFO    | [seed=133] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:46:22,701 | INFO    | [seed=133] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=475 | total=728
+2026-05-11 11:46:22,917 | INFO    | AUC=0.958 | AP=0.950 | Brier=0.063 | P*70=0.757 | P*OPT=0.357 (TPR=0.89) | P*85=0.464 | P*95=0.095
+2026-05-11 11:46:23,078 | INFO    | === MC 35/100 | seed=134 ===
+2026-05-11 11:46:51,191 | INFO    | [seed=134] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:46:51,232 | INFO    | [seed=134] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 11:46:51,455 | INFO    | AUC=0.937 | AP=0.914 | Brier=0.083 | P*70=0.657 | P*OPT=0.318 (TPR=0.89) | P*85=0.359 | P*95=0.046
+2026-05-11 11:46:51,617 | INFO    | === MC 36/100 | seed=135 ===
+2026-05-11 11:47:19,894 | INFO    | [seed=135] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:47:19,933 | INFO    | [seed=135] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 11:47:20,100 | INFO    | AUC=0.943 | AP=0.916 | Brier=0.074 | P*70=0.755 | P*OPT=0.442 (TPR=0.88) | P*85=0.482 | P*95=0.038
+2026-05-11 11:47:20,260 | INFO    | === MC 37/100 | seed=136 ===
+2026-05-11 11:47:48,471 | INFO    | [seed=136] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:47:48,513 | INFO    | [seed=136] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 11:47:48,681 | INFO    | AUC=0.950 | AP=0.927 | Brier=0.077 | P*70=0.769 | P*OPT=0.304 (TPR=0.89) | P*85=0.485 | P*95=0.067
+2026-05-11 11:47:48,845 | INFO    | === MC 38/100 | seed=137 ===
+2026-05-11 11:48:17,256 | INFO    | [seed=137] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:48:17,296 | INFO    | [seed=137] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=476 | total=729
+2026-05-11 11:48:17,459 | INFO    | AUC=0.957 | AP=0.943 | Brier=0.070 | P*70=0.727 | P*OPT=0.421 (TPR=0.87) | P*85=0.421 | P*95=0.055
+2026-05-11 11:48:17,619 | INFO    | === MC 39/100 | seed=138 ===
+2026-05-11 11:48:45,954 | INFO    | [seed=138] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:48:45,993 | INFO    | [seed=138] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 11:48:46,157 | INFO    | AUC=0.952 | AP=0.930 | Brier=0.068 | P*70=0.751 | P*OPT=0.292 (TPR=0.89) | P*85=0.474 | P*95=0.074
+2026-05-11 11:48:46,318 | INFO    | === MC 40/100 | seed=139 ===
+2026-05-11 11:49:14,336 | INFO    | [seed=139] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:49:14,376 | INFO    | [seed=139] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=466 | total=719
+2026-05-11 11:49:14,541 | INFO    | AUC=0.953 | AP=0.932 | Brier=0.071 | P*70=0.741 | P*OPT=0.367 (TPR=0.88) | P*85=0.442 | P*95=0.067
+2026-05-11 11:49:14,702 | INFO    | === MC 41/100 | seed=140 ===
+2026-05-11 11:49:42,465 | INFO    | [seed=140] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:49:42,504 | INFO    | [seed=140] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=475 | total=728
+2026-05-11 11:49:42,667 | INFO    | AUC=0.940 | AP=0.912 | Brier=0.085 | P*70=0.698 | P*OPT=0.302 (TPR=0.91) | P*85=0.383 | P*95=0.047
+2026-05-11 11:49:42,851 | INFO    | === MC 42/100 | seed=141 ===
+2026-05-11 11:50:11,312 | INFO    | [seed=141] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:50:11,354 | INFO    | [seed=141] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=463 | total=716
+2026-05-11 11:50:11,555 | INFO    | AUC=0.958 | AP=0.953 | Brier=0.058 | P*70=0.762 | P*OPT=0.343 (TPR=0.91) | P*85=0.343 | P*95=0.063
+2026-05-11 11:50:11,725 | INFO    | === MC 43/100 | seed=142 ===
+2026-05-11 11:50:39,714 | INFO    | [seed=142] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:50:39,753 | INFO    | [seed=142] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=481 | total=734
+2026-05-11 11:50:39,926 | INFO    | AUC=0.947 | AP=0.924 | Brier=0.081 | P*70=0.725 | P*OPT=0.426 (TPR=0.88) | P*85=0.426 | P*95=0.088
+2026-05-11 11:50:40,089 | INFO    | === MC 44/100 | seed=143 ===
+2026-05-11 11:51:09,132 | INFO    | [seed=143] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:51:09,173 | INFO    | [seed=143] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=461 | total=714
+2026-05-11 11:51:09,360 | INFO    | AUC=0.955 | AP=0.929 | Brier=0.067 | P*70=0.805 | P*OPT=0.335 (TPR=0.91) | P*85=0.457 | P*95=0.068
+2026-05-11 11:51:09,521 | INFO    | === MC 45/100 | seed=144 ===
+2026-05-11 11:51:37,817 | INFO    | [seed=144] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:51:37,856 | INFO    | [seed=144] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=468 | total=721
+2026-05-11 11:51:38,027 | INFO    | AUC=0.947 | AP=0.911 | Brier=0.080 | P*70=0.802 | P*OPT=0.311 (TPR=0.88) | P*85=0.311 | P*95=0.019
+2026-05-11 11:51:38,188 | INFO    | === MC 46/100 | seed=145 ===
+2026-05-11 11:52:06,050 | INFO    | [seed=145] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:52:06,089 | INFO    | [seed=145] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 11:52:06,263 | INFO    | AUC=0.950 | AP=0.928 | Brier=0.075 | P*70=0.722 | P*OPT=0.252 (TPR=0.88) | P*85=0.399 | P*95=0.049
+2026-05-11 11:52:06,424 | INFO    | === MC 47/100 | seed=146 ===
+2026-05-11 11:52:34,329 | INFO    | [seed=146] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:52:34,369 | INFO    | [seed=146] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=475 | total=728
+2026-05-11 11:52:34,540 | INFO    | AUC=0.934 | AP=0.901 | Brier=0.088 | P*70=0.706 | P*OPT=0.268 (TPR=0.91) | P*85=0.416 | P*95=0.092
+2026-05-11 11:52:34,705 | INFO    | === MC 48/100 | seed=147 ===
+2026-05-11 11:53:02,575 | INFO    | [seed=147] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:53:02,617 | INFO    | [seed=147] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 11:53:02,791 | INFO    | AUC=0.946 | AP=0.921 | Brier=0.081 | P*70=0.735 | P*OPT=0.321 (TPR=0.89) | P*85=0.423 | P*95=0.070
+2026-05-11 11:53:02,954 | INFO    | === MC 49/100 | seed=148 ===
+2026-05-11 11:53:31,113 | INFO    | [seed=148] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:53:31,155 | INFO    | [seed=148] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=471 | total=724
+2026-05-11 11:53:31,324 | INFO    | AUC=0.947 | AP=0.907 | Brier=0.077 | P*70=0.714 | P*OPT=0.205 (TPR=0.92) | P*85=0.427 | P*95=0.037
+2026-05-11 11:53:31,486 | INFO    | === MC 50/100 | seed=149 ===
+2026-05-11 11:53:59,333 | INFO    | [seed=149] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:53:59,373 | INFO    | [seed=149] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=471 | total=724
+2026-05-11 11:53:59,546 | INFO    | AUC=0.954 | AP=0.936 | Brier=0.075 | P*70=0.772 | P*OPT=0.384 (TPR=0.88) | P*85=0.384 | P*95=0.057
+2026-05-11 11:53:59,695 | INFO    | === MC 51/100 | seed=150 ===
+2026-05-11 11:54:28,089 | INFO    | [seed=150] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:54:28,170 | INFO    | [seed=150] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 11:54:28,343 | INFO    | AUC=0.936 | AP=0.904 | Brier=0.082 | P*70=0.766 | P*OPT=0.294 (TPR=0.91) | P*85=0.375 | P*95=0.073
+2026-05-11 11:54:28,505 | INFO    | === MC 52/100 | seed=151 ===
+2026-05-11 11:54:56,490 | INFO    | [seed=151] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:54:56,531 | INFO    | [seed=151] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 11:54:56,705 | INFO    | AUC=0.952 | AP=0.934 | Brier=0.075 | P*70=0.807 | P*OPT=0.509 (TPR=0.86) | P*85=0.509 | P*95=0.085
+2026-05-11 11:54:56,869 | INFO    | === MC 53/100 | seed=152 ===
+2026-05-11 11:55:25,364 | INFO    | [seed=152] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:55:25,404 | INFO    | [seed=152] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=451 | total=704
+2026-05-11 11:55:25,596 | INFO    | AUC=0.969 | AP=0.957 | Brier=0.062 | P*70=0.743 | P*OPT=0.420 (TPR=0.88) | P*85=0.420 | P*95=0.065
+2026-05-11 11:55:25,757 | INFO    | === MC 54/100 | seed=153 ===
+2026-05-11 11:55:53,833 | INFO    | [seed=153] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:55:53,873 | INFO    | [seed=153] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=465 | total=718
+2026-05-11 11:55:54,072 | INFO    | AUC=0.946 | AP=0.918 | Brier=0.072 | P*70=0.673 | P*OPT=0.365 (TPR=0.89) | P*85=0.384 | P*95=0.055
+2026-05-11 11:55:54,245 | INFO    | === MC 55/100 | seed=154 ===
+2026-05-11 11:56:23,546 | INFO    | [seed=154] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:56:23,588 | INFO    | [seed=154] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=459 | total=712
+2026-05-11 11:56:23,796 | INFO    | AUC=0.954 | AP=0.938 | Brier=0.065 | P*70=0.688 | P*OPT=0.328 (TPR=0.89) | P*85=0.564 | P*95=0.094
+2026-05-11 11:56:23,974 | INFO    | === MC 56/100 | seed=155 ===
+2026-05-11 11:56:52,045 | INFO    | [seed=155] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:56:52,084 | INFO    | [seed=155] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=471 | total=724
+2026-05-11 11:56:52,247 | INFO    | AUC=0.967 | AP=0.953 | Brier=0.062 | P*70=0.660 | P*OPT=0.323 (TPR=0.89) | P*85=0.428 | P*95=0.068
+2026-05-11 11:56:52,407 | INFO    | === MC 57/100 | seed=156 ===
+2026-05-11 11:57:20,458 | INFO    | [seed=156] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:57:20,497 | INFO    | [seed=156] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=474 | total=727
+2026-05-11 11:57:20,670 | INFO    | AUC=0.941 | AP=0.916 | Brier=0.080 | P*70=0.788 | P*OPT=0.528 (TPR=0.87) | P*85=0.528 | P*95=0.070
+2026-05-11 11:57:20,830 | INFO    | === MC 58/100 | seed=157 ===
+2026-05-11 11:57:48,327 | INFO    | [seed=157] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:57:48,366 | INFO    | [seed=157] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=478 | total=731
+2026-05-11 11:57:48,531 | INFO    | AUC=0.963 | AP=0.956 | Brier=0.063 | P*70=0.602 | P*OPT=0.349 (TPR=0.88) | P*85=0.448 | P*95=0.070
+2026-05-11 11:57:48,693 | INFO    | === MC 59/100 | seed=158 ===
+2026-05-11 11:58:16,347 | INFO    | [seed=158] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:58:16,385 | INFO    | [seed=158] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=465 | total=718
+2026-05-11 11:58:16,548 | INFO    | AUC=0.954 | AP=0.945 | Brier=0.065 | P*70=0.779 | P*OPT=0.271 (TPR=0.91) | P*85=0.412 | P*95=0.049
+2026-05-11 11:58:16,708 | INFO    | === MC 60/100 | seed=159 ===
+2026-05-11 11:58:44,355 | INFO    | [seed=159] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:58:44,435 | INFO    | [seed=159] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=471 | total=724
+2026-05-11 11:58:44,603 | INFO    | AUC=0.965 | AP=0.952 | Brier=0.062 | P*70=0.763 | P*OPT=0.256 (TPR=0.91) | P*85=0.540 | P*95=0.054
+2026-05-11 11:58:44,766 | INFO    | === MC 61/100 | seed=160 ===
+2026-05-11 11:59:12,743 | INFO    | [seed=160] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:59:12,783 | INFO    | [seed=160] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=472 | total=725
+2026-05-11 11:59:12,947 | INFO    | AUC=0.942 | AP=0.914 | Brier=0.080 | P*70=0.710 | P*OPT=0.503 (TPR=0.84) | P*85=0.356 | P*95=0.075
+2026-05-11 11:59:13,108 | INFO    | === MC 62/100 | seed=161 ===
+2026-05-11 11:59:40,802 | INFO    | [seed=161] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 11:59:40,841 | INFO    | [seed=161] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=455 | total=708
+2026-05-11 11:59:41,003 | INFO    | AUC=0.949 | AP=0.926 | Brier=0.074 | P*70=0.694 | P*OPT=0.545 (TPR=0.86) | P*85=0.545 | P*95=0.072
+2026-05-11 11:59:41,163 | INFO    | === MC 63/100 | seed=162 ===
+2026-05-11 12:00:09,869 | INFO    | [seed=162] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:00:09,909 | INFO    | [seed=162] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=464 | total=717
+2026-05-11 12:00:10,095 | INFO    | AUC=0.956 | AP=0.945 | Brier=0.064 | P*70=0.857 | P*OPT=0.430 (TPR=0.88) | P*85=0.430 | P*95=0.051
+2026-05-11 12:00:10,284 | INFO    | === MC 64/100 | seed=163 ===
+2026-05-11 12:00:38,633 | INFO    | [seed=163] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:00:38,675 | INFO    | [seed=163] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=473 | total=726
+2026-05-11 12:00:38,852 | INFO    | AUC=0.952 | AP=0.938 | Brier=0.073 | P*70=0.810 | P*OPT=0.184 (TPR=0.92) | P*85=0.427 | P*95=0.054
+2026-05-11 12:00:39,020 | INFO    | === MC 65/100 | seed=164 ===
+2026-05-11 12:01:08,346 | INFO    | [seed=164] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:01:08,386 | INFO    | [seed=164] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=474 | total=727
+2026-05-11 12:01:08,572 | INFO    | AUC=0.956 | AP=0.933 | Brier=0.065 | P*70=0.683 | P*OPT=0.271 (TPR=0.91) | P*85=0.399 | P*95=0.064
+2026-05-11 12:01:08,734 | INFO    | === MC 66/100 | seed=165 ===
+2026-05-11 12:01:36,890 | INFO    | [seed=165] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:01:36,930 | INFO    | [seed=165] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=464 | total=717
+2026-05-11 12:01:37,101 | INFO    | AUC=0.965 | AP=0.955 | Brier=0.060 | P*70=0.685 | P*OPT=0.294 (TPR=0.91) | P*85=0.485 | P*95=0.069
+2026-05-11 12:01:37,262 | INFO    | === MC 67/100 | seed=166 ===
+2026-05-11 12:02:05,309 | INFO    | [seed=166] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:02:05,349 | INFO    | [seed=166] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=475 | total=728
+2026-05-11 12:02:05,519 | INFO    | AUC=0.943 | AP=0.926 | Brier=0.079 | P*70=0.749 | P*OPT=0.287 (TPR=0.91) | P*85=0.368 | P*95=0.041
+2026-05-11 12:02:05,681 | INFO    | === MC 68/100 | seed=167 ===
+2026-05-11 12:02:33,879 | INFO    | [seed=167] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:02:33,920 | INFO    | [seed=167] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 12:02:34,095 | INFO    | AUC=0.955 | AP=0.922 | Brier=0.070 | P*70=0.712 | P*OPT=0.471 (TPR=0.87) | P*85=0.471 | P*95=0.049
+2026-05-11 12:02:34,258 | INFO    | === MC 69/100 | seed=168 ===
+2026-05-11 12:03:02,733 | INFO    | [seed=168] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:03:02,776 | INFO    | [seed=168] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=464 | total=717
+2026-05-11 12:03:02,966 | INFO    | AUC=0.952 | AP=0.936 | Brier=0.078 | P*70=0.814 | P*OPT=0.550 (TPR=0.87) | P*85=0.602 | P*95=0.066
+2026-05-11 12:03:03,133 | INFO    | === MC 70/100 | seed=169 ===
+2026-05-11 12:03:31,702 | INFO    | [seed=169] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:03:31,790 | INFO    | [seed=169] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=457 | total=710
+2026-05-11 12:03:31,956 | INFO    | AUC=0.956 | AP=0.946 | Brier=0.067 | P*70=0.720 | P*OPT=0.329 (TPR=0.89) | P*85=0.339 | P*95=0.064
+2026-05-11 12:03:32,121 | INFO    | === MC 71/100 | seed=170 ===
+2026-05-11 12:04:00,166 | INFO    | [seed=170] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:04:00,206 | INFO    | [seed=170] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=470 | total=723
+2026-05-11 12:04:00,375 | INFO    | AUC=0.956 | AP=0.932 | Brier=0.069 | P*70=0.852 | P*OPT=0.312 (TPR=0.89) | P*85=0.418 | P*95=0.039
+2026-05-11 12:04:00,537 | INFO    | === MC 72/100 | seed=171 ===
+2026-05-11 12:04:28,565 | INFO    | [seed=171] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:04:28,604 | INFO    | [seed=171] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=470 | total=723
+2026-05-11 12:04:28,770 | INFO    | AUC=0.918 | AP=0.871 | Brier=0.096 | P*70=0.586 | P*OPT=0.415 (TPR=0.86) | P*85=0.415 | P*95=0.049
+2026-05-11 12:04:28,933 | INFO    | === MC 73/100 | seed=172 ===
+2026-05-11 12:04:56,720 | INFO    | [seed=172] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:04:56,759 | INFO    | [seed=172] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=456 | total=709
+2026-05-11 12:04:56,926 | INFO    | AUC=0.957 | AP=0.949 | Brier=0.060 | P*70=0.819 | P*OPT=0.548 (TPR=0.87) | P*85=0.548 | P*95=0.042
+2026-05-11 12:04:57,089 | INFO    | === MC 74/100 | seed=173 ===
+2026-05-11 12:05:25,713 | INFO    | [seed=173] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:05:25,753 | INFO    | [seed=173] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=466 | total=719
+2026-05-11 12:05:25,924 | INFO    | AUC=0.962 | AP=0.950 | Brier=0.065 | P*70=0.736 | P*OPT=0.412 (TPR=0.87) | P*85=0.412 | P*95=0.060
+2026-05-11 12:05:26,086 | INFO    | === MC 75/100 | seed=174 ===
+2026-05-11 12:05:54,400 | INFO    | [seed=174] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:05:54,440 | INFO    | [seed=174] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=455 | total=708
+2026-05-11 12:05:54,621 | INFO    | AUC=0.944 | AP=0.939 | Brier=0.069 | P*70=0.612 | P*OPT=0.289 (TPR=0.91) | P*85=0.521 | P*95=0.083
+2026-05-11 12:05:54,792 | INFO    | === MC 76/100 | seed=175 ===
+2026-05-11 12:06:24,929 | INFO    | [seed=175] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:06:24,970 | INFO    | [seed=175] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=456 | total=709
+2026-05-11 12:06:25,138 | INFO    | AUC=0.955 | AP=0.945 | Brier=0.069 | P*70=0.799 | P*OPT=0.504 (TPR=0.88) | P*85=0.504 | P*95=0.075
+2026-05-11 12:06:25,337 | INFO    | === MC 77/100 | seed=176 ===
+2026-05-11 12:06:53,641 | INFO    | [seed=176] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:06:53,681 | INFO    | [seed=176] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=474 | total=727
+2026-05-11 12:06:53,854 | INFO    | AUC=0.948 | AP=0.936 | Brier=0.073 | P*70=0.580 | P*OPT=0.463 (TPR=0.86) | P*85=0.463 | P*95=0.067
+2026-05-11 12:06:54,018 | INFO    | === MC 78/100 | seed=177 ===
+2026-05-11 12:07:22,434 | INFO    | [seed=177] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:07:22,477 | INFO    | [seed=177] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 12:07:22,714 | INFO    | AUC=0.953 | AP=0.928 | Brier=0.074 | P*70=0.748 | P*OPT=0.395 (TPR=0.88) | P*85=0.395 | P*95=0.050
+2026-05-11 12:07:22,882 | INFO    | === MC 79/100 | seed=178 ===
+2026-05-11 12:07:51,044 | INFO    | [seed=178] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:07:51,084 | INFO    | [seed=178] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=457 | total=710
+2026-05-11 12:07:51,251 | INFO    | AUC=0.958 | AP=0.942 | Brier=0.068 | P*70=0.740 | P*OPT=0.416 (TPR=0.87) | P*85=0.427 | P*95=0.054
+2026-05-11 12:07:51,415 | INFO    | === MC 80/100 | seed=179 ===
+2026-05-11 12:08:19,450 | INFO    | [seed=179] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:08:19,491 | INFO    | [seed=179] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=466 | total=719
+2026-05-11 12:08:19,660 | INFO    | AUC=0.959 | AP=0.940 | Brier=0.067 | P*70=0.753 | P*OPT=0.364 (TPR=0.89) | P*85=0.458 | P*95=0.044
+2026-05-11 12:08:19,820 | INFO    | === MC 81/100 | seed=180 ===
+2026-05-11 12:08:47,998 | INFO    | [seed=180] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:08:48,083 | INFO    | [seed=180] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=472 | total=725
+2026-05-11 12:08:48,249 | INFO    | AUC=0.958 | AP=0.953 | Brier=0.059 | P*70=0.826 | P*OPT=0.340 (TPR=0.89) | P*85=0.463 | P*95=0.044
+2026-05-11 12:08:48,411 | INFO    | === MC 82/100 | seed=181 ===
+2026-05-11 12:09:16,733 | INFO    | [seed=181] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:09:16,774 | INFO    | [seed=181] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 12:09:16,961 | INFO    | AUC=0.936 | AP=0.902 | Brier=0.088 | P*70=0.717 | P*OPT=0.379 (TPR=0.89) | P*85=0.379 | P*95=0.069
+2026-05-11 12:09:17,123 | INFO    | === MC 83/100 | seed=182 ===
+2026-05-11 12:09:45,330 | INFO    | [seed=182] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:09:45,370 | INFO    | [seed=182] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=471 | total=724
+2026-05-11 12:09:45,536 | INFO    | AUC=0.957 | AP=0.943 | Brier=0.070 | P*70=0.706 | P*OPT=0.378 (TPR=0.88) | P*85=0.462 | P*95=0.058
+2026-05-11 12:09:45,699 | INFO    | === MC 84/100 | seed=183 ===
+2026-05-11 12:10:15,362 | INFO    | [seed=183] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:10:15,405 | INFO    | [seed=183] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=471 | total=724
+2026-05-11 12:10:15,583 | INFO    | AUC=0.951 | AP=0.935 | Brier=0.075 | P*70=0.846 | P*OPT=0.481 (TPR=0.87) | P*85=0.481 | P*95=0.046
+2026-05-11 12:10:15,774 | INFO    | === MC 85/100 | seed=184 ===
+2026-05-11 12:10:46,057 | INFO    | [seed=184] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:10:46,104 | INFO    | [seed=184] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=459 | total=712
+2026-05-11 12:10:46,308 | INFO    | AUC=0.961 | AP=0.951 | Brier=0.060 | P*70=0.831 | P*OPT=0.432 (TPR=0.89) | P*85=0.542 | P*95=0.055
+2026-05-11 12:10:46,491 | INFO    | === MC 86/100 | seed=185 ===
+2026-05-11 12:11:16,413 | INFO    | [seed=185] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:11:16,456 | INFO    | [seed=185] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=476 | total=729
+2026-05-11 12:11:16,622 | INFO    | AUC=0.960 | AP=0.953 | Brier=0.057 | P*70=0.737 | P*OPT=0.326 (TPR=0.91) | P*85=0.582 | P*95=0.044
+2026-05-11 12:11:16,787 | INFO    | === MC 87/100 | seed=186 ===
+2026-05-11 12:11:46,613 | INFO    | [seed=186] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:11:46,655 | INFO    | [seed=186] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=465 | total=718
+2026-05-11 12:11:46,813 | INFO    | AUC=0.955 | AP=0.940 | Brier=0.071 | P*70=0.767 | P*OPT=0.270 (TPR=0.91) | P*85=0.491 | P*95=0.065
+2026-05-11 12:11:46,955 | INFO    | === MC 88/100 | seed=187 ===
+2026-05-11 12:12:16,395 | INFO    | [seed=187] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:12:16,436 | INFO    | [seed=187] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=464 | total=717
+2026-05-11 12:12:16,591 | INFO    | AUC=0.945 | AP=0.924 | Brier=0.081 | P*70=0.779 | P*OPT=0.306 (TPR=0.91) | P*85=0.616 | P*95=0.050
+2026-05-11 12:12:16,782 | INFO    | === MC 89/100 | seed=188 ===
+2026-05-11 12:12:45,911 | INFO    | [seed=188] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:12:45,953 | INFO    | [seed=188] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=471 | total=724
+2026-05-11 12:12:46,110 | INFO    | AUC=0.956 | AP=0.948 | Brier=0.066 | P*70=0.676 | P*OPT=0.618 (TPR=0.84) | P*85=0.447 | P*95=0.046
+2026-05-11 12:12:46,277 | INFO    | === MC 90/100 | seed=189 ===
+2026-05-11 12:13:15,494 | INFO    | [seed=189] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:13:15,536 | INFO    | [seed=189] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=469 | total=722
+2026-05-11 12:13:15,715 | INFO    | AUC=0.957 | AP=0.952 | Brier=0.060 | P*70=0.783 | P*OPT=0.447 (TPR=0.88) | P*85=0.447 | P*95=0.041
+2026-05-11 12:13:15,971 | INFO    | === MC 91/100 | seed=190 ===
+2026-05-11 12:13:45,236 | INFO    | [seed=190] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:13:45,278 | INFO    | [seed=190] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=471 | total=724
+2026-05-11 12:13:45,437 | INFO    | AUC=0.959 | AP=0.951 | Brier=0.062 | P*70=0.719 | P*OPT=0.206 (TPR=0.92) | P*85=0.473 | P*95=0.068
+2026-05-11 12:13:45,605 | INFO    | === MC 92/100 | seed=191 ===
+2026-05-11 12:14:15,022 | INFO    | [seed=191] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:14:15,063 | INFO    | [seed=191] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=457 | total=710
+2026-05-11 12:14:15,221 | INFO    | AUC=0.959 | AP=0.948 | Brier=0.066 | P*70=0.731 | P*OPT=0.467 (TPR=0.88) | P*85=0.467 | P*95=0.059
+2026-05-11 12:14:15,388 | INFO    | === MC 93/100 | seed=192 ===
+2026-05-11 12:14:44,800 | INFO    | [seed=192] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:14:44,842 | INFO    | [seed=192] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=468 | total=721
+2026-05-11 12:14:45,004 | INFO    | AUC=0.946 | AP=0.939 | Brier=0.070 | P*70=0.818 | P*OPT=0.322 (TPR=0.88) | P*85=0.460 | P*95=0.047
+2026-05-11 12:14:45,172 | INFO    | === MC 94/100 | seed=193 ===
+2026-05-11 12:15:14,914 | INFO    | [seed=193] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:15:14,956 | INFO    | [seed=193] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=465 | total=718
+2026-05-11 12:15:15,159 | INFO    | AUC=0.947 | AP=0.928 | Brier=0.073 | P*70=0.651 | P*OPT=0.549 (TPR=0.83) | P*85=0.395 | P*95=0.072
+2026-05-11 12:15:15,325 | INFO    | === MC 95/100 | seed=194 ===
+2026-05-11 12:15:44,706 | INFO    | [seed=194] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:15:44,751 | INFO    | [seed=194] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=459 | total=712
+2026-05-11 12:15:44,921 | INFO    | AUC=0.961 | AP=0.950 | Brier=0.065 | P*70=0.838 | P*OPT=0.277 (TPR=0.91) | P*85=0.449 | P*95=0.053
+2026-05-11 12:15:45,083 | INFO    | === MC 96/100 | seed=195 ===
+2026-05-11 12:16:14,954 | INFO    | [seed=195] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:16:14,997 | INFO    | [seed=195] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=462 | total=715
+2026-05-11 12:16:15,158 | INFO    | AUC=0.965 | AP=0.959 | Brier=0.053 | P*70=0.772 | P*OPT=0.326 (TPR=0.91) | P*85=0.448 | P*95=0.089
+2026-05-11 12:16:15,328 | INFO    | === MC 97/100 | seed=196 ===
+2026-05-11 12:16:45,580 | INFO    | [seed=196] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:16:45,623 | INFO    | [seed=196] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=462 | total=715
+2026-05-11 12:16:45,784 | INFO    | AUC=0.939 | AP=0.896 | Brier=0.083 | P*70=0.671 | P*OPT=0.281 (TPR=0.91) | P*85=0.530 | P*95=0.077
+2026-05-11 12:16:45,953 | INFO    | === MC 98/100 | seed=197 ===
+2026-05-11 12:17:16,108 | INFO    | [seed=197] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:17:16,152 | INFO    | [seed=197] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=471 | total=724
+2026-05-11 12:17:16,317 | INFO    | AUC=0.962 | AP=0.948 | Brier=0.066 | P*70=0.769 | P*OPT=0.344 (TPR=0.88) | P*85=0.376 | P*95=0.062
+2026-05-11 12:17:16,484 | INFO    | === MC 99/100 | seed=198 ===
+2026-05-11 12:17:46,281 | INFO    | [seed=198] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:17:46,324 | INFO    | [seed=198] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=478 | total=731
+2026-05-11 12:17:46,480 | INFO    | AUC=0.955 | AP=0.944 | Brier=0.067 | P*70=0.685 | P*OPT=0.401 (TPR=0.88) | P*85=0.508 | P*95=0.060
+2026-05-11 12:17:46,648 | INFO    | === MC 100/100 | seed=199 ===
+2026-05-11 12:18:16,423 | INFO    | [seed=199] Eventos descartados por filtro exposición (1d>=5.0, 30d>=50.0): 12 / 265 (4.5%)
+2026-05-11 12:18:16,517 | INFO    | [seed=199] su_type=2 | SI=253 | NO_eligible=26318 | NO_final=478 | total=731
+2026-05-11 12:18:16,677 | INFO    | AUC=0.943 | AP=0.919 | Brier=0.087 | P*70=0.801 | P*OPT=0.425 (TPR=0.91) | P*85=0.516 | P*95=0.055
+2026-05-11 12:18:41,742 | INFO    | NO acumulados de 100 corridas: 46837 filas guardadas en /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_no_events_all_runs.parquet
+2026-05-11 12:18:41,753 | INFO    | Curvas ROC de 100 corridas: 21690 filas guardadas en /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_roc_curves_mc.parquet
+2026-05-11 12:18:41,753 | INFO    | AUC mediana=0.9545 | AP mediana=0.9370 | Brier mediana=0.0701
+2026-05-11 12:18:41,753 | INFO    | run_star=16
+2026-05-11 12:18:41,815 | INFO    | === LISTO ===
+2026-05-11 12:18:41,815 | INFO    | Métricas:     /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_mc_metrics.csv
+2026-05-11 12:18:41,815 | INFO    | Thresholds:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_thresholds_mc.csv
+2026-05-11 12:18:41,815 | INFO    | Grilla agg:   /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs.parquet
+2026-05-11 12:18:41,815 | INFO    | Grilla x run: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_grid_probs_per_run.parquet
+2026-05-11 12:18:41,815 | INFO    | Modelo final: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_run_star.joblib
+2026-05-11 12:18:41,815 | INFO    | Package:      /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_package.json
+2026-05-11 12:18:41,815 | INFO    | Dataset star: /home/oisanchezp/Thesis/src/06_Chapter/Umbrales/gam_su2_dataset_run_star.parquet

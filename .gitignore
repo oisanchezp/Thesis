@@ -4,3 +4,7 @@ __pycache__/
 *$py.class
 .DS_Store
 data/metadata/dem_AMVA_5m.tif
+src/04_Chapter/Curvatura/curvatura_estandar.tif
+src/04_Chapter/geologia_alex/salida.shp
+src/06_Chapter/slope_units_final.gpkg
+src/04_Chapter/Slope_detallado/Slope_detallado.shp

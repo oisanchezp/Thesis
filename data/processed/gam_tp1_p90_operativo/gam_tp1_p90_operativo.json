@@ -1,0 +1,79 @@
+{
+  "model_type": "GAM",
+  "feature_names": [
+    "T",
+    "P",
+    "sin_doy",
+    "cos_doy",
+    "ENSO_code",
+    "slope_mean",
+    "geologia_code",
+    "cobertura_code"
+  ],
+  "t_days": 1,
+  "p_days": 90,
+  "total_days": 91,
+  "best_lam": 5.62341325190349,
+  "thresholds": [
+    0.4822909684815206,
+    0.26494591976823656
+  ],
+  "threshold_names": {
+    "media_alta_tnr95": 0.4822909684815206,
+    "baja_media_tpr95": 0.26494591976823656
+  },
+  "mappings": {
+    "ENSO": {
+      "La Niña": 0,
+      "Neutro": 1,
+      "El Niño": 2
+    },
+    "geologia": {
+      "Depósitos Cuaternarios": 0,
+      "Rocas Metamórficas": 1,
+      "Rocas Ultramáficas": 2,
+      "Rocas Volcanosedimentarias": 3,
+      "Rocas Ígneas Intrusivas": 4
+    },
+    "cobertura": {
+      "0.0": 0,
+      "1.0": 1,
+      "2.0": 2,
+      "3.0": 3,
+      "4.0": 4,
+      "5.0": 5,
+      "6.0": 6,
+      "7.0": 7,
+      "8.0": 8,
+      "9.0": 9
+    }
+  },
+  "notes": {
+    "threshold_media_alta": "Umbral con TNR≈0.95",
+    "threshold_baja_media": "Umbral con TPR≈0.95",
+    "class_rule": "0=baja, 1=media, 2=alta",
+    "P_definition": "P = acumulado_total_(T+P) - acumulado_T"
+  },
+  "summary_mc": {
+    "auc_median": 0.9729677734321129,
+    "auc_mean": 0.9723630602523531,
+    "run_id_star": 43,
+    "threshold_baja_media_median": 0.26494591976823656,
+    "threshold_media_alta_median": 0.4822909684815206,
+    "threshold_baja_media_mean": 0.26903357796284605,
+    "threshold_media_alta_mean": 0.4901280262431621
+  },
+  "run_id_star": 43,
+  "auc_run_star": 0.972971221156339,
+  "successful_runs": 100,
+  "config": {
+    "min_dist_m": 200.0,
+    "excl_days": 30,
+    "umbral_1d": 10.0,
+    "umbral_7d": 15.0,
+    "umbral_90d": 80.0,
+    "test_size": 0.3,
+    "random_state_split": 42,
+    "base_seed": 100
+  }
+}

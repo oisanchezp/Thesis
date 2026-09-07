@@ -1,0 +1,89 @@
+{
+  "t_days": 1,
+  "p_days": 33,
+  "feature_order": [
+    "T",
+    "P",
+    "sin_doy",
+    "cos_doy",
+    "ENSO",
+    "slope_mean",
+    "log_area",
+    "geologia",
+    "cobertura"
+  ],
+  "geo_levels": [
+    "Depósitos Cuaternarios",
+    "Rocas Metamórficas",
+    "Rocas Ultramáficas",
+    "Rocas Volcanosedimentarias",
+    "Rocas Ígneas Intrusivas"
+  ],
+  "cov_levels": [
+    "Bosque Fragmentado",
+    "Bosque Plantado",
+    "Canteras",
+    "Cuerpos de agua",
+    "Cultivos",
+    "Pastos",
+    "Pastos Arbolados",
+    "Pastos Enmalezados",
+    "Tejido Urbano Continuo",
+    "Tejido Urbano Discontinuo"
+  ],
+  "enso_levels": [
+    "0",
+    "1",
+    "2"
+  ],
+  "best_lam": 1.0,
+  "thresholds_prob": {
+    "OPT": 0.4786257132672686,
+    "TPR95": 0.35630024202248,
+    "TNR95": 0.4805547188310531
+  },
+  "paths_training": {
+    "path_gpkg": "/home/oisanchezp/Thesis/data/metadata/slope_units_con_inventario.gpkg",
+    "layer_in": "slope_units_full",
+    "pluv_meta": "/home/oisanchezp/Thesis/data/metadata/pluviometros_metadatos_20250506.csv",
+    "ruta_series": "/mnt/investigacion/geotecnia/Pluvios_horarios/Pluvios_horarios_completos/",
+    "oni_path": "/home/oisanchezp/Thesis/data/metadata/oni_diario_2010_2025.csv"
+  },
+  "selection": {
+    "paquete": "C",
+    "modelo_referencia": "GAM",
+    "mc_id_star": 40,
+    "seed_star": 140,
+    "auc_star": 0.9823431529643781,
+    "auc_median": 0.9823431529643781,
+    "t_days": 1,
+    "p_days": 33,
+    "random_state_split": 42,
+    "threshold": 0.5,
+    "min_dist_m": 300.0,
+    "excl_days": 30,
+    "umbrales": {
+      "1d": 10.0,
+      "7d": 20.0,
+      "90d": 80.0
+    },
+    "paths": {
+      "path_gpkg": "/home/oisanchezp/Thesis/data/metadata/slope_units_con_inventario.gpkg",
+      "layer_in": "slope_units_full",
+      "pluv_meta": "/home/oisanchezp/Thesis/data/metadata/pluviometros_metadatos_20250506.csv",
+      "ruta_series": "/mnt/investigacion/geotecnia/Pluvios_horarios/Pluvios_horarios_completos/",
+      "oni_path": "/home/oisanchezp/Thesis/data/metadata/oni_diario_2010_2025.csv"
+    },
+    "feature_names": [
+      "T",
+      "P",
+      "sin_doy",
+      "cos_doy",
+      "ENSO",
+      "slope_mean",
+      "log_area",
+      "geologia",
+      "cobertura"
+    ]
+  }
+}

@@ -1,10 +1,44 @@
-# Byte-compiled / optimized / DLL files
+# ── Datos geoespaciales pesados (quedan en disco, fuera de Git) ──
+*.gpkg
+*.gpkg-shm
+*.gpkg-wal
+*.tif
+*.tiff
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sbn
+*.sbx
+*.qix
+*.nc
+*.grib*
+*.h5
+*.hdf5
+*.parquet
+*.feather
+*.zip
+*.7z
+
+# ── Python ──
 __pycache__/
 *.py[cod]
-*$py.class
+.ipynb_checkpoints/
+.venv/
+env/
+
+# ── LaTeX ──
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+
+# ── Sistema ──
 .DS_Store
-data/metadata/dem_AMVA_5m.tif
-src/04_Chapter/Curvatura/curvatura_estandar.tif
-src/04_Chapter/geologia_alex/salida.shp
-src/06_Chapter/slope_units_final.gpkg
-src/04_Chapter/Slope_detallado/Slope_detallado.shp
+Thumbs.db

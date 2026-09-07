@@ -1,0 +1,23 @@
+\renewcommand{\arraystretch}{1.25}
+\setlength{\tabcolsep}{6pt}
+\begin{table}[h]
+\centering
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}m{0.8cm} Y Y Y Y}
+\hline
+\textbf{$k$} & \textbf{ARI}\textsubscript{H--D} & \textbf{ARI}\textsubscript{H--M} & \textbf{ARI}\textsubscript{D--M} & \textbf{Mean ARI} \\
+\hline
+4 & 1.000 & 0.289 & 0.298 & 0.529 \\
+\hline
+\textbf{5} & \textbf{1.000} & \textbf{0.301} & \textbf{0.310} & \textbf{0.537} \\
+\hline
+6 & 0.866 & 0.269 & 0.264 & 0.467 \\
+\hline
+7 & 0.789 & 0.322 & 0.294 & 0.468 \\
+\hline
+8 & 0.780 & 0.295 & 0.291 & 0.455 \\
+\hline
+\end{tabularx}
+\caption{Adjusted Rand Index (ARI) between the partitions obtained at the hourly (H), daily (D) and monthly (M) aggregations for each candidate $k$. ARI\textsubscript{H--D}, ARI\textsubscript{H--M} and ARI\textsubscript{D--M} are the pairwise ARI values; the last column is the mean of the three pairs and provides a single scalar measure of cross-scale consistency. ARI ranges from $0$ (random agreement) to $1$ (identical partitions); values above approximately $0.6$ indicate strong agreement. The row corresponding to the maximum mean ARI ($k=5$) is highlighted in bold.}
+\label{tab:ari_summary}
+\end{table}

@@ -1,0 +1,25 @@
+\renewcommand{\arraystretch}{1.25}
+\setlength{\tabcolsep}{5pt}
+\begin{table}[h]
+\centering
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}m{0.8cm} Y Y Y Y |  Y Y Y Y |  Y Y Y Y}
+\hline
+\multirow{2}{*}{\textbf{$k$}} & \multicolumn{4}{c|}{\textbf{Hourly}} & \multicolumn{4}{c|}{\textbf{Daily}} & \multicolumn{4}{c}{\textbf{Monthly}} \\
+\cline{2-13}
+ & \textbf{$S_k$} & \textbf{DBI} & \textbf{$n_s$} & \textbf{$\Delta h$} & \textbf{$S_k$} & \textbf{DBI} & \textbf{$n_s$} & \textbf{$\Delta h$} & \textbf{$S_k$} & \textbf{DBI} & \textbf{$n_s$} & \textbf{$\Delta h$} \\
+\hline
+4 & 0.074 & 2.437 & 0 & 28.263 & 0.080 & 2.358 & 0 & 76.711 & 0.084 & 2.456 & 0 & 102.304 \\
+\hline
+5 & 0.085 & 2.218 & 0 & 105.022 & 0.089 & 2.179 & 0 & 45.802 & 0.088 & 2.348 & 0 & 180.022 \\
+\hline
+6 & 0.099 & 2.020 & 0 & 28.685 & 0.095 & 2.091 & 0 & 87.776 & 0.084 & 2.274 & 0 & 61.551 \\
+\hline
+7 & 0.092 & 1.962 & 0 & 19.531 & 0.103 & 1.930 & 0 & 14.012 & 0.083 & 2.014 & 1 & 23.248 \\
+\hline
+8 & 0.098 & 1.900 & 0 & 68.497 & 0.115 & 1.818 & 0 & 91.683 & 0.077 & 1.807 & 2 & 63.768 \\
+\hline
+\end{tabularx}
+\caption{Cluster-validity and partition properties for candidate numbers of clusters ($k=4$--8) across the hourly, daily, and monthly aggregations. $S_k$: mean silhouette score (higher is better); DBI: Davies--Bouldin index (lower is better); $n_s$: number of singleton clusters; $\Delta h$: dendrogram jump immediately above the cut (larger indicates a more natural partition).}
+\label{tab:kselect}
+\end{table}

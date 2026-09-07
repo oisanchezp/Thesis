@@ -1,0 +1,91 @@
+---
+title: "ENSAYO"
+format: html
+---
+
+```{r}
+library(readr)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+# 1. Cargar datos
+df_1 <- read_csv("/home/oisanchezp/Thesis/data/processed/slope_units_si_no_20251115.csv", sep = ",")
+
+class(df_1)
+```
+
+```{r}
+# 2. Hacer si_no factor con etiquetas más bonitas
+df_1 <- df_1 %>%
+  mutate(
+    si_no = factor(
+      si_no,
+      levels = c(0, 1),
+      labels = c("No evento", "Evento")
+    )
+  )
+
+# Paleta para usar siempre los mismos colores
+colores_si <- c("No evento" = "#1f77b4",   # azul
+                "Evento"    = "#d62728")   # rojo
+```
+
+```{r}
+# Función auxiliar para no repetir tanto
+plot_hist_lluvia <- function(data, var, titulo, xlab) {
+  ggplot(data, aes(x = .data[[var]], fill = si_no)) +
+    geom_histogram(aes(y = ..density..),
+                   position = "identity",
+                   alpha = 0.4,
+                   bins = 30) +
+    geom_density(alpha = 0.7, linewidth = 1) +
+    scale_fill_manual(values = colores_si, name = "Tipo de evento") +
+    labs(
+      title = titulo,
+      x = xlab,
+      y = "Densidad"
+    ) +
+    theme_minimal(base_size = 13)
+}
+```
+
+```{r}
+
+# 1 día
+plot_hist_lluvia(df_1, "1d",
+                 "Distribución de lluvia 1 día para eventos y no eventos",
+                 "Lluvia 1 día (mm)")
+
+# 3 días
+plot_hist_lluvia(df_1, "3d",
+                 "Distribución de lluvia 3 días para eventos y no eventos",
+                 "Lluvia 3 días (mm)")
+
+# 5 días
+plot_hist_lluvia(df_1, "5d",
+                 "Distribución de lluvia 5 días para eventos y no eventos",
+                 "Lluvia 5 días (mm)")
+
+# 7 días
+plot_hist_lluvia(df_1, "7d",
+                 "Distribución de lluvia 7 días para eventos y no eventos",
+                 "Lluvia 7 días (mm)")
+
+# 30 días (tu columna se llama 31d en el código de Python)
+plot_hist_lluvia(df_1, "31d",
+                 "Distribución de lluvia 30 días para eventos y no eventos",
+                 "Lluvia 30 días (mm)")
+
+# 60 días
+plot_hist_lluvia(df_1, "61d",
+                 "Distribución de lluvia 60 días para eventos y no eventos",
+                 "Lluvia 60 días (mm)")
+
+# 90 días
+plot_hist_lluvia(df_1, "91d",
+                 "Distribución de lluvia 90 días para eventos y no eventos",
+                 "Lluvia 90 días (mm)")
+
+```

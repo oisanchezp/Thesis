@@ -1,0 +1,18 @@
+Variable,Class,Units,Percent
+Slope angle,10–15°: Strongly sloping,8363,13.7
+Slope angle,15–20°: Moderately steep,10186,16.7
+Slope angle,20–30°: Steep,24882,40.7
+Slope angle,30–45°: Very steep,17386,28.5
+Slope angle,> 45°: Extremely steep,256,0.4
+Curvature,Concave,12432,20.4
+Curvature,Planar,41962,68.7
+Curvature,Convex,6679,10.9
+Land cover,Forests,27176,44.5
+Land cover,Agricultural areas,17767,29.1
+Land cover,Bare and degraded land,437,0.7
+Land cover,Discontinuous urban fabric,11854,19.4
+Land cover,Continuous urban fabric,3744,6.1
+Soil type,Silty clay,8877,14.5
+Soil type,Sandy clay,17161,28.1
+Soil type,Sandy silt,23284,38.1
+Soil type,"Blocks, gravel, sand and mud",11751,19.2

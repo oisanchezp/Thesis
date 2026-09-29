@@ -299,7 +299,7 @@ def load_gauge_series(cod: int) -> Tuple[Optional[pd.Series], Optional[pd.Series
     n_dup = int(df["Fecha"].duplicated().sum())
 
     # Duplicados -> max() (ver DECISIONES, punto 1). Huecos -> NaN.
-    serie_h = df.groupby("Fecha")["P"].max().sort_index().asfreq("h")
+    serie_h = df.groupby("Fecha")["P"].max().sort_index().asfreq("H")
 
     valida = serie_h.notna()
     cs = serie_h.fillna(0.0).cumsum().astype(np.float32)
@@ -325,7 +325,7 @@ def build_gauge_cache(codigos: List[int]) -> Dict[int, Tuple[pd.Series, pd.Serie
 
 def _pos_at(cs: pd.Series, tstamp) -> int:
     """Posición del timestamp en el índice horario (pad hacia atrás)."""
-    t = pd.Timestamp(tstamp).floor("h")
+    t = pd.Timestamp(tstamp).floor("H")
     if t in cs.index:
         return cs.index.get_loc(t)
     loc = cs.index.get_indexer([t], method="pad")

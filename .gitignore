@@ -38,6 +38,7 @@ env/
 *.fdb_latexmk
 *.bbl
 *.blg
+*.csv
 
 # ── Sistema ──
 .DS_Store

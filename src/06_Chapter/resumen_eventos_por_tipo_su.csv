@@ -1,6 +1,0 @@
-,n_SUs_susceptibles,n_SUs_con_evento,n_eventos,tasa_eventos_por_SU,pct_SUs_con_evento,viabilidad_modelo_separado
-1.0,10419,77,91,0.0087,0.74,Robusto
-2.0,28945,217,265,0.0092,0.75,Robusto
-3.0,5853,17,24,0.0041,0.29,Frágil
-4.0,10025,78,99,0.0099,0.78,Robusto
-TOTAL,55242,389,479,0.0087,0.7,—

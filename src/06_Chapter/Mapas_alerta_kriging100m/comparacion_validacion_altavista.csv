@@ -1,5 +1,0 @@
-evento,mapas,hits,misses,false_alarms,correct_negatives,recall,false_alarm_rate,HK,asignacion
-altavista,Rainfall class only,176,2,6306,48744,0.989,0.1146,0.874,kriging_log_100m
-altavista,Decision matrix,176,2,5473,49577,0.989,0.0994,0.889,kriging_log_100m
-altavista,Rainfall class only,157,21,7070,47980,0.882,0.1284,0.754,vecino_mas_cercano
-altavista,Decision matrix,164,14,6376,48674,0.921,0.1158,0.806,vecino_mas_cercano

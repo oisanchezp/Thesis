@@ -1,3 +1,0 @@
-evento,mapas,hits,misses,false_alarms,correct_negatives,recall,false_alarm_rate,HK
-granizal,Rainfall class only,1,0,16574,38653,1.0,0.3001,0.7
-granizal,Decision matrix,1,0,14810,40417,1.0,0.2682,0.732

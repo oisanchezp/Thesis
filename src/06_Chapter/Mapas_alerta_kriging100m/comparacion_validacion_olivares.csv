@@ -1,5 +1,0 @@
-evento,mapas,hits,misses,false_alarms,correct_negatives,recall,false_alarm_rate,HK,asignacion
-olivares,Rainfall class only,20,0,14043,41165,1.0,0.2544,0.746,kriging_log_100m
-olivares,Decision matrix,20,0,10182,45026,1.0,0.1844,0.816,kriging_log_100m
-olivares,Rainfall class only,20,0,18568,36640,1.0,0.3363,0.664,vecino_mas_cercano
-olivares,Decision matrix,20,0,13307,41901,1.0,0.241,0.759,vecino_mas_cercano

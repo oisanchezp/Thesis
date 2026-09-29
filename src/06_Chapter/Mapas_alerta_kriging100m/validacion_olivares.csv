@@ -1,3 +1,0 @@
-evento,mapas,hits,misses,false_alarms,correct_negatives,recall,false_alarm_rate,HK
-olivares,Rainfall class only,20,0,14043,41165,1.0,0.2544,0.746
-olivares,Decision matrix,20,0,10182,45026,1.0,0.1844,0.816

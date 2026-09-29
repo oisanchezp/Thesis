@@ -1,0 +1,5 @@
+evento,mapas,hits,misses,false_alarms,correct_negatives,recall,false_alarm_rate,HK,asignacion
+granizal,Rainfall class only,1,0,15111,40116,1.0,0.2736,0.726,kriging_log_100m
+granizal,Decision matrix,1,0,13243,41984,1.0,0.2398,0.76,kriging_log_100m
+granizal,Rainfall class only,1,0,16574,38653,1.0,0.3001,0.7,vecino_mas_cercano
+granizal,Decision matrix,1,0,14810,40417,1.0,0.2682,0.732,vecino_mas_cercano

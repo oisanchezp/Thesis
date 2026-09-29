@@ -1,0 +1,166 @@
+{
+  "dist_pluvio_eventos_m": {
+    "mediana": 661.5309481903404,
+    "p95": 1741.6919111809182,
+    "max": 3533.6595418985803
+  },
+  "su_elegibles_200m": 49451,
+  "su_pool": 49451,
+  "dias_vetados": 1160,
+  "periodos_con_eventos": null,
+  "pluviometros_con_candidatas": 143,
+  "horas_candidatas": 991701,
+  "dist_pluvio_pool_m": {
+    "mediana": 1885.5864186303033,
+    "p95": 6350.391056909011,
+    "max": 12998.291927472419
+  },
+  "modelo_final": {
+    "run_star": 34,
+    "seed_star": 134,
+    "lam": 1.0,
+    "edof": 11.917241303414203,
+    "n": 999,
+    "n_si": 333,
+    "centro_STR": -5.359035620131337,
+    "centro_LTR": 1.1406861924931693
+  },
+  "config": {
+    "UMBRAL_1D": 10.0,
+    "UMBRAL_30D": 50.0,
+    "MIN_DIST_M": 200.0,
+    "RATIO_NO_SI": 2,
+    "N_MC": 100,
+    "TEST_SIZE": 0.2,
+    "BASE_SEED": 100,
+    "MIN_COV": 0.9,
+    "H1": 24,
+    "LAM_GRID": [
+      1.0,
+      5.62341325190349,
+      31.622776601683793,
+      177.82794100389228,
+      1000.0
+    ],
+    "TPR_TARGETS": [
+      0.7,
+      0.85,
+      0.95
+    ],
+    "EXCL_DAYS_C": 10,
+    "MATCH_TIME": false,
+    "DISENO_TEMPORAL": "excl10d_libre",
+    "FECHA_CORTE": "2025-04-01",
+    "LTR_DEF": "R30-R1",
+    "N_SPLINES": 8,
+    "DEDUP": "su_dia",
+    "SPLIT": "estratificado_agrupado",
+    "LAMBDA_VAL_SIZE": 0.3,
+    "STR_GRID": [
+      0.0,
+      300.0,
+      301
+    ],
+    "LTR_GRID": [
+      0.0,
+      1000.0,
+      201
+    ],
+    "PATH_DOMINIO": "/home/oisanchezp/Thesis/src/06_Chapter/salidas/su_susceptibles_parte2.gpkg",
+    "PATH_INVENTARIO": "/home/oisanchezp/Thesis/data/processed/inventario_unificado.csv"
+  },
+  "mapas": {
+    "ENSO": {
+      "La Niña": 0,
+      "Neutro": 1,
+      "El Niño": 2
+    },
+    "zona": {
+      "1": 0,
+      "2": 1,
+      "3": 2,
+      "4": 3,
+      "5": 4
+    },
+    "tipo_su": {
+      "1": 0,
+      "2": 1,
+      "3": 2
+    }
+  },
+  "presencias": 333,
+  "su_con_presencia": 292,
+  "registros_validacion": 57,
+  "corridas_exitosas": 100,
+  "run_star": 34,
+  "lam_star": 1.0,
+  "metricas": {
+    "auc": {
+      "mediana": 0.9702053641566604,
+      "p05": 0.9483503534956795,
+      "p95": 0.9853290366350068
+    },
+    "ap": {
+      "mediana": 0.9369724525280398,
+      "p05": 0.8773626703085683,
+      "p95": 0.9728047141769484
+    },
+    "brier": {
+      "mediana": 0.06132795300919652,
+      "p05": 0.04654623778910891,
+      "p95": 0.08468827679039256
+    },
+    "hk": {
+      "mediana": 0.8130400628436762,
+      "p05": 0.7202568837289968,
+      "p95": 0.8801537425653687
+    },
+    "recall": {
+      "mediana": 0.8656716417910447,
+      "p05": 0.7910447761194029,
+      "p95": 0.9253731343283582
+    },
+    "precision": {
+      "mediana": 0.8823529411764706,
+      "p05": 0.8181818181818182,
+      "p95": 0.9356327543424316
+    },
+    "pofd": {
+      "mediana": 0.06015037593984962,
+      "p05": 0.029850746268656716,
+      "p95": 0.09774436090225563
+    },
+    "f1": {
+      "mediana": 0.8787878787878788,
+      "p05": 0.8174115665356542,
+      "p95": 0.9144360902255638
+    }
+  },
+  "cortes_mediana": {
+    "P_OPT": {
+      "threshold": 0.3452,
+      "tpr": 0.9552,
+      "fpr": 0.0827,
+      "tnr": 0.9173
+    },
+    "P_TPR70": {
+      "threshold": 0.7307,
+      "tpr": 0.7463,
+      "fpr": 0.0226,
+      "tnr": 0.9774
+    },
+    "P_TPR85": {
+      "threshold": 0.5139,
+      "tpr": 0.8657,
+      "fpr": 0.0526,
+      "tnr": 0.9474
+    },
+    "P_TPR95": {
+      "threshold": 0.2745,
+      "tpr": 0.9552,
+      "fpr": 0.1053,
+      "tnr": 0.8947
+    }
+  },
+  "minutos": 1.6
+}

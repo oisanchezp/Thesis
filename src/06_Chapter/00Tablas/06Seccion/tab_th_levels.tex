@@ -1,0 +1,32 @@
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{5pt}
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}m{2.4cm} X r r r r}
+\hline
+\textbf{Variable} & \textbf{Level} & \textbf{Slope units} & \textbf{\%} & \textbf{With $Y_i>0$} & \textbf{Landslides} \\
+\hline
+Soil type & Sandy silt$^{*}$ & $23{,}196$ & 38.1 & $1{,}411$ & $2{,}001$ \\
+ & Sandy clay & $17{,}125$ & 28.1 & $1{,}316$ & $2{,}151$ \\
+ & Blocks, gravel, sand and mud & $11{,}731$ & 19.3 & $606$ & $936$ \\
+ & Silty clay & $8{,}862$ & 14.5 & $727$ & $1{,}110$ \\
+Land cover & Forests$^{*}$ & $27{,}148$ & 44.6 & $1{,}941$ & $2{,}958$ \\
+ & Agricultural areas & $17{,}740$ & 29.1 & $1{,}123$ & $1{,}738$ \\
+ & Discontinuous urban fabric & $11{,}845$ & 19.4 & $712$ & $1{,}113$ \\
+ & Continuous urban fabric & $3{,}744$ & 6.1 & $253$ & $342$ \\
+ & Bare and degraded land & $437$ & 0.7 & $31$ & $47$ \\
+Slope unit type & Steep concave--convex slopes$^{*}$ & $31{,}561$ & 51.8 & $2{,}935$ & $4{,}668$ \\
+ & Intermediate concave--convex slopes & $22{,}854$ & 37.5 & $874$ & $1{,}209$ \\
+ & Steep concave slopes & $6{,}499$ & 10.7 & $251$ & $321$ \\
+Rainfall zone & Norte & $29{,}676$ & 48.7 & $1{,}472$ & $1{,}956$ \\
+ & Sur & $14{,}374$ & 23.6 & $1{,}045$ & $1{,}750$ \\
+ & Occidente & $8{,}490$ & 13.9 & $939$ & $1{,}576$ \\
+ & Oriente & $5{,}768$ & 9.5 & $216$ & $281$ \\
+ & San Antonio de Prado & $2{,}606$ & 4.3 & $388$ & $635$ \\
+\hline
+\end{tabularx}
+\caption{Levels of the four categorical predisposing variables, number of slope units per level, number of slope units with at least one recorded landslide and total number of landslides. Percentages are computed over the $60{,}914$ slope units that entered the models. Reference categories of the fixed effects are marked with an asterisk; the rainfall zone has no reference category because it enters the model as a random intercept.}
+\label{tab:th-levels}
+\end{table}

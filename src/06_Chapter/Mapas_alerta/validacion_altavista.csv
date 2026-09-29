@@ -1,0 +1,3 @@
+evento,mapas,hits,misses,false_alarms,correct_negatives,recall,false_alarm_rate,HK
+altavista,Rainfall class only,157,21,7070,47980,0.882,0.1284,0.754
+altavista,Decision matrix,164,14,6376,48674,0.921,0.1158,0.806

@@ -1,0 +1,18 @@
+Variable,Level,Units,Percent,WithLs,Landslides,Reference
+Soil type,Sandy silt,23196,38.1,1411,2001,True
+Soil type,Sandy clay,17125,28.1,1316,2151,False
+Soil type,"Blocks, gravel, sand and mud",11731,19.3,606,936,False
+Soil type,Silty clay,8862,14.5,727,1110,False
+Land cover,Forests,27148,44.6,1941,2958,True
+Land cover,Agricultural areas,17740,29.1,1123,1738,False
+Land cover,Discontinuous urban fabric,11845,19.4,712,1113,False
+Land cover,Continuous urban fabric,3744,6.1,253,342,False
+Land cover,Bare and degraded land,437,0.7,31,47,False
+Slope unit type,Steep concave–convex slopes,31561,51.8,2935,4668,True
+Slope unit type,Intermediate concave–convex slopes,22854,37.5,874,1209,False
+Slope unit type,Steep concave slopes,6499,10.7,251,321,False
+Rainfall zone,Norte,29676,48.7,1472,1956,False
+Rainfall zone,Sur,14374,23.6,1045,1750,False
+Rainfall zone,Occidente,8490,13.9,939,1576,False
+Rainfall zone,Oriente,5768,9.5,216,281,False
+Rainfall zone,San Antonio de Prado,2606,4.3,388,635,False

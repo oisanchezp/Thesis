@@ -1,0 +1,30 @@
+[
+  {
+    "cell": 9,
+    "width_in": 6.5,
+    "height_in": 2.35,
+    "dpi": 110.0,
+    "off_canvas_text": []
+  },
+  {
+    "cell": 11,
+    "width_in": 6.5,
+    "height_in": 5.1,
+    "dpi": 110.0,
+    "off_canvas_text": []
+  },
+  {
+    "cell": 15,
+    "width_in": 6.5,
+    "height_in": 3.45,
+    "dpi": 110.0,
+    "off_canvas_text": []
+  },
+  {
+    "cell": 17,
+    "width_in": 6.5,
+    "height_in": 9.05,
+    "dpi": 110.0,
+    "off_canvas_text": []
+  }
+]

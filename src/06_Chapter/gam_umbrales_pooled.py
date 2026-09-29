@@ -111,7 +111,7 @@ MIN_DIST_M = 200      # buffer espacial SU evento -> candidatos no-evento
 EXCL_DAYS  = 30       # buffer temporal fechas evento
  
 # Filtro de exposición (no-sequía) para fechas candidatas no-evento
-UMBRAL_1D  = 5.0      # mm en 1 día
+UMBRAL_1D  = 10.0      # mm en 1 día
 UMBRAL_30D = 50.0     # mm en 30 días
  
 # Ratio caso:control

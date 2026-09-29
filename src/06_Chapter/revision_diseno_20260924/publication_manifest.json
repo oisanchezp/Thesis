@@ -1,0 +1,61 @@
+{
+  "published_at_utc": "2026-09-24T23:51:29.313812+00:00",
+  "backup": "/home/oisanchezp/Thesis/src/06_Chapter/revision_diseno_20260924/originales",
+  "original_notebook_sha256": "76f944163ccbd572e11e3e3bf2339ada63de0189aa8644ef62750779666b925f",
+  "unchanged_tables": [
+    "tabla_res_gam_clases_excl10d_libre.csv",
+    "tabla_res_gam_cortes_excl10d_libre.csv",
+    "tabla_res_gam_desempeno_excl10d_libre.csv",
+    "tabla_res_gam_factores_excl10d_libre.csv",
+    "tabla_res_gam_muestra_excl10d_libre.csv",
+    "tabla_res_gam_umbrales_mm_excl10d_libre.csv",
+    "tabla_res_gam_umbrales_mm_tipo_excl10d_libre.csv"
+  ],
+  "reliability_unchanged": true,
+  "published": [
+    {
+      "path": "/home/oisanchezp/Thesis/src/06_Chapter/00Figuras/06Seccion/fig_gam_desempeno_excl10d_libre.pdf",
+      "sha256": "eaac036e2602e3ece5753c7cae7e27566131465977454b2e1a584245e4cebb52"
+    },
+    {
+      "path": "/home/oisanchezp/Thesis/src/06_Chapter/00Figuras/06Seccion/fig_gam_desempeno_excl10d_libre.png",
+      "sha256": "2c9741d3d6aaa899cf74d0af7d8872280de53dda820f226d816e320a04e9446f"
+    },
+    {
+      "path": "/home/oisanchezp/Thesis/src/06_Chapter/00Figuras/06Seccion/fig_gam_efectos_excl10d_libre.pdf",
+      "sha256": "6eaab4b5c5061f7819e3c728ea4d8f3e1f5c21b70e5d7b9456f2912d16af5c95"
+    },
+    {
+      "path": "/home/oisanchezp/Thesis/src/06_Chapter/00Figuras/06Seccion/fig_gam_efectos_excl10d_libre.png",
+      "sha256": "4f9c405ca280c9807d412ad23708dca6eea412b19702a968613da4075f943d67"
+    },
+    {
+      "path": "/home/oisanchezp/Thesis/src/06_Chapter/00Figuras/06Seccion/fig_gam_roc_calibracion_excl10d_libre.pdf",
+      "sha256": "148fe83daab76357edb4590b99b614dc27440918bba00b2d78c4515acfe7041c"
+    },
+    {
+      "path": "/home/oisanchezp/Thesis/src/06_Chapter/00Figuras/06Seccion/fig_gam_roc_calibracion_excl10d_libre.png",
+      "sha256": "425011153603ca43c40755e34e03756ffbd64c793cf08142eef083a7989289f4"
+    },
+    {
+      "path": "/home/oisanchezp/Thesis/src/06_Chapter/00Figuras/06Seccion/fig_gam_isolineas_excl10d_libre.pdf",
+      "sha256": "bff5f3067560bfb689eb74579d14eddbc096b144f44619effca3e2ee7b3ad7a2"
+    },
+    {
+      "path": "/home/oisanchezp/Thesis/src/06_Chapter/00Figuras/06Seccion/fig_gam_isolineas_excl10d_libre.png",
+      "sha256": "45f6472a3410b6336c7dd2b8fd52073a180236c9e12b5d0fce0d06ecab43bcf4"
+    },
+    {
+      "path": "/home/oisanchezp/Thesis/src/06_Chapter/salidas/tabla_res_gam_calibracion_excl10d_libre.csv",
+      "sha256": "08e086283fd31e5d16a12d858a17974f721af2d81d68ac54d0a2b0cb2df053fa"
+    },
+    {
+      "path": "/home/oisanchezp/Thesis/src/06_Chapter/salidas/tabla_res_gam_distribucion_probabilidades_excl10d_libre.csv",
+      "sha256": "98d6c787cf4f9c061ef0b670365c07e436f928fb3919bda4e601ace7fb9a59e9"
+    },
+    {
+      "path": "/home/oisanchezp/Thesis/src/06_Chapter/umbrales_gam_cap6.ipynb",
+      "sha256": "5bca50dc3ed6dd47703f88468a78176981340010c4dd458f3d33df94fe0a9950"
+    }
+  ]
+}

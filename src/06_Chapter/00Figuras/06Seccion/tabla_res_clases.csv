@@ -1,0 +1,5 @@
+cls_susc,Slope units,Area (km2),Landslides,Units with landslides,lambda min,lambda max,% units,% area,% landslides,% units with landslides,Density (landslides/km2),Ratio to valley mean
+Very high,2321,35.559,3098,1482,38.0522,519.5589,3.8103,3.5815,49.9839,63.8518,87.1228,13.9562
+High,6119,96.1343,1858,1427,14.9383,38.0384,10.0453,9.6826,29.9774,23.3208,19.3271,3.096
+Moderate,14234,224.8767,932,847,4.8159,14.9363,23.3674,22.6494,15.0371,5.9505,4.1445,0.6639
+Low,38240,636.2897,310,304,0.0,4.8158,62.777,64.0866,5.0016,0.795,0.4872,0.078

@@ -1,0 +1,4 @@
+"serie","I","esperado","p_valor"
+"1. Tasa observada (y/area)",0.146190572125487,-1.64168568285916e-05,0.001
+"2. Residuales de M0 (sin campo espacial)",0.153319846428502,-1.64168568285916e-05,0.001
+"3. Residuales del modelo final (con BYM2)",0.0060025039764032,-1.64168568285916e-05,0.015

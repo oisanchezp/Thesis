@@ -1,0 +1,16 @@
+{
+  "unchanged_tables": [
+    "tabla_res_gam_clases_excl10d_libre.csv",
+    "tabla_res_gam_cortes_excl10d_libre.csv",
+    "tabla_res_gam_desempeno_excl10d_libre.csv",
+    "tabla_res_gam_factores_excl10d_libre.csv",
+    "tabla_res_gam_muestra_excl10d_libre.csv",
+    "tabla_res_gam_umbrales_mm_excl10d_libre.csv",
+    "tabla_res_gam_umbrales_mm_tipo_excl10d_libre.csv"
+  ],
+  "reliability_unchanged": true,
+  "histogram_sum_pct": {
+    "0": 100.0,
+    "1": 100.0
+  }
+}

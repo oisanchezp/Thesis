@@ -199,7 +199,7 @@ if not os.path.isfile(os.path.join(CH5_DIR, "mc_common.py")):
         f"No encuentro mc_common.py en {CH5_DIR}. Ajusta CH5_DIR al inicio del script.")
 if CH5_DIR not in sys.path:
     sys.path.insert(0, CH5_DIR)
-import mc_common as mcc  # noqa: E402
+#import mc_common as mcc  # noqa: E402
 
 _faltan = [n for n in _NECESARIAS if not hasattr(mcc, n)]
 if _faltan:
